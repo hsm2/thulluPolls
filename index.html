@@ -13,6 +13,10 @@ form {
     border: 3px solid #f1f1f1;
 }
 
+fill_pate {
+    margin: 0;
+    height: 100%;
+}
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -73,11 +77,6 @@ span.psw {
     height: auto;
 }
 
-fill_pate{
-    margin: 0;
-    height: 100%;
-}
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
@@ -92,7 +91,7 @@ fill_pate{
  <h1 style="background-color:#f1f1f1">
    Thullu Polls
  </h1>
-<form action="action_page.php">
+<form class = "fill_pate" action="action_page.php">
   <div class="imgcontainer">
     <img class = "resize" src="thullu.png" alt="Avatar" class="avatar">
   </div>
