@@ -1,27 +1,27 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+	<title></title>
+	<link rel="stylesheet" href="w3.css">
+</head>
+
 <?php
 session_start();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
 #include('bankinfo.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if($_POST['password'] == $_POST['confirmpassword'] && ($_POST['bank_password'] == $_POST['bank_confirmpassword'])){
+    if($_POST['password'] == $_POST['confirmpassword']){
         $fullname = $mysqli->real_escape_string($_POST['fullname']);
         $username = $mysqli->real_escape_string($_POST['username']);
-        $bank_username = $mysqli->real_escape_string($_POST['bank_username']);
-        $bank_password = $mysqli->real_escape_string($_POST['bank_password']);
         $password = $_POST['password'];
-        $bank_type = $_POST['bank_type'];
-        #$bankID = 0;
         $_SESSION['fullname'] = $fullname;
         $_SESSION['username'] = $username;
-        $balance = 0;
-        $sql = "INSERT INTO User (username, name, password, balance, bankID ) " . "VALUES ('$username', '$fullname', '$password', '$balance', '$bank_type')";
-        $sql1 = "INSERT INTO Bank (bankID, crypto_username, bank_username, password) " . "VALUES ('$bank_type', '$username', '$bank_username', '$bank_password')";
+        $sql = "INSERT INTO User (username, name, password) " . "VALUES ('$username', '$fullname', '$password', '$balance', '$bank_type')";
+
 
         if(($mysqli->query($sql) === true) && ($mysqli->query($sql1) === true)){
             $_SESSION['message'] = "Registration Successful! $username has been added to the database!";
             header("location: index.html");
-            #header("location:bankinfo.php");
         }
         else{
             $_SESSION['message'] = "User could not be added to database";
@@ -29,8 +29,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     }
     else{
-        $_SESSION['message'] = "Two passwords do not match!";
+        $_SESSION['message'] = "Two passwords do not match! Please type a valid password";
     }
 }
 $mysqli->close();
 ?>
+
+<div class="body-content">
+  <div class="module">
+      <a class="topnav" href="index.html" title="Homepage">Home</a>
+    <h1>Create an account</h1>
+    <form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
+      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+      <input type="text" placeholder="Full Name" name="fullname" required />
+      <input type="text" placeholder="User Name" name="username" required />
+      <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+      <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+      <!--<input type="submit" value="Register" name="register" class="btn btn-block btn-primary" /> -->
+
+      <div class="module">
+    </form>
+  </div>
+</div>
