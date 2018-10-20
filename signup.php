@@ -11,15 +11,15 @@ $mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu1
 #include('bankinfo.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($_POST['password'] == $_POST['confirmpassword']){
-        $name = $mysqli->real_escape_string($_POST['name']);
-        $username = $mysqli->real_escape_string($_POST['username']);
+        $name = $_POST['name'];
+        $id = $_POST['username'];
         $password = $_POST['password'];
-        $_SESSION['fullname'] = $fullname;
+        $_SESSION['name'] = $name;
         $_SESSION['username'] = $username;
         $sql = "INSERT INTO User (username, name, password) " . "VALUES ('$id', '$name', '$password')";
-        
+
         if(($mysqli->query($sql) === true)){
-            $_SESSION['message'] = "Registration Successful! Welcome $username";
+            $_SESSION['message'] = "Registration Successful! Welcome $id";
             header("location: index.html");
         }
         else{
