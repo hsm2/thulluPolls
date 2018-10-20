@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO User (username, name, password) " . "VALUES ('$id', '$name', '$password')";
 
 
-        if(($mysqli->query($sql) === true) && ($mysqli->query($sql1) === true)){
+        if(($mysqli->query($sql) === true)){
             $_SESSION['message'] = "Registration Successful! Welcome $username";
             header("location: index.html");
         }
