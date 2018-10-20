@@ -16,11 +16,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $password = $_POST['password'];
         $_SESSION['fullname'] = $fullname;
         $_SESSION['username'] = $username;
-        $sql = "INSERT INTO User (username, name, password) " . "VALUES ('$username', '$fullname', '$password', '$balance', '$bank_type')";
+        $sql = "INSERT INTO User (username, name, password) " . "VALUES ('$id', '$name', '$password')";
 
 
         if(($mysqli->query($sql) === true) && ($mysqli->query($sql1) === true)){
-            $_SESSION['message'] = "Registration Successful! $username has been added to the database!";
+            $_SESSION['message'] = "Registration Successful! Welcome $username";
             header("location: index.html");
         }
         else{
