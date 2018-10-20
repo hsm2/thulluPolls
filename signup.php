@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $name = $mysqli->real_escape_string($_POST['name']);
         $id = $mysqli->real_escape_string($_POST['id']);
         $password = $mysqli->real_escape_string($_POST['password']);
-        $_SESSION['fullname'] = $fullname;
+        $_SESSION['name'] = $name;
         $_SESSION['id'] = $id;
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
 
@@ -40,7 +40,7 @@ $mysqli->close();
     <h1>Create an account</h1>
     <form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
       <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-      <input type="text" placeholder="Full Name" name="fullname" required />
+      <input type="text" placeholder="Full Name" name="name" required />
       <input type="text" placeholder="User Name" name="id" required />
       <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
       <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
