@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("location: index.html");
         }
         else{
-            $_SESSION['message'] = "User could not be added to database";
+            $_SESSION['message'] = "Account was not created";
         }
 
     }
@@ -45,7 +45,7 @@ $mysqli->close();
       <input type="text" placeholder="User Name" name="username" required />
       <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
       <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
-      <input type="submit" value="Verify" name="verify" class="btn btn-block btn-primary" />
+      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
 
       <div class="module">
     </form>
