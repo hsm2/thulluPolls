@@ -4,6 +4,13 @@
 	<link rel="stylesheet" href="w3.css">
 </head>
 
+<?php
+session_start();
+$_SESSION['message'] = '';
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+#include('bankinfo.php');
+$mysqli->close();
+?>
 
 <html>
 	<head>
