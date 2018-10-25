@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
 	$result = $mysqli->query($sql);
-	if ($result) {
+	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
 	}
 	else {
