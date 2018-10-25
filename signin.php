@@ -69,6 +69,7 @@
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<div class="dt js-height">
 							<div class="dtc animate-box">
+								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Sign In</h2>
 								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
@@ -76,7 +77,7 @@
 						      <input type="text" placeholder="User Name" name="id" required />
 									<input type="text" placeholder="Password" name="password" required />
 						      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
-
+								</center>
 						      <div class="module">
 						    </form>
 								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
