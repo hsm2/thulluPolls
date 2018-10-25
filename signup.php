@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
 
         if(($mysqli->query($sql) === true)){
-						header("Location:signup.php");
+						header("Location:signup.php", true, 303);
             $_SESSION['message'] = "Registration Successful! Welcome $id";
         }
         else{
