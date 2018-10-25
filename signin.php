@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
 		header("Location: homepage.php");
+		exit;
 	}
 	else {
 		$_SESSION['message'] = "You fucked up";
