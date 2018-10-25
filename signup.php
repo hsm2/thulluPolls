@@ -32,8 +32,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
 
         if(($mysqli->query($sql) === true)){
+						header("location: signin.php");
             $_SESSION['message'] = "Registration Successful! Welcome $id";
-            header("location: signin.php");
         }
         else{
             $_SESSION['message'] = "Account was not created:(";
