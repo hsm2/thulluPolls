@@ -23,12 +23,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("location: index.html");
         }
         else{
-            $_SESSION['message'] = "Account was not created";
+            $_SESSION['message'] = "Account was not created:(";
         }
 
     }
     else{
-        $_SESSION['message'] = "Two passwords do not match! Please type a valid password";
+        $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
     }
 }
 $mysqli->close();
