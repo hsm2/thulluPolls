@@ -31,7 +31,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
 
         if(($mysqli->query($sql) === true)){
-						header("Location: http://thullupolls.web.illinois.edu/signin.php");
+						$hello = 'http://thullupolls.web.illinois.edu/signin.php'
+						header('Location: '.$hello);
 						exit();
         }
         else{
