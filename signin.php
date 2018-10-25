@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 }
 $mysqli->close();
-?>
+?> -->
 
 <html>
 	<head>
