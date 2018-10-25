@@ -12,15 +12,14 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $mysqli->real_escape_string($_POST['username']);
 	$password = $mysqli->real_escape_string($_POST['password']);
-	echo "$username, $password" . PHP_EOL;
-	// $sql = "SELECT * FROM User WHERE (id = $username AND password = $password)";
-	// $result = mysqli->query(sql);
-	// if ($result) {
-	// 	$_SESSION['message'] = "You're signed in!";
-	// }
-	// else {
-	// 	$_SESSION['message'] = "You fucked up";
-	// }
+	$sql = "SELECT * FROM User WHERE (id = $username AND password = $password)";
+	$result = $mysqli->query(sql);
+	if ($result) {
+		$_SESSION['message'] = "You're signed in!";
+	}
+	else {
+		$_SESSION['message'] = "You fucked up";
+	}
 }
 $mysqli->close();
 ?>
