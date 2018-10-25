@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if(($mysqli->query($sql) === true)){
             $_SESSION['message'] = "Registration Successful! Welcome $id";
-            header("location: index.html");
+            header("location: signin.php");
         }
         else{
             $_SESSION['message'] = "Account was not created:(";
