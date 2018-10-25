@@ -7,8 +7,8 @@
 <?php
 session_start();
 $_SESSION['message'] = '';
-$mysqli = new mysqli("web.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
-$link = mysqli_connect("web.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
+$mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
+$link = mysqli_connect("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
