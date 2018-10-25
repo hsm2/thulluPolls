@@ -103,28 +103,6 @@ $mysqli->close();
 			</div>
 		</nav>
 
-		<div id="gtco-intro">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<div class="dt js-height">
-							<div class="dtc animate-box">
-								<h2 class="gradient-text">Get opinoins and share opinoins by participating in the Thullu Polls!</h2>
-								<form action="signup.php">
-								    <button class="btn btn-gradient" type="submit">Sign Up</button>
-								</form>
-								<form action="signin.php">
-								    <button class="btn btn-gradient" type="submit">Sign In</button>
-								</form>
-								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
-								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="body-content">
 		  <div class="module">
 		      <a class="topnav" href="index.html" title="Homepage">Home</a>
