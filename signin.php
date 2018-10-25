@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['message'] = "You're signed in!";
 	}
 	else {
-		$_SESSION['message'] = "You fucked up $result";
+		$_SESSION['message'] = "You fucked up $result $username $password";
 	}
 }
 $mysqli->close();
