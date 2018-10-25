@@ -89,7 +89,7 @@ $mysqli->close();
 								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Sign In</h2>
-								<form class="form" action="signin.php" method="post" enctype="multipart/form-data" autocomplete="off">
+								<form class="form" action="homepage.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input type="text" placeholder="User Name" name="username" required />
 									<input type="text" placeholder="Password" name="password" required />
