@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
-		header("Location: homepage.php");
+		header("Location: http://thullupolls.web.illinois.edu/homepage.php");
 	}
 	else {
 		$_SESSION['message'] = "You fucked up";
