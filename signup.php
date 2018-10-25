@@ -11,9 +11,9 @@ $mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu1
 #include('bankinfo.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($_POST['password'] == $_POST['confirmpassword']){
-        $name = $mysqli->real_escape_string($_POST['name']);
-        $id = $mysqli->real_escape_string($_POST['id']);
-        $password = $mysqli->real_escape_string($_POST['password']);
+        $name = $_POST['name'];
+        $id = $_POST['id'];
+        $password = $_POST['password'];
         $_SESSION['name'] = $name;
         $_SESSION['id'] = $id;
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
