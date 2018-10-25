@@ -12,6 +12,7 @@ if (isset($_SESSION['username'])) {
   $name = $_SESSION['username'];
   $_SESSION['message'] = "this thullu - $name is logged in";
 }
+$_SESSION['message'] = "this thullu - $name is logged in";
 $mysqli->close();
 ?>
 
