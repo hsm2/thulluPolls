@@ -88,9 +88,6 @@ $mysqli->close();
 			<div class="container">
 
 				<div class="row">
-					<div class="col-sm-2 col-xs-2">
-						<div id="gtco-logo"><a href="index.html">Thullu<sup>&trade;</sup></div>
-					</div>
 					<div class="col-xs-10 text-right fh5co-top-social">
 						<ul class="gtco-social">
 							<li><a href="#" class="icon-twitter"></i></a></li>
