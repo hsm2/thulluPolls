@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if(($mysqli->query($sql) === true)){
 						header("Location: signin.php");
+						exit();
             $_SESSION['message'] = "Registration Successful! Welcome $id";
         }
         else{
