@@ -12,7 +12,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $mysqli->real_escape_string($_POST['username']);
 	$password = $mysqli->real_escape_string($_POST['password']);
-	$sql = "SELECT * FROM User";
+	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
