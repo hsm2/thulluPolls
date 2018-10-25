@@ -99,22 +99,31 @@ $mysqli->close();
 
 			</div>
 		</nav>
+		<div id="gtco-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<div class="dt js-height">
+							<div class="dtc animate-box">
+								<a class="topnav" href="index.html" title="Homepage">Home</a>
+								<h2 class="gradient-text">Create an account</h2>
+								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
+						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+						      <input type="text" placeholder="Full Name" name="name" required />
+						      <input type="text" placeholder="User Name" name="id" required />
+						      <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+						      <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+						      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
 
-		<div class="body-content">
-		  <div class="module">
-		      <a class="topnav" href="index.html" title="Homepage">Home</a>
-		    <h1>Create an account</h1>
-		    <form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
-		      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-		      <input type="text" placeholder="Full Name" name="name" required />
-		      <input type="text" placeholder="User Name" name="id" required />
-		      <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
-		      <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
-		      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
-
-		      <div class="module">
-		    </form>
-		  </div>
+						      <div class="module">
+						    </form>
+								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
+								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
