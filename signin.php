@@ -14,11 +14,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
 	$result = $mysqli->query($sql);
-	if ($result->num_rows > 0) {
+	if ($result) {
 		$_SESSION['message'] = "You're signed in!";
 	}
 	else {
-		$_SESSION['message'] = "You fucked up $result $username $password";
+		$_SESSION['message'] = "You fucked up";
 	}
 }
 $mysqli->close();
