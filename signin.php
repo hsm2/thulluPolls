@@ -16,7 +16,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$_SESSION['password'] = $password;
 	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
 	$result = $mysqli->query($sql);
-	$mysqli->close();
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
 		header("Location:homepage.php");
@@ -25,6 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['message'] = "You fucked up";
 	}
 }
+$mysqli->close();
 ?>
 
 <html>
