@@ -8,22 +8,19 @@
 session_start();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-#include('bankinfo.php');
-echo "1" . PHP_EOL;
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	echo "2" . PHP_EOL;
 	$username = $mysqli->real_escape_string($_POST['username']);
 	$password = $mysqli->real_escape_string($_POST['password']);
-	echo "3" . PHP_EOL;
-	$sql = "SELECT * FROM User WHERE (id = $username AND password = $password)";
-	$result = mysqli->query(sql);
-	echo "4" . PHP_EOL;
-	if ($result) {
-		$_SESSION['message'] = "You're signed in!";
-	}
-	else {
-		$_SESSION['message'] = "You fucked up";
-	}
+	echo "$username, $password" . PHP_EOL;
+	// $sql = "SELECT * FROM User WHERE (id = $username AND password = $password)";
+	// $result = mysqli->query(sql);
+	// if ($result) {
+	// 	$_SESSION['message'] = "You're signed in!";
+	// }
+	// else {
+	// 	$_SESSION['message'] = "You fucked up";
+	// }
 }
 $mysqli->close();
 ?>
