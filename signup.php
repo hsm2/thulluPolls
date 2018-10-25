@@ -23,6 +23,7 @@ echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 mysqli_close($link);
 #include('bankinfo.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	header("Location: http://thullupolls.web.illinois.edu/signin.php");
     if($_POST['password'] == $_POST['confirmpassword']){
         $name = $mysqli->real_escape_string($_POST['name']);
         $id = $mysqli->real_escape_string($_POST['id']);
@@ -32,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
 
         if(($mysqli->query($sql) === true)){
-						header("Location: http://thullupolls.web.illinois.edu/signin.php");
+
             $_SESSION['message'] = "Registration Successful! Welcome $id";
         }
         else{
