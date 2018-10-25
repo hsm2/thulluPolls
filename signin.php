@@ -1,3 +1,24 @@
+<?php
+session_start();
+$_SESSION['message'] = '';
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+#include('bankinfo.php');
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	$username = $mysqli->real_escape_string($_POST['username']);
+	$password = $mysqli->real_escape_string($_POST['password']);
+	$sql = "SELECT * FROM User WHERE (id = $username AND password = $password)";
+	$result = mysqli->query(sql);
+
+	if ($result) {
+		$_SESSION['message'] = "You're signed in!";
+	}
+	else {
+		$_SESSION['message'] = "You fucked up";
+	}
+}
+$mysqli->close();
+?>
+
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -72,9 +93,9 @@
 								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Sign In</h2>
-								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
+								<form class="form" action="signin.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      <input type="text" placeholder="User Name" name="id" required />
+						      <input type="text" placeholder="User Name" name="username" required />
 									<input type="text" placeholder="Password" name="password" required />
 						      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
 								</center>
