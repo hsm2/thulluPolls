@@ -13,7 +13,7 @@ $sql = "SELECT * FROM Poll";
 $result = $mysqli->query($sql);
 
 while($row = mysql_fetch_array($result)) {
-	echo ($row[0]);
+	$_SESSION['message'] = $row[0];ß
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
