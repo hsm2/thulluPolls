@@ -108,7 +108,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
-                  <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
 						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
