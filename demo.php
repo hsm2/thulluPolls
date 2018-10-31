@@ -50,6 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Problem 4";
 		$flag = false;
 	}
+	echo "slkdfjlskdfjl"
 	header("Location: demo2.php");
 
 
