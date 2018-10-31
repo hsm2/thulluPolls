@@ -7,7 +7,14 @@
 <?php
 session_start();
 $_SESSION['message'] = '';
-$mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+
+$sql = "SELECT * FROM Poll";
+$result = $mysqli->query($sql);
+
+while($row = mysql_fetch_array($result)) {
+	echo ($row);
+}
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // if($_POST['password'] == $_POST['confirmpassword']){
