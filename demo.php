@@ -138,7 +138,7 @@ $mysqli->close();
 							<div class="dtc animate-box">
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
-								<form class="form" action="demo2.php" method="post" enctype="multipart/form-data" autocomplete="off">
+								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
 						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
