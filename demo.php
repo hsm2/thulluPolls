@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	$mysqli->close();
 	header("Location: demo2.php");
-
+	ob_flush();
 
 
     // if($_POST['password'] == $_POST['confirmpassword']){
