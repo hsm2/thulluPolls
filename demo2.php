@@ -4,36 +4,6 @@
 	<link rel="stylesheet" href="w3.css">
 </head>
 
-<?php
-session_start();
-$_SESSION['message'] = '';
-$mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    // if($_POST['password'] == $_POST['confirmpassword']){
-    //     $name = $mysqli->real_escape_string($_POST['name']);
-    //     $id = $mysqli->real_escape_string($_POST['id']);
-    //     $password = $mysqli->real_escape_string($_POST['password']);
-    //     $_SESSION['name'] = $name;
-    //     $_SESSION['id'] = $id;
-    //     $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
-    //
-    //     if(($mysqli->query($sql) === true)){
-    //         $_SESSION['message'] = "Registration Successful! Welcome $id";
-    //         header("location: index.html");
-    //     }
-    //     else{
-    //         $_SESSION['message'] = "Account was not created:(";
-    //     }
-    //
-    // }
-    // else{
-    //     $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
-    // }
-}
-$mysqli->close();
-?>
-
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -108,51 +78,19 @@ $mysqli->close();
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
 								<form class="form" action="demo2.php" method="post" enctype="multipart/form-data" autocomplete="off">
-						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
-						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
-                  <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
-
-						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
-						      <div class="module">
+									<form action="delete.php">
+									    <button class="btn btn-gradient" type="submit">Delete Question</button>
+									</form>
+									<form action="update.php">
+									    <button class="btn btn-gradient" type="submit">Update Question</button>
+									</form>
 						    </form>
-								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
-								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-		<!-- <footer id="fh5co-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-footer-widget">
-							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-md-push-1">
-						<div class="fh5co-footer-widget">
-							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-md-push-1">
-						<div class="fh5co-footer-widget gtco-social-wrap">
-							<ul class="gtco-social">
-								<li><a href="#" class="icon-twitter"></a></li>
-								<li><a href="#" class="icon-dribbble"></a></li>
-								<li><a href="#" class="icon-instagram"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer> -->
-
 
 	</div>
 
