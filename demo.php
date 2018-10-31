@@ -20,15 +20,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$poll_id = uniqid();
 
+	// $sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
+	// 				. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
 	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
-					. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
+					. "VALUES ('0', '0', '0', '0', 0, 0, '0')";
 	$sql2 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (1, '$answer1', '$poll_id', 0)";
 	$sql3 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (2, '$answer2', '$poll_id', 0)";
 	$sql4 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (3, '$answer3', '$poll_id', 0)";
-					
+
 	if ($mysqli->query($sql1) == false) {
 		$_SESSION['message'] = "Problem 1";
 		echo "Problem 1";
