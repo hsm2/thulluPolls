@@ -116,10 +116,10 @@ $mysqli->close();
 								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
-						      <input style="width: 300px; height: 50px;  padding-right: 20px;" type="text" placeholder="Question" name="q1" /> <br><br>
-						      <input style="width: 300px; height: 50px; padding-right: 20px;"  type="text" placeholder="Answer Choice 1" name="a1"/>
-						      <input style="width: 300px; height: 50px; padding-right: 20px;" type="text" placeholder="Answer Choice 2" name="a2"/>
-                  <input style="width: 300px; height: 50px; padding-right: 20px;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
+						      <input style="width: 300px; height: 50px; box-sizing: border-box;" type="text" placeholder="Question" name="q1" /> <br><br>
+						      <input style="width: 300px; height: 50px; box-sizing: border-box;" type="text" placeholder="Answer Choice 1" name="a1"/>
+						      <input style="width: 300px; height: 50px; box-sizing: border-box;" type="text" placeholder="Answer Choice 2" name="a2"/>
+                  <input style="width: 300px; height: 50px; box-sizing: border-box;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
 
                   <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
