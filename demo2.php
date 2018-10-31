@@ -12,8 +12,10 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 $sql = "SELECT * FROM Poll";
 $result = $mysqli->query($sql);
 
+echo "HEY";
 while($row = mysql_fetch_array($result)) {
 	$_SESSION['message'] = $row[0];
+	echo $row[0];
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
