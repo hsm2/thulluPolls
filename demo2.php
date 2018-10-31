@@ -11,8 +11,9 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 $sql = "SELECT * FROM Poll";
 $result = $mysqli->query($sql);
-
-echo "HEY";
+if ($result) {
+	echo "HEY";
+}
 while($row = mysql_fetch_array($result)) {
 	$_SESSION['message'] = $row[0];
 	echo $row[0];
