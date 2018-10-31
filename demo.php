@@ -1,6 +1,4 @@
-<?php
- ob_start();  //begin buffering the output
-?>
+
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -56,30 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	$_SESSION['message'] = "Poll created the id is: "$poll_id;
 	$mysqli->close();
-	// header("Location: demo2.php");
-	ob_flush();
-
-
-    // if($_POST['password'] == $_POST['confirmpassword']){
-    //     $name = $mysqli->real_escape_string($_POST['name']);
-    //     $id = $mysqli->real_escape_string($_POST['id']);
-    //     $password = $mysqli->real_escape_string($_POST['password']);
-    //     $_SESSION['name'] = $name;
-    //     $_SESSION['id'] = $id;
-    //     $sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
-    //
-    //     if(($mysqli->query($sql) === true)){
-    //         $_SESSION['message'] = "Registration Successful! Welcome $id";
-    //         header("location: index.html");
-    //     }
-    //     else{
-    //         $_SESSION['message'] = "Account was not created:(";
-    //     }
-    //
-    // }
-    // else{
-    //     $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
-    // }
 }
 ?>
 
