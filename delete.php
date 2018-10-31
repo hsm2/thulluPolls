@@ -15,7 +15,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$poll_id = $mysqli->real_escape_string($_POST['id']);
-  echo('$poll_id')
+  echo($poll_id);
 	$sql1 = "DELETE FROM  Poll WHERE id=$poll_id";
 
 	if ($mysqli->query($sql4) == false) {
