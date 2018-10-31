@@ -7,7 +7,7 @@
 <?php
 session_start();
 $_SESSION['message'] = '';
-$mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$pollName = $mysqli->real_escape_string($_POST['name']);
@@ -20,9 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$poll_id = uniqid();
 
-	// $sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
-	// 				. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
-	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, visibility)"
+	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
+					. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
+	$sql5 = "INSERT INTO Poll (id, owner, poll_name, question, visibility)"
 					. "VALUES ('0', '0', '0', '0', '0')";
 	$sql2 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (1, '$answer1', '$poll_id', 0)";
@@ -46,6 +46,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if ($mysqli->query($sql4) == false) {
 		$_SESSION['message'] = "Problem 4";
 		echo "Problem 4";
+	}
+	if ($mysqli->query($sql5) == false) {
+		$_SESSION['message'] = "Problem 5";
+		echo "Problem 5";
 	}
     // if($_POST['password'] == $_POST['confirmpassword']){
     //     $name = $mysqli->real_escape_string($_POST['name']);
@@ -144,7 +148,15 @@ $mysqli->close();
 							<div class="dtc animate-box">
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
+<<<<<<< HEAD
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
+=======
+<<<<<<< HEAD
+								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
+=======
+								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
+>>>>>>> db8a95c04f60996c4b092c31cbddf7bab68db47d
+>>>>>>> 7cf885f17124c8bb1bcc17b3b727897ee0a93c7c
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
 						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
