@@ -10,8 +10,25 @@ $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+<<<<<<< HEAD
 	header("Location:homepage.php");
 	exit;
+=======
+	$username = $mysqli->real_escape_string($_POST['username']);
+	$password = $mysqli->real_escape_string($_POST['password']);
+	$_SESSION['username'] = $username;
+	$_SESSION['password'] = $password;
+	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
+	$result = $mysqli->query($sql);
+	if ($result->num_rows > 0) {
+		$_SESSION['message'] = "You're signed in!";
+		header("Location:homepage.php");
+		exit;
+	}
+	else {
+		$_SESSION['message'] = "You fucked up";
+	}
+>>>>>>> a2d8f7db42256c42152a5898ebfe4e7afe754fee
 }
 ?>
 
