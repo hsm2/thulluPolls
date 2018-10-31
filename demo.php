@@ -50,13 +50,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Problem 4";
 		$flag = false;
 	}
-	if ($flag == true) {
-		header("Location: index.html");
-	}
-	else {
-		echo "HERE";
-		header("Location: index.html");
-	}
+	header("Location: demo2.php");
+
 
 
     // if($_POST['password'] == $_POST['confirmpassword']){
