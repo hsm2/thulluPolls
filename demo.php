@@ -1,3 +1,7 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 	<title></title>
@@ -52,8 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	$mysqli->close();
 	header("Location: signin.php");
-
-
+	ob_flush();
 
     // if($_POST['password'] == $_POST['confirmpassword']){
     //     $name = $mysqli->real_escape_string($_POST['name']);
