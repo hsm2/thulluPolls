@@ -116,7 +116,7 @@ $mysqli->close();
 								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
-						      Question <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
+						      Question <br><input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
 						      Answer Choice 1 <br> <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 1" name="a1"/><br><br>
 						      Answer Choice 2 <br> <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 2" name="a2"/><br><br>
                   Answer Choice 3 <br> <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
