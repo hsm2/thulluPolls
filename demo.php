@@ -117,8 +117,8 @@ $mysqli->close();
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px; " type="text" placeholder="Poll Name" name="name" required /> <br>
 						      <input style="width: 300px; height: 150px;" type="text" placeholder="Question" name="q1" /> <br>
-						      <input style="width: 300px; height: 150px;" type="text" placeholder="Answer Choice 1" name="a1"/> <br>
-						      <input style="width: 300px; height: 150px;" type="text" placeholder="Answer Choice 2" name="a2"/> <br>
+						      <input style="width: 300px; height: 150px;" type="text" placeholder="Answer Choice 1" name="a1"/>
+						      <input style="width: 300px; height: 150px;" type="text" placeholder="Answer Choice 2" name="a2"/>
                   <input style="width: 300px; height: 150px;" type="text" placeholder="Answer Choice 3" name="a3"/> <br>
 
                   <input type="checkbox" name="Public" value="public"> Public Post <br>
