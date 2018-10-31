@@ -110,11 +110,13 @@ $mysqli->close();
 								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input type="text" placeholder="Poll Name" name="name" required />
-						      <input type="text" placeholder="Question 1" name="q1" />
-						      <input type="text" placeholder="Question 2" name="q2"/>
-						      <input type="text" placeholder="Question 3" name="q3"/>
-                  <input type="text" placeholder="Question 4" name="q4"/>
-                  <input type="checkbox" name="Public" value="public"/>
+						      <input type="text" placeholder="Question" name="q1" />
+						      <input type="text" placeholder="Answer Choice 1" name="a1"/>
+						      <input type="text" placeholder="Answer Choice 2" name="a2"/>
+                  <input type="text" placeholder="Answer Choice 3" name="a3"/>
+
+                  <input type="checkbox" name="Public" value="public"> Public Post <br>
+
 						      <input type="submit" value="verify" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
