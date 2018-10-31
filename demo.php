@@ -7,7 +7,7 @@
 <?php
 session_start();
 $_SESSION['message'] = '';
-$mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$pollName = $mysqli->real_escape_string($_POST['name']);
@@ -20,9 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$poll_id = uniqid();
 
-	// $sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
-	// 				. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
-	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, visibility)"
+	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
+					. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
+	$sql5 = "INSERT INTO Poll (id, owner, poll_name, question, visibility)"
 					. "VALUES ('0', '0', '0', '0', '0')";
 	$sql2 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (1, '$answer1', '$poll_id', 0)";
@@ -46,6 +46,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if ($mysqli->query($sql4) == false) {
 		$_SESSION['message'] = "Problem 4";
 		echo "Problem 4";
+	}
+	if ($mysqli->query($sql5) == false) {
+		$_SESSION['message'] = "Problem 5";
+		echo "Problem 5";
 	}
     // if($_POST['password'] == $_POST['confirmpassword']){
     //     $name = $mysqli->real_escape_string($_POST['name']);
