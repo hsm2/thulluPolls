@@ -29,28 +29,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sql4 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (3, '$answer3', '$poll_id', 0)";
 
-	boolean flag = true;
+	$flag = true;
 	if ($mysqli->query($sql1) == false ) {
 		$_SESSION['message'] = "Problem 1";
 		echo "Problem 1";
-		flag = false;
+		$flag = false;
 	}
 	if ($mysqli->query($sql2) == false) {
 		$_SESSION['message'] = "Problem 2";
 		echo "Problem 1";
-		flag = false;
+		$flag = false;
 	}
 	if ($mysqli->query($sql3) == false) {
 		$_SESSION['message'] = "Problem 3";
 		echo "Problem 1";
-		flag = false;
+		$flag = false;
 	}
 	if ($mysqli->query($sql4) == false) {
 		$_SESSION['message'] = "Problem 4";
 		echo "Problem 4";
-		flag = false;
+		$flag = false;
 	}
-	if (flag == true) {
+	if ($flag == true) {
 		header("Location: index.html");
 	}
 
