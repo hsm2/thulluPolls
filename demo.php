@@ -123,7 +123,7 @@ $mysqli->close();
 
                   <input type="checkbox" name="Public" value="public"> Public Post <br>
 
-						      <input type="submit" value="verify" name="Create Poll" class="btn btn-block btn-primary" />
+						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
 								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
@@ -137,7 +137,7 @@ $mysqli->close();
 
 
 
-		<footer id="fh5co-footer">
+		<!-- <footer id="fh5co-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
@@ -161,7 +161,7 @@ $mysqli->close();
 					</div>
 				</div>
 			</div>
-		</footer>
+		</footer> -->
 
 
 	</div>
