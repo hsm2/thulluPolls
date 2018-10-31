@@ -53,6 +53,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if ($flag == true) {
 		header("Location: index.html");
 	}
+	else {
+		echo "HERE";
+		header("Location: index.html");
+	}
 
 
     // if($_POST['password'] == $_POST['confirmpassword']){
