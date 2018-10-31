@@ -28,18 +28,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					. "VALUES (2, '$answer2', '$poll_id', 0)";
 	$sql4 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (3, '$answer3', '$poll_id', 0)";
-
+					
 	if ($mysqli->query($sql1) == false) {
 		$_SESSION['message'] = "Problem 1";
+		echo "Problem 1";
 	}
 	if ($mysqli->query($sql2) == false) {
 		$_SESSION['message'] = "Problem 2";
+		echo "Problem 1";
 	}
 	if ($mysqli->query($sql3) == false) {
 		$_SESSION['message'] = "Problem 3";
+		echo "Problem 1";
 	}
 	if ($mysqli->query($sql4) == false) {
 		$_SESSION['message'] = "Problem 4";
+		echo "Problem 4";
 	}
     // if($_POST['password'] == $_POST['confirmpassword']){
     //     $name = $mysqli->real_escape_string($_POST['name']);
@@ -138,7 +142,7 @@ $mysqli->close();
 							<div class="dtc animate-box">
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
-								<form class="form" action="demo2.php" method="post" enctype="multipart/form-data" autocomplete="off">
+								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
 						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
