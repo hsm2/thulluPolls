@@ -14,7 +14,7 @@ $result = $mysqli->query($sql);
 if ($result) {
 	echo "HEY";
 }
-while($row = mysql_fetch_array($result)) {
+while($row = $result->fetch_array()) {
 	$_SESSION['message'] = $row[0];
 	echo $row[0];
 }
