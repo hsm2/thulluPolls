@@ -116,11 +116,10 @@ $mysqli->close();
 								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
-						      <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
-						      <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 1" name="a1"/>
-						      <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 2" name="a2"/>
-                  <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
-
+						      Question <input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
+						      Answer Choice 1<input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 1" name="a1"/>
+						      Answer Choice 2<input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 2" name="a2"/>
+                  Answer Choice 3<input style="width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
                   <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
 						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
