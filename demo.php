@@ -115,11 +115,11 @@ $mysqli->close();
 								<h2 class="gradient-text">Create a Poll</h2>
 								<form class="form" class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      <input type="text" placeholder="Poll Name" name="name" required /> <br>
-						      <input type="text" placeholder="Question" name="q1" /> <br>
-						      <input type="text" placeholder="Answer Choice 1" name="a1"/> <br>
-						      <input type="text" placeholder="Answer Choice 2" name="a2"/> <br>
-                  <input type="text" placeholder="Answer Choice 3" name="a3"/> <br>
+						      <input class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" type="text" placeholder="Poll Name" name="name" required /> <br>
+						      <input class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" type="text" placeholder="Question" name="q1" /> <br>
+						      <input class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" type="text" placeholder="Answer Choice 1" name="a1"/> <br>
+						      <input class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" type="text" placeholder="Answer Choice 2" name="a2"/> <br>
+                  <input class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" type="text" placeholder="Answer Choice 3" name="a3"/> <br>
 
                   <input type="checkbox" name="Public" value="public"> Public Post <br>
 
