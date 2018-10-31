@@ -4,6 +4,12 @@
 	<link rel="stylesheet" href="w3.css">
 </head>
 
+<script>
+q {
+font-size:20px;
+}
+</script>
+
 <?php
 session_start();
 $_SESSION['message'] = '';
@@ -107,7 +113,7 @@ $mysqli->close();
 							<div class="dtc animate-box">
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
-								<form class="form" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
+								<form class="form" class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box" action="signup.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input type="text" placeholder="Poll Name" name="name" required /> <br>
 						      <input type="text" placeholder="Question" name="q1" /> <br>
