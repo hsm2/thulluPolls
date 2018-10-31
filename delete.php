@@ -14,49 +14,20 @@ $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$pollName = $mysqli->real_escape_string($_POST['name']);
-	$question = $mysqli->real_escape_string($_POST['q1']);
-	$answer1 = $mysqli->real_escape_string($_POST['a1']);
-	$answer2 = $mysqli->real_escape_string($_POST['a2']);
-	$answer3 = $mysqli->real_escape_string($_POST['a3']);
-	$visibility = "public";
-	$owner = "owner";
+	$poll_id = $mysqli->real_escape_string($_POST['id']);
 
-	$poll_id = uniqid();
 
-	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
-					. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
-	$sql2 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
-					. "VALUES (1, '$answer1', '$poll_id', 0)";
-	$sql3 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
-					. "VALUES (2, '$answer2', '$poll_id', 0)";
-	$sql4 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
-					. "VALUES (3, '$answer3', '$poll_id', 0)";
+	$sql1 = "DELETE FROM  Poll WHERE id=$poll_id";
 
-	$flag = true;
-	if ($mysqli->query($sql1) == false ) {
-		$_SESSION['message'] = "Problem 1";
-		echo "Problem 1";
-		$flag = false;
-	}
-	if ($mysqli->query($sql2) == false) {
-		$_SESSION['message'] = "Problem 2";
-		echo "Problem 1";
-		$flag = false;
-	}
-	if ($mysqli->query($sql3) == false) {
-		$_SESSION['message'] = "Problem 3";
-		echo "Problem 1";
-		$flag = false;
-	}
 	if ($mysqli->query($sql4) == false) {
-		$_SESSION['message'] = "Problem 4";
-		echo "Problem 4";
-		$flag = false;
+		echo "This is not a correct poll id.";
 	}
+  else {
+    echo "Successfully deleted the poll!";
+    header("Location: demo2.php");
+  	ob_flush();
+  }
 	$mysqli->close();
-	header("Location: demo2.php");
-	ob_flush();
 }
 ?>
 
@@ -136,7 +107,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								<h2 class="gradient-text">Delete a Poll</h2>
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      Poll Name <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="name" name="name" /> <br><br>
 						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
                   <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
