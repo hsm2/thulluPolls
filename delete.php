@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
   else {
     echo "Successfully deleted the poll!";
-    header("Location: demo2.php");
+    header("Location: demo.php");
   	ob_flush();
   }
 	$mysqli->close();
