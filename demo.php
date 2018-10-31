@@ -121,7 +121,7 @@ $mysqli->close();
 						      <input style="width: 300px; height: 50px;" type="text" placeholder="Answer Choice 2" name="a2"/>
                   <input style="width: 300px; height: 50px;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
 
-                  <input type="checkbox" name="Public" value="public"> Public Post <br>
+                  <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
 						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
