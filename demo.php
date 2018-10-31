@@ -22,8 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	// $sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
 	// 				. "VALUES ('$poll_id', '$owner', '$pollName', '$question', 0, 0, '$visibility')";
-	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, total_likes, total_votes, visibility)"
-					. "VALUES ('0', '0', '0', '0', 0, 0, '0')";
+	$sql1 = "INSERT INTO Poll (id, owner, poll_name, question, visibility)"
+					. "VALUES ('0', '0', '0', '0', '0')";
 	$sql2 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (1, '$answer1', '$poll_id', 0)";
 	$sql3 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
