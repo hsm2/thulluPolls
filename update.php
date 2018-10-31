@@ -16,6 +16,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$poll_id = $mysqli->real_escape_string($_POST['id']);
   $poll_name = $mysqli->real_escape_string($_POST['name']);
+  echo($poll_name);
 
 	$sql1 = "UPDATE Poll SET name='$poll_name' WHERE id='$poll_id'";
 
@@ -110,7 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
                   Updated Name for Poll<br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="name" name="name" /> <br><br>
 
-						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
+						      <input type="submit" value="Update Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
 							</div>
