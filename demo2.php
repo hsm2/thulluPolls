@@ -10,7 +10,7 @@ $_SESSION['message'] = '';
 $mysqli = new mysqli("cpanel3.engr.illinois.edu", "thullupolls_thullu", "Thullu123!", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    header("Location:demo2.php");
+    // header("Location:demo2.php");
     // if($_POST['password'] == $_POST['confirmpassword']){
     //     $name = $mysqli->real_escape_string($_POST['name']);
     //     $id = $mysqli->real_escape_string($_POST['id']);
