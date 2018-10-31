@@ -133,15 +133,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						<div class="dt js-height">
 							<div class="dtc animate-box">
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
-								<h2 class="gradient-text">Create a Poll</h2>
+								<h2 class="gradient-text">Delete a Poll</h2>
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
-						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
-						      Question Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
+						      Poll Name <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="name" name="name" /> <br><br>
+						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
                   <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
-						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
+						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
 							</div>
