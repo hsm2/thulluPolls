@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$flag = false;
 	}
 	$mysqli->close();
-	header("Location: demo2.php");
+	// header("Location: demo2.php");
 	ob_flush();
 
 
@@ -167,6 +167,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
+						    </form>
+
+								<form class="form" action="demo2.php" method="post" enctype="multipart/form-data" autocomplete="off">
+									<form action="delete.php">
+									    <button class="btn btn-gradient" type="submit">Delete Question</button>
+									</form>
+									<form action="update.php">
+									    <button class="btn btn-gradient" type="submit">Update Question</button>
+									</form>
 						    </form>
 								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
 								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
