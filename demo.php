@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$flag = false;
 	}
 	$mysqli->close();
-	header("Location: demo2.php");
+	header("Location: signin.php");
 
 
 
