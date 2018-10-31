@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Problem 4";
 		$flag = false;
 	}
-	// $_SESSION['message'] = "Poll created the id is: "$poll_id;
+	$_SESSION['message'] = "Poll created the id is: " + $poll_id;
 	$mysqli->close();
 }
 ?>
