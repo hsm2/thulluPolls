@@ -51,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$flag = false;
 	}
 	echo "slkdfjlskdfjl"
+	$mysqli->close();
 	header("Location: demo2.php");
 
 
@@ -76,7 +77,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //     $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
     // }
 }
-$mysqli->close();
 ?>
 
 
