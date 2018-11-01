@@ -16,7 +16,6 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$poll_id = $mysqli->real_escape_string($_POST['id']);
   $poll_name = $mysqli->real_escape_string($_POST['name']);
-  echo($poll_name);
 
 	$sql1 = "UPDATE Poll SET name='$poll_name' WHERE id='$poll_id'";
 
