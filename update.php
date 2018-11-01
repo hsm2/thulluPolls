@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$poll_id = $mysqli->real_escape_string($_POST['id']);
   $poll_name = $mysqli->real_escape_string($_POST['name']);
 
-	$sql1 = "UPDATE Poll SET name='$poll_name' WHERE id='$poll_id'";
+	$sql1 = "UPDATE Poll SET poll_name='$poll_name' WHERE id='$poll_id'";
 
 	if ($mysqli->query($sql1) == false) {
 		echo "This is not a correct poll id.";
