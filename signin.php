@@ -1,3 +1,7 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 	<title></title>
@@ -19,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
 		header("Location:homepage.php");
-		exit;
+		ob_flush();
 	}
 	else {
 		$_SESSION['message'] = "You fucked up";
