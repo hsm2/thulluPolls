@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['message'] = "You're signed in!";
 		$_SESSION['username'] = $username;
 		session_start();
-		header("Location:index.html");
+		header("Location:welcome.php");
 		ob_flush();
 	}
 	else {
