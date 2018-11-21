@@ -1,4 +1,7 @@
 <?php
+ session.start();
+?>
+<?php
  ob_start();  //begin buffering the output
 ?>
 
@@ -9,33 +12,27 @@
 </head>
 
 <?php
-
-header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
-
-
+session_start();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$username = $mysqli->real_escape_string($_POST['username']);
-	$password = $mysqli->real_escape_string($_POST['password']);
-	$_SESSION['username'] = $username;
-	$_SESSION['password'] = $password;
-	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
-	$result = $mysqli->query($sql);
-	if ($result->num_rows > 0) {
-		$_SESSION['message'] = "You're signed in!";
-		$_SESSION['username'] = $username;
-		session_start();
-		header("Location:index.html");
-		ob_flush();
+	$poll_id = $mysqli->real_escape_string($_POST['id']);
+  echo($poll_id);
+	$sql1 = "DELETE FROM  Poll WHERE id='$poll_id'";
+
+	if ($mysqli->query($sql1) == false) {
+		echo "This is not a correct poll id.";
 	}
-	else {
-		$_SESSION['message'] = "You fucked up";
-	}
+  else {
+    echo "Successfully deleted the poll!";
+    header("Location: demo.php");
+  	ob_flush();
+  }
+	$mysqli->close();
 }
 ?>
+
 
 <html>
 	<head>
@@ -108,54 +105,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<div class="dt js-height">
 							<div class="dtc animate-box">
-								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
-								<h2 class="gradient-text">Sign In</h2>
-								<form class="form" action="signin.php" method="post" enctype="multipart/form-data" autocomplete="off">
-						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      <input type="text" placeholder="User Name" name="username" required />
-									<input type="text" placeholder="Password" name="password" required />
-						      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
-								</center>
+								<h2 class="gradient-text">Delete a Poll</h2>
+								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
+						      <div class="alert alert-error"><?= $_SESSION['username'] ?></div>
+						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
+
+						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
-								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
-								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-		<footer id="fh5co-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-footer-widget">
-							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-md-push-1">
-						<div class="fh5co-footer-widget">
-							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-md-push-1">
-						<div class="fh5co-footer-widget gtco-social-wrap">
-							<ul class="gtco-social">
-								<li><a href="#" class="icon-twitter"></a></li>
-								<li><a href="#" class="icon-dribbble"></a></li>
-								<li><a href="#" class="icon-instagram"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
 
 	</div>
 
