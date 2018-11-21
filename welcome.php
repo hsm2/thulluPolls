@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $result = $mysqli->query($sql1);
 
 	if (mysql_affected_rows() <= 0) {
+    $_SESSION['message'] = "This is not a correct poll id.";
 		echo "This is not a correct poll id.";
 	}
   else {
