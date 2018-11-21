@@ -35,22 +35,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['id'] = $id;
 				$sql1 = "SELECT id FROM User WHERE id=$id";
 				if($mysqli->query($sql) == true) {
-					if(empty($sql1)) {
-						$sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
-
-		        if(($mysqli->query($sql) === true)){
-		            $_SESSION['message'] = "Registration Successful! Welcome $id";
-		            header("location: index.html");
-								ob_flush();
-		        }
-		        else{
-		            $_SESSION['message'] = "Account was not created:(";
-		        }
-
-					}
-					else {
-						$_SESSION['message'] = "Username already exsits. Please try a different one."
-					}
+					// if(empty($sql1)) {
+					// 	$sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
+					//
+		      //   if(($mysqli->query($sql) === true)){
+		      //       $_SESSION['message'] = "Registration Successful! Welcome $id";
+		      //       header("location: index.html");
+					// 			ob_flush();
+		      //   }
+		      //   else{
+		      //       $_SESSION['message'] = "Account was not created:(";
+		      //   }
+					//
+					// }
+					// else {
+					// 	$_SESSION['message'] = "Username already exsits. Please try a different one."
+					// }
 				}
 				else{
 					$_SESSION['message'] = "User name query not working."
