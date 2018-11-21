@@ -9,7 +9,9 @@
 </head>
 
 <?php
-session_start();
+header("Cache-Control: no cache");
+session_cache_limiter("private_no_expire");
+
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
@@ -21,8 +23,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
+		session_start();
 		$_SESSION['message'] = "You're signed in!";
-		header("Location:homepage.php");
+		$_SESSION['username'] = $username;
+		header("Location:index.html");
 		ob_flush();
 	}
 	else {
