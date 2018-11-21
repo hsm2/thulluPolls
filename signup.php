@@ -42,16 +42,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				  else{
 				      $_SESSION['message'] = "Account was not created:(";
 				  }
-				
-				}
-				else{
-					$_SESSION['message'] = "User name query not working."
+
 				}
 
-    }
-    else{
-        $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
-    }
+		    else{
+		        $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
+		    }
 }
 $mysqli->close();
 ?>
