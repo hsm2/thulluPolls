@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $password = $mysqli->real_escape_string($_POST['password']);
         $_SESSION['name'] = $name;
         $_SESSION['id'] = $id;
-				$sql1 = "SELECT * FROM User WHERE id='tullu'";
+				$sql1 = "SELECT * FROM User WHERE id='$id'";
 				$result = $mysqli->query($sql1);
 				if(mysqli_num_rows($result) == 0) {
 						$sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
