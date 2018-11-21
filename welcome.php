@@ -1,7 +1,4 @@
 <?php
- session.start();
-?>
-<?php
  ob_start();  //begin buffering the output
 ?>
 
@@ -13,7 +10,7 @@
 
 <?php
 session_start();
-$_SESSION['message'] = '';
+$_SESSION['message'] =  $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -108,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Delete a Poll</h2>
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
-						      <div class="alert alert-error"><?= $_SESSION['username'] ?></div>
+						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
 
 						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
