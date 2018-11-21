@@ -1,6 +1,3 @@
-<?php
- ob_start();  //begin buffering the output
-?>
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
