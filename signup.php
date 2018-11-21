@@ -1,3 +1,6 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -22,7 +25,7 @@ echo "Success: A proper connection to MySQL was made! The my_db database is grea
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
 mysqli_close($link);
-#include('bankinfo.php');
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($_POST['password'] == $_POST['confirmpassword']){
         $name = $mysqli->real_escape_string($_POST['name']);
@@ -31,23 +34,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['name'] = $name;
         $_SESSION['id'] = $id;
 				$sql1 = "SELECT id FROM User WHERE id=$id";
-				if($mysqli->query($sql) == true) {
-					// if(empty($sql1)) {
-					// 	$sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
-					//
-		      //   if(($mysqli->query($sql) === true)){
-		      //       $_SESSION['message'] = "Registration Successful! Welcome $id";
-		      //       header("location: index.html");
-					// 			ob_flush();
-		      //   }
-		      //   else{
-		      //       $_SESSION['message'] = "Account was not created:(";
-		      //   }
-					//
-					// }
-					// else {
-					// 	$_SESSION['message'] = "Username already exsits. Please try a different one."
-					// }
+				if($mysqli->query($sql1) == true) {
+					if(empty($sql1)) {
+						$sql = "INSERT INTO User (id, name, password) " . "VALUES ('$id', '$name', '$password')";
+
+		        if(($mysqli->query($sql) === true)){
+		            $_SESSION['message'] = "Registration Successful! Welcome $id";
+		            header("location: index.html");
+								ob_flush();
+		        }
+		        else{
+		            $_SESSION['message'] = "Account was not created:(";
+		        }
+
+					}
+					else {
+						$_SESSION['message'] = "Username already exsits. Please try a different one."
+					}
 				}
 				else{
 					$_SESSION['message'] = "User name query not working."
