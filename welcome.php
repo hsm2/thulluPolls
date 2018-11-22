@@ -8,12 +8,6 @@ if(isset($_SESSION['username'])) {
   echo "Your session is running " . $_SESSION['userName'];
 }
 ?>
-<?DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
 <html>
 	<head>
 	<meta charset="utf-8">
