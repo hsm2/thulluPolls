@@ -1,7 +1,12 @@
 <?php
  ob_start();  //begin buffering the output
 ?>
-
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+  echo "Your session is running " . $_SESSION['userName'];
+}
+?>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 	<title></title>
@@ -9,11 +14,7 @@
 </head>
 
 <?php
-session_start();
-if(isset($_SESSION['username'])) {
-  echo "Your session is running " . $_SESSION['userName'];
-}
-
+echo session_id();
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

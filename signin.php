@@ -11,7 +11,9 @@
 <?php
 
 header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
+// session_cache_limiter("private_no_expire");
+session_start();
+echo session_id();
 
 
 $_SESSION['message'] = '';
@@ -26,8 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
-		$_SESSION['username'] = $username;
-		session_start();
 		header("Location:welcome.php");
 		ob_flush();
 	}
