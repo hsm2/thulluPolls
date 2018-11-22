@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
 		$_SESSION['message'] = "You're signed in!";
-		header("Location:welcome.php");
+		header("Location:welcome.html");
 		ob_flush();
 	}
 	else {
