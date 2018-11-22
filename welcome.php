@@ -10,6 +10,10 @@
 
 <?php
 session_start();
+if(isset($_SESSION['username'])) {
+  echo "Your session is running " . $_SESSION['userName'];
+}
+
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -18,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $result = $mysqli->query($sql1);
 
 	if (mysql_affected_rows() <= 0) {
-    $_SESSION['message'] = "This is not a correct poll id." + $_SESSION['username'];
+    $_SESSION['message'] = "This is not a correct poll id.";
 		echo "This is not a correct poll id.";
 	}
   else {
