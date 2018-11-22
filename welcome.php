@@ -8,35 +8,12 @@ if(isset($_SESSION['username'])) {
   echo "Your session is running " . $_SESSION['userName'];
 }
 ?>
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-	<title></title>
-	<link rel="stylesheet" href="w3.css">
-</head>
-
-<?php
-echo session_id();
-$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$poll_id = $mysqli->real_escape_string($_POST['id']);
-	$sql1 = "DELETE FROM  Poll WHERE id='$poll_id'";
-  $result = $mysqli->query($sql1);
-
-	if (mysql_affected_rows() <= 0) {
-    $_SESSION['message'] = "This is not a correct poll id.";
-		echo "This is not a correct poll id.";
-	}
-  else {
-    echo "Successfully deleted the poll!";
-    header("Location: demo.php");
-  	ob_flush();
-  }
-	$mysqli->close();
-}
-?>
-
-
+<?DOCTYPE HTML>
+<!--
+	Aesthetic by gettemplates.co
+	Twitter: http://twitter.com/gettemplateco
+	URL: http://gettemplates.co
+-->
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -91,6 +68,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			<div class="container">
 
 				<div class="row">
+					<div class="col-sm-2 col-xs-2">
+						<div id="gtco-logo"><a href="index.html">Thullu<sup>&trade;</sup></div>
+					</div>
 					<div class="col-xs-10 text-right fh5co-top-social">
 						<ul class="gtco-social">
 							<li><a href="#" class="icon-twitter"></i></a></li>
@@ -102,27 +82,124 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 			</div>
 		</nav>
+
 		<div id="gtco-intro">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<div class="dt js-height">
 							<div class="dtc animate-box">
-								<a class="topnav" href="index.html" title="Homepage">Home</a>
-								<h2 class="gradient-text">Delete a Poll</h2>
-								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
-						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-						      Poll Id <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="id" name="id" /> <br><br>
-
-						      <input type="submit" value="Delete Poll" name="Create Poll" class="btn btn-block btn-primary" />
-						      <div class="module">
-						    </form>
+								<h2 class="gradient-text">Get opinoins and share opinoins by participating in the Thullu Polls!</h2>
+								<form action="participate.php">
+								    <button class="btn btn-gradient" type="submit">Participate in Polls</button>
+								</form>
+								<form action="create.php">
+								    <button class="btn btn-gradient" type="submit">Create Polls</button>
+								</form>
+								<form action="edit.php">
+								    <button class="btn btn-gradient" type="submit">Edit Polls</button>
+								</form>
+								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
+								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div id="gtco-project">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-7">
+						<h3>Top Polls</h3>
+						<p class="desc">Which polls do you agree with? Let us know by participating!</p>
+					</div>
+				</div>
+				<div class="row row-pb-md">
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Fancy 3D Letter Effect</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_4.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Hard Cover A5 Format</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Notepad Mockup</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Paper Hot Cup</h3>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Fancy 3D Letter Effect</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_4.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Hard Cover A5 Format</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Notepad Mockup</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Paper Hot Cup</h3>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3>Notepad Mockup</h3>
+						</a>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load_more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer id="fh5co-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="fh5co-footer-widget">
+							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-push-1">
+						<div class="fh5co-footer-widget">
+							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-push-1">
+						<div class="fh5co-footer-widget gtco-social-wrap">
+							<ul class="gtco-social">
+								<li><a href="#" class="icon-twitter"></a></li>
+								<li><a href="#" class="icon-dribbble"></a></li>
+								<li><a href="#" class="icon-instagram"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
 
 	</div>
 
