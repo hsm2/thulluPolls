@@ -8,6 +8,7 @@
 
 <?php
 session_start();
+echo $_SESSION['message'];
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
