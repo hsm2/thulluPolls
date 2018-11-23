@@ -1,3 +1,42 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+	<title></title>
+	<link rel="stylesheet" href="w3.css">
+</head>
+
+<?php
+
+header("Cache-Control: no cache");
+// session_cache_limiter("private_no_expire");
+session_start();
+echo session_id();
+
+
+$_SESSION['message'] = '';
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	$username = $mysqli->real_escape_string($_POST['username']);
+	$password = $mysqli->real_escape_string($_POST['password']);
+	$_SESSION['username'] = $username;
+	$_SESSION['password'] = $password;
+	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
+	$result = $mysqli->query($sql);
+	if ($result->num_rows > 0) {
+		$_SESSION['message'] = "You're signed in!";
+		header("Location:welcome.php");
+		ob_flush();
+	}
+	else {
+		$_SESSION['message'] = "You fucked up";
+	}
+}
+?>
+
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -52,9 +91,6 @@
 			<div class="container">
 
 				<div class="row">
-					<div class="col-sm-2 col-xs-2">
-						<div id="gtco-logo"><a href="index.html">Thullu<sup>&trade;</sup></div>
-					</div>
 					<div class="col-xs-10 text-right fh5co-top-social">
 						<ul class="gtco-social">
 							<li><a href="#" class="icon-twitter"></i></a></li>
@@ -66,22 +102,23 @@
 
 			</div>
 		</nav>
-
 		<div id="gtco-intro">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<div class="dt js-height">
 							<div class="dtc animate-box">
-								<h2 class="gradient-text">Get opinoins and share opinoins by participating in the Thullu Polls!</h2>
-								<form action="signup.php">
-								    <button class="btn btn-gradient" type="submit">Sign Up</button>
+								<center>
+								<a class="topnav" href="index.html" title="Homepage">Home</a>
+								<h2 class="gradient-text">Poll Time!</h2>
+								<form action="participate.php">
+								    <button class="btn btn-gradient" type="submit">Participate in Polls</button>
 								</form>
-								<form action="signin.php">
-								    <button class="btn btn-gradient" type="submit">Sign In</button>
+								<form action="create.php">
+								    <button class="btn btn-gradient" type="submit">Create Polls</button>
 								</form>
-								<form action="demo.php">
-								    <button class="btn btn-gradient" type="submit">Create Poll</button>
+								<form action="edit.php">
+								    <button class="btn btn-gradient" type="submit">Edit Polls</button>
 								</form>
 								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
 								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
@@ -92,70 +129,6 @@
 			</div>
 		</div>
 
-		<div id="gtco-project">
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-7">
-						<h3>Top Polls</h3>
-						<p class="desc">Which polls do you agree with? Let us know by participating!</p>
-					</div>
-				</div>
-				<div class="row row-pb-md">
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Fancy 3D Letter Effect</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_4.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Hard Cover A5 Format</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Notepad Mockup</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Paper Hot Cup</h3>
-						</a>
-					</div>
-
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Fancy 3D Letter Effect</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_4.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Hard Cover A5 Format</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Notepad Mockup</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Paper Hot Cup</h3>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="#"><img src="images/img_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>Notepad Mockup</h3>
-						</a>
-					</div>
-
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load more...</a>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
 		<footer id="fh5co-footer">
