@@ -24,12 +24,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$answer2 = $mysqli->real_escape_string($_POST['a2']);
 	$answer3 = $mysqli->real_escape_string($_POST['a3']);
   $answer4 = $mysqli->real_escape_string($_POST['a4']);
-  if(isset($_POST['public']){
+  $visibility = "private";
+  if(isset($_POST['public'])){
     $visibility = "public";
   }
-  else {
-    $visibility = "private";
-  }
+
 	$owner = $_SESSION['username'];
 
 	$poll_id = uniqid();
