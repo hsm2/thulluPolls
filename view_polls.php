@@ -13,15 +13,6 @@ echo $_SESSION['username']
 	<link rel="stylesheet" href="w3.css">
 </head>
 
-<?php
-$_SESSION['message'] = '';
-$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-
-$owner = $_SESSION['username'];
-$sql = "SELECT poll_name FROM Poll WHERE owner = '$owner'";
-$result = $mysqli->query($sql);
-
-?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -118,11 +109,18 @@ $result = $mysqli->query($sql);
 	</body>
 </html>
 
-<?php
 
+<?php
+$_SESSION['message'] = '';
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+
+$owner = $_SESSION['username'];
+$sql = "SELECT poll_name FROM Poll WHERE owner = '$owner'";
+$result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
+    echo "hello";
     ?>
     <div id="gtco-project">
 			<div class="container">
