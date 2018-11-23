@@ -24,7 +24,7 @@ $result = $mysqli->query($sql);
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
-    <p> Name : <?php echo $row ?> </p>
+    <p> Name : <?php echo $row[0] ?> </p>
     <?php
   }
 }
