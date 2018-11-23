@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$answer3 = $mysqli->real_escape_string($_POST['a3']);
   $answer4 = $mysqli->real_escape_string($_POST['a4']);
   $visibility = "private";
-  if(isset($_POST['public'])){
+  if ($_POST['Public'] == 'public') {
     $visibility = "public";
   }
 
