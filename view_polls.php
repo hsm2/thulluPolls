@@ -21,7 +21,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $owner = $_SESSION['username'];
   $sql = "SELECT poll_name FROM Poll";
   $result = $conn->query($sql);
-
+  ?>
+  <p> hello </p>
+  <?php
   if ($result->num_rows > 0) {
     // Show each data returned by mysql
     while($row = $result->fetch_assoc()) {
