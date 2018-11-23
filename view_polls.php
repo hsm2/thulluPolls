@@ -17,29 +17,22 @@ echo $_SESSION['username']
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-?>
-<p> hello </p>
+$owner = $_SESSION['username'];
+$sql = "SELECT poll_name FROM Poll";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // Show each data returned by mysql
+  while($row = $result->fetch_assoc()) {
+  ?>
+
+  <!-- USING HTML HERE : Here I am using php within html tags -->
+  <p> Name : <?php echo $row ?> </p>
+
 <?php
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $owner = $_SESSION['username'];
-  $sql = "SELECT poll_name FROM Poll";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    // Show each data returned by mysql
-    while($row = $result->fetch_assoc()) {
-    ?>
-
-  	<!-- USING HTML HERE : Here I am using php within html tags -->
-  	<p> Name : <?php echo $row ?> </p>
-
-  <?php
-    }
   }
-  else {
-    echo "0 results";
-  }
-
-  }
+}
+else {
+  echo "0 results";
+}
 ?>
