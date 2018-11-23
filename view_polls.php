@@ -17,13 +17,15 @@ echo $_SESSION['username']
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
+?>
+<p> hello </p>
+<?php
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $owner = $_SESSION['username'];
   $sql = "SELECT poll_name FROM Poll";
   $result = $conn->query($sql);
-  ?>
-  <p> hello </p>
-  <?php
+
   if ($result->num_rows > 0) {
     // Show each data returned by mysql
     while($row = $result->fetch_assoc()) {
