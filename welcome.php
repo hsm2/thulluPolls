@@ -1,4 +1,11 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
 
+<?php
+session_start();
+echo $_SESSION['username']
+?>
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
