@@ -16,13 +16,16 @@ echo $_SESSION['username']
 <?php
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+?>
+<p> Hello1 : </p>
+<?php
 
 $owner = $_SESSION['username'];
 $sql = "SELECT poll_name FROM Poll";
 $result = $conn->query($sql);
 
 ?>
-<p> Name : </p>
+<p> Hello : </p>
 <?php
 
 if ($result->num_rows > 0) {
