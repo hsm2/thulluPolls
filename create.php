@@ -1,4 +1,11 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
 
+<?php
+session_start();
+echo $_SESSION['username']
+?>
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -7,8 +14,6 @@
 </head>
 
 <?php
-session_start();
-echo $_SESSION['message'];
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
@@ -18,8 +23,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$answer1 = $mysqli->real_escape_string($_POST['a1']);
 	$answer2 = $mysqli->real_escape_string($_POST['a2']);
 	$answer3 = $mysqli->real_escape_string($_POST['a3']);
-	$visibility = "public";
-	$owner = "owner";
+  $answer4 = $mysqli->real_escape_string($_POST['a4']);
+  if(isset($_POST['public']) {
+    $visibility = "public";
+  }
+  else {
+    $visibility = "private";
+  }
+	$owner = $_SESSION['username'];
 
 	$poll_id = uniqid();
 
@@ -31,6 +42,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					. "VALUES (2, '$answer2', '$poll_id', 0)";
 	$sql4 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
 					. "VALUES (3, '$answer3', '$poll_id', 0)";
+  $sql5 = "INSERT INTO Options (option_num, option_name, poll_id, total_votes)"
+        	. "VALUES (4, '$answer4', '$poll_id', 0)";
 
 	$flag = true;
 	if ($mysqli->query($sql1) == false ) {
@@ -54,6 +67,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$flag = false;
 	}
 	$_SESSION['message'] = $poll_id;
+  header("location: view_polls.php");
+  ob_flush();
 	$mysqli->close();
 }
 ?>
@@ -130,7 +145,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<div class="dt js-height">
 							<div class="dtc animate-box">
-								<a class="topnav" href="index.html" title="Homepage">Home</a>
+                <a class="topnav" href="welcome.php" title="Homepage">Home</a>
 								<h2 class="gradient-text">Create a Poll</h2>
 								<form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
@@ -139,52 +154,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						      Answer Choice 1 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 1" name="a1"/><br><br>
 						      Answer Choice 2 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 2" name="a2"/><br><br>
                   Answer Choice 3 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 3" name="a3"/> <br><br>
+                  Answer Choice 4 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 4" name="a3"/> <br><br>
                   <input type="checkbox" name="Public" value="public"> Public Post <br><br><br>
 
 						      <input type="submit" value="Create Poll" name="Create Poll" class="btn btn-block btn-primary" />
 						      <div class="module">
 						    </form>
 
-									<form action="delete.php">
-									    <button class="btn btn-gradient" type="submit">Delete Question</button>
-									</form>
-									<form action="update.php">
-									    <button class="btn btn-gradient" type="submit">Update Question</button>
-									</form>
+                <form action="view_polls.php">
+								    <button class="btn btn-gradient" type="submit">View My Polls</button>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-		<!-- <footer id="fh5co-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-footer-widget">
-							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-md-push-1">
-						<div class="fh5co-footer-widget">
-							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-md-push-1">
-						<div class="fh5co-footer-widget gtco-social-wrap">
-							<ul class="gtco-social">
-								<li><a href="#" class="icon-twitter"></a></li>
-								<li><a href="#" class="icon-dribbble"></a></li>
-								<li><a href="#" class="icon-instagram"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer> -->
 
 
 	</div>
