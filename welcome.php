@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -152,7 +151,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load_more</a>
+						<a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load more...</a>
 					</div>
 				</div>
 			</div>
