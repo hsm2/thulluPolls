@@ -1,6 +1,4 @@
-<?php
- ob_start();  //begin buffering the output
-?>
+
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -8,34 +6,7 @@
 	<link rel="stylesheet" href="w3.css">
 </head>
 
-<?php
 
-header("Cache-Control: no cache");
-// session_cache_limiter("private_no_expire");
-session_start();
-echo session_id();
-
-
-$_SESSION['message'] = '';
-$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$username = $mysqli->real_escape_string($_POST['username']);
-	$password = $mysqli->real_escape_string($_POST['password']);
-	$_SESSION['username'] = $username;
-	$_SESSION['password'] = $password;
-	$sql = "SELECT * FROM User WHERE (id = '$username' AND password = '$password')";
-	$result = $mysqli->query($sql);
-	if ($result->num_rows > 0) {
-		$_SESSION['message'] = "You're signed in!";
-		header("Location:welcome.php");
-		ob_flush();
-	}
-	else {
-		$_SESSION['message'] = "You fucked up";
-	}
-}
-?>
 
 <html>
 	<head>
