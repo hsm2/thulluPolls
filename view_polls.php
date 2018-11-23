@@ -16,10 +16,10 @@ echo $_SESSION['username']
 <?php
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-$owner = $_SESSION['username'];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $sql = "SELECT poll_name FROM Poll WHERE owner = '$owner'";
+  $owner = $_SESSION['username'];
+  $sql = "SELECT poll_name FROM Poll";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -106,7 +106,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 			</div>
 		</nav>
-		
+
 
 
 	</div>
