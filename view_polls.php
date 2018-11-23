@@ -21,8 +21,6 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 <?php
 
 $owner = $_SESSION['username'];
-$sql = "SELECT poll_name FROM Poll";
-$result = $conn->query($sql);
 
 ?>
 <p> Hello : </p>
