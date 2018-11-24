@@ -15,7 +15,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $poll_id = $_SESSION['poll_id'];
 
     $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
-    $votes = $mysqli->query($sql);
+    $result1 = $mysqli->query($sql);
+    $votes = 0;
+    while ($row = $result1->fetch_assoc()) {
+        $votes = $votes + $row['total_votes'];
+    }
     $votes = $votes + 1;
 
 		$sql1 = "UPDATE Poll SET total_votes='$votes' WHERE id='$poll_id'";
