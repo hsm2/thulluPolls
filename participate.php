@@ -168,7 +168,7 @@ if ($result->num_rows > 0) {
               <input type="text" placeholder="Option Number" name="number" required />
               <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" />
             </center>
-              <div class="module">
+              <div class="module"> </div>
             </form>
             <?php
         ?>
