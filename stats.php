@@ -18,8 +18,6 @@ echo $_SESSION['username']
 <?php
     //include the library
     include "libchart/classes/libchart.php";
-    $CI = &get_instance();
-    $CI->load->library('libchart');
 
     //new pie chart instance
     $chart = new PieChart( 500, 300 );
