@@ -6,6 +6,27 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
+        var mysql = require('mysql');
+
+        var con = mysql.createConnection({
+          host: "127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls"
+          user: "thullupolls_root",
+          password: "Surabhiharish",
+          database: "mydb"
+        });
+
+        con.connect(function(err) {
+          if (err) throw err;
+          console.log("Connected!");
+        });
+
+        con.connect(function(err) {
+          if (err) throw err;
+          con.query("SELECT * FROM Options", function (err, result, fields) {
+            if (err) throw err;
+            console.log(result);
+          });
+        });
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
