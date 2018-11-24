@@ -172,13 +172,13 @@ if ($result->num_rows > 0) {
             ?>
 
             <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
-              <a class="topnav" href="stats.php" title="Homepage">View Statistics</a>
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
               <input type="text" placeholder="Option Number" name="number" required />
               <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" />
             </center>
               <div class="module"> </div>
             </form>
+            <a class="topnav" href="stats.php" title="Homepage">View Statistics</a>
             <?php
         ?>
     </div>
