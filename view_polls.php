@@ -117,7 +117,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-      <a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+      <a><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
         <h3><?php echo $row['poll_name'] ?> </h3>
       </a>
     </div>
