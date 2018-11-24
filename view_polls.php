@@ -130,7 +130,7 @@ if ($result->num_rows > 0) {
             $option = "$id";
             if($result1->num_rows > 0) {
               while($row1 = $result1->fetch_assoc()) {
-                if($row1['total_votes']== $max) {
+                if($row1['total_votes']> $max) {
                   $max = $row1['total_votes'];
                   $option = $row1['option_name'];
                 }
