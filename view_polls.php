@@ -117,12 +117,12 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-        <h3>Poll Name: <?php echo $row['poll_name'] ?> </h3>
-        <h3>Poll Id: <?php echo $row['id'] ?> </h3>
-        <h3>Visibility: <?php echo $row['visibility'] ?> </h3>
-        <h3>Total Votes: <?php echo $row['total_votes'] ?> </h3>
-        <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
-        <h3>Most Popular Option: <?php
+        <h3><b>Poll Name:</b> <?php echo $row['poll_name'] ?> </h3>
+        <h3><b>Poll Id: </b><?php echo $row['id'] ?> </h3>
+        <h3><b>Visibility: </b><?php echo $row['visibility'] ?> </h3>
+        <h3><b>Total Votes: </b><?php echo $row['total_votes'] ?> </h3>
+        <h3><b>Total Likes: </b><?php echo $row['total_likes'] ?> </h3>
+        <h3><b>Most Popular Option: </b><?php
             $id = $row['id'];
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
