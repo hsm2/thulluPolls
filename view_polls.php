@@ -123,7 +123,7 @@ if ($result->num_rows > 0) {
         <h3>Total Votes: <?php echo $row['total_votes'] ?> </h3>
         <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
         <h3>Most Popular Option: <?php
-            $id = $row['poll_id'];
+            $id = $row['id'];
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
             $max = 0;
