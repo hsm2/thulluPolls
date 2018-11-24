@@ -9,10 +9,10 @@
         var mysql = require('mysql');
 
         var con = mysql.createConnection({
-          host: "127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls"
+          host: "127.0.0.1",
           user: "thullupolls_root",
           password: "Surabhiharish",
-          database: "mydb"
+          database: "thullupolls_thullupolls"
         });
 
         con.connect(function(err) {
