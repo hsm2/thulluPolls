@@ -60,7 +60,7 @@ echo $_SESSION['username']
 	<body>
     <div class="dtc animate-box">
       <center>
-      <a class="topnav" href="welcome.html" title="Homepage">Home</a>
+      <a class="topnav" href="welcome.php" title="Homepage">Home</a>
       <h2 class="gradient-text">My Polls</h2>
     </div>
   </body>
