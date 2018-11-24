@@ -17,8 +17,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
     $result1 = $mysqli->query($sql);
     $votes = 0;
-    while ($row = $result1->fetch_assoc()) {
-        $votes = $votes + $row['total_votes'];
+    if($result1->num_rows > 0) {
+      while ($row = $result1->fetch_assoc()) {
+          $votes = $votes + $row['total_votes'];
+      }
+    }
+    else {
+      echo "Not a valid option:(";
     }
     $votes = $votes + 1;
 
@@ -28,8 +33,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $result = $mysqli->query($sql3);
     $num = 0;
-    while ($row = $result->fetch_assoc()) {
-        $num = $num + $row['total_votes'];
+    if($result1->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $num = $num + $row['total_votes'];
+        }
     }
     $num = $num + 1;
 
@@ -163,6 +170,7 @@ if ($result->num_rows > 0) {
               }
             }
             ?>
+            <a class="topnav" href="stats.php" title="Homepage">View Statistics</a>
             <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
               <input type="text" placeholder="Option Number" name="number" required />

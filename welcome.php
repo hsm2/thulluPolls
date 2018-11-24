@@ -95,9 +95,6 @@ echo $_SESSION['username']
 								<form action="create.php">
 								    <button class="btn btn-gradient" type="submit">Create Polls</button>
 								</form>
-								<form action="edit.php">
-								    <button class="btn btn-gradient" type="submit">Edit Polls</button>
-								</form>
 								<form action="view_polls.php">
 								    <button class="btn btn-gradient" type="submit">View Your Polls</button>
 								</form>
