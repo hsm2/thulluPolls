@@ -99,7 +99,7 @@ $result = $mysqli->query($sql);
         <p class="desc">Which poll do you want more information on?</p>
       </div>
     </div>
-    <div >
+    <div class="row row-pb-md">
 
       <script src="js/jquery.min.js"></script>
     	<!-- jQuery Easing -->
@@ -117,7 +117,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-        <h3><?php echo $row['poll_name'] ?> </h3>
+        <h3>Poll Name: <?php echo $row['poll_name'] ?> </h3>
+        <h3>Visibility: <?php echo $row['visibility'] ?> </h3>
+        <h3>Total Votes: <?php echo $row['total_votes'] ?> </h3>
+        <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
     </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
