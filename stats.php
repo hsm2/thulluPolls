@@ -17,7 +17,7 @@ echo $_SESSION['username']
 
 <?php
     //include the library
-    include "libchart/classes/libchart.php";
+    include "libchart/libchart/classes/libchart.php";
 
     //new pie chart instance
     $chart = new PieChart( 500, 300 );
