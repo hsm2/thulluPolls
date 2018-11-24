@@ -22,13 +22,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$mysqli->query($sql1);
 
     $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
-    $num = $mysqli->query($sql3);
-    while ($row = $num->fetch_assoc()) {
-        echo $row['total_votes']."<br>";
+    $result = $mysqli->query($sql3);
+    $num = 0;
+    while ($row = $result->fetch_assoc()) {
+        $num = $num + $row['total_votes'];
     }
-    // $num = $num + 1;
+    $num = $num + 1;
 
-    // $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
+    $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $mysqli->query($sql4);
 }
 
