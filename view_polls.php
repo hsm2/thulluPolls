@@ -90,18 +90,37 @@ $owner = $_SESSION['username'];
 $sql = "SELECT poll_name FROM Poll WHERE owner = '$owner'";
 $result = $mysqli->query($sql);
 
+?>
+<div id="gtco-project">
+  <div class="container">
+    <div class="row row-pb-md">
+      <div class="col-md-7">
+        <h3>Your Polls</h3>
+        <p class="desc">Which poll do you want more information on?</p>
+      </div>
+    </div>
+    <div class="row row-pb-md">
+
+      <script src="js/jquery.min.js"></script>
+    	<!-- jQuery Easing -->
+    	<script src="js/jquery.easing.1.3.js"></script>
+    	<!-- Bootstrap -->
+    	<script src="js/bootstrap.min.js"></script>
+    	<!-- Waypoints -->
+    	<script src="js/jquery.waypoints.min.js"></script>
+
+    	<!-- Main -->
+    	<script src="js/main.js"></script>
+<?php
+
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
-    <div id="gtco-project">
-				<div class="row row-pb-md">
-          <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-						<a href="individual_poll.php"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3> <?php echo $row['poll_name'] ?> </h3>
-						</a>
-					</div>
-				</div>
-		</div>
+    <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+      <a href="#"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+        <h3><?php echo $row['poll_name'] ?> </h3>
+      </a>
+    </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -119,6 +138,16 @@ if ($result->num_rows > 0) {
 else {
   echo "0 results";
 }
+?>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load more...</a>
+  </div>
+</div>
+</div>
+</div>
+<?php
 ?>
 
 <html>
