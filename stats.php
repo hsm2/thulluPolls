@@ -23,7 +23,7 @@
         if (err) throw err;
         con.query("SELECT * FROM Options", function (err, result, fields) {
           if (err) throw err;
-          </script><h3><script>console.log(result);</script></h3><script>
+          console.log(result);
         });
       });
 
