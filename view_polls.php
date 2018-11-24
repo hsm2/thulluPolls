@@ -87,7 +87,7 @@ $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 $owner = $_SESSION['username'];
-$sql = "SELECT poll_name FROM Poll WHERE owner = '$owner'";
+$sql = "SELECT * FROM Poll WHERE owner = '$owner'";
 $result = $mysqli->query($sql);
 
 ?>
