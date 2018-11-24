@@ -15,14 +15,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $poll_id = $_SESSION['poll_id'];
 
     $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
-    $votes = $mysqli->query($sql) + 1;
+    $votes = $mysqli->query($sql);
+    echo $votes;
+    $votes = $votes + 1;
 
 		$sql1 = "UPDATE Poll SET total_votes='$votes' WHERE id='$poll_id'";
 		$mysqli->query($sql1);
 
     $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
-    $num = $mysqli->query($sql3) + 1;
+    $num = $mysqli->query($sql3);
     echo $num;
+    $num = $num + 1;
 
     $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $mysqli->query($sql4);
