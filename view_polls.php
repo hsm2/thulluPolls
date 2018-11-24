@@ -99,7 +99,7 @@ $result = $mysqli->query($sql);
         <p class="desc">Which poll do you want more information on?</p>
       </div>
     </div>
-    <div class="row row-pb-md">
+    <div >
 
       <script src="js/jquery.min.js"></script>
     	<!-- jQuery Easing -->
