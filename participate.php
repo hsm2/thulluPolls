@@ -135,8 +135,8 @@ $result = $mysqli->query($sql);
   <div class="container">
     <div class="row row-pb-md">
       <div class="col-md-7">
-        <h3>Polls</h3>
-        <p class="desc">Participate on Polls!</p>
+        <h3><center>Polls</center></h3>
+        <p class="desc"><center>Participate on Polls!</center></p>
       </div>
     </div>
     <div class="row row-pb-md">
