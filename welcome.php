@@ -98,8 +98,9 @@ echo $_SESSION['username']
 								<form action="edit.php">
 								    <button class="btn btn-gradient" type="submit">Edit Polls</button>
 								</form>
-								<!-- <p><a href="#" class="btn btn-gradient">Sign In</a></p>
-								<p><a href="#" class="btn btn-gradient">Sign up</a></p> -->
+								<form action="view_polls.php">
+								    <button class="btn btn-gradient" type="submit">View Your Polls</button>
+								</form>
 							</div>
 						</div>
 					</div>
