@@ -17,7 +17,8 @@ echo $_SESSION['username']
 
 <?php
     //include the library
-    include "libchart/libchart/classes/libchart.php";
+    include "libchart/classes/libchart.php";
+    header("Content-type: image/png");
 
     //new pie chart instance
     $chart = new PieChart( 500, 300 );
