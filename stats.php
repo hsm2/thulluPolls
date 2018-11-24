@@ -6,14 +6,14 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-        var mysql = require('mysql');
-
-        var con = mysql.createConnection({
-          host: "127.0.0.1",
-          user: "thullupolls_root",
-          password: "Surabhiharish",
-          database: "thullupolls_thullupolls"
-        });
+        // var mysql = require('mysql');
+        //
+        // var con = mysql.createConnection({
+        //   host: "127.0.0.1",
+        //   user: "thullupolls_root",
+        //   password: "Surabhiharish",
+        //   database: "thullupolls_thullupolls"
+        // });
 
         // con.connect(function(err) {
         //   if (err) throw err;
