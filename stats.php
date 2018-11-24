@@ -32,7 +32,8 @@ echo $_SESSION['username']
     $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
     //query all records from the database
-    $query = "SELECT total_votes FROM Options WHERE poll_id = $_SESSION['poll_id_stats']";
+    $temp_id = $_SESSION['poll_id_stats']
+    $query = "SELECT total_votes FROM Options WHERE poll_id = '$temp_id'";
 
     //execute the query
     $result = $mysqli->query( $query );
