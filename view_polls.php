@@ -122,7 +122,6 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div id="gtco-project">
-			<div class="container">
 				<div class="row row-pb-md">
           <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
 						<a href="individual_poll.php"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
@@ -130,7 +129,6 @@ if ($result->num_rows > 0) {
 						</a>
 					</div>
 				</div>
-			</div>
 		</div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
