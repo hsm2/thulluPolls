@@ -94,32 +94,6 @@ echo $_SESSION['username']
 			</div>
 		</div>
 
-    <footer id="fh5co-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-footer-widget">
-							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-md-push-1">
-						<div class="fh5co-footer-widget">
-							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-md-push-1">
-						<div class="fh5co-footer-widget gtco-social-wrap">
-							<ul class="gtco-social">
-								<li><a href="#" class="icon-twitter"></a></li>
-								<li><a href="#" class="icon-dribbble"></a></li>
-								<li><a href="#" class="icon-instagram"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -147,14 +121,17 @@ $result = $mysqli->query($sql);
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
-		<div class="row row-pb-md">
-      <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-				<a href="individual_poll.php"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-					<h3> <?php echo $row['poll_name'] ?> </h3>
-				</a>
+    <div id="gtco-project">
+			<div class="container">
+				<div class="row row-pb-md">
+          <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
+						<a href="individual_poll.php"><img src="images/img_3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<h3> <?php echo $row['poll_name'] ?> </h3>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
-
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -173,3 +150,38 @@ else {
   echo "0 results";
 }
 ?>
+
+<html>
+		<footer id="fh5co-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="fh5co-footer-widget">
+							<a href="index.html">Motion <sup>&trade;</sup></a> Free HTML5 &copy; All Rights Reserved.  <br> Designed by <a href="http://gettemplates.co" target="_blank">GetTemplates.co</a> Images: <a href="http://pixeden.com" target="_blank">Pixeden</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-push-1">
+						<div class="fh5co-footer-widget">
+							<p><a href="tel://+1 234 567 8910">+1 234 567 8910</a> <br> <a href="#">info@yourdomain.com</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-push-1">
+						<div class="fh5co-footer-widget gtco-social-wrap">
+							<ul class="gtco-social">
+								<li><a href="#" class="icon-twitter"></a></li>
+								<li><a href="#" class="icon-dribbble"></a></li>
+								<li><a href="#" class="icon-instagram"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+</html>
