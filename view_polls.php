@@ -124,8 +124,8 @@ if ($result->num_rows > 0) {
         <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
         <h3>Most Popular Option: <?php
             $id = $row['poll_id']
-            $sql1 = "SELECT * FROM Options WHERE poll_id = '$id'";
-            $result1 = $mysqli->query($sql1);
+            $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
+            $result1 = $mysqli->query($sq);
             $max = 0;
             if($result1->num_rows > 0) {
               while($row1 = $result1->fetch_assoc()) {
