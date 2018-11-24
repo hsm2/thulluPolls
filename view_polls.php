@@ -118,7 +118,7 @@ if ($result->num_rows > 0) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
         <h3>Poll Name: <?php echo $row['poll_name'] ?> </h3>
-        <h3>Poll Id: <?php echo $row['poll_id'] ?> </h3>
+        <h3>Poll Id: <?php echo $row['id'] ?> </h3>
         <h3>Visibility: <?php echo $row['visibility'] ?> </h3>
         <h3>Total Votes: <?php echo $row['total_votes'] ?> </h3>
         <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
@@ -130,7 +130,6 @@ if ($result->num_rows > 0) {
             $option = "$id";
             if($result1->num_rows > 0) {
               while($row1 = $result1->fetch_assoc()) {
-                echo "no";
                 if($row1['total_votes']== $max) {
                   $max = $row1['total_votes'];
                   $option = $row1['option_name'];
