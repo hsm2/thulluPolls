@@ -7,6 +7,29 @@ session_start();
 echo $_SESSION['username']
 ?>
 
+<?php
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $number = $_POST['number'];
+    $poll_id = $_SESSION['poll_id'];
+
+    $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
+    $votes = $mysqli->query($sql) + 1;
+
+		$sql1 = "UPDATE Poll SET total_votes='$votes' WHERE id='$poll_id'";
+		$mysqli->query($sql1);
+
+    $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
+    $num = $mysqli->query($sql3) + 1;
+
+    $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
+    $mysqli->query($sql4);
+}
+
+$mysqli->close();
+?>
+
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
 	<title></title>
@@ -120,7 +143,7 @@ if ($result->num_rows > 0) {
         <h3><b> <?php echo $row['poll_name'] ?> </b></h3>
         <h3><b><?php echo $row['question'] ?> </b> </h3>
 
-        <h3><b>Options </b></h3><?php
+        <h3><b>Options: </b></h3><?php
             $id = $row['id'];
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
@@ -130,9 +153,9 @@ if ($result->num_rows > 0) {
               }
             }
             ?>
-            <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+            <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-              <input type="text" placeholder="Option Number" name="username" required />
+              <input type="text" placeholder="Option Number" name="number" required />
               <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" />
             </center>
               <div class="module">
