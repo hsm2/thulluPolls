@@ -178,7 +178,7 @@ if ($result->num_rows > 0) {
             </center>
               <div class="module"> </div>
             </form>
-            <a class="topnav" href="stats.php" title="Homepage">View Statistics</a>
+            <a class="topnav" href="stats.php" title="Homepage"><font color="red">View Statistics of this poll.</font></a>
             <?php
         ?>
     </div>
