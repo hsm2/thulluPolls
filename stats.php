@@ -15,18 +15,18 @@
           database: "thullupolls_thullupolls"
         });
 
-        con.connect(function(err) {
-          if (err) throw err;
-          console.log("Connected!");
-        });
-
-        con.connect(function(err) {
-          if (err) throw err;
-          con.query("SELECT * FROM Options", function (err, result, fields) {
-            if (err) throw err;
-            console.log(result);
-          });
-        });
+        // con.connect(function(err) {
+        //   if (err) throw err;
+        //   console.log("Connected!");
+        // });
+        //
+        // con.connect(function(err) {
+        //   if (err) throw err;
+        //   con.query("SELECT * FROM Options", function (err, result, fields) {
+        //     if (err) throw err;
+        //     console.log(result);
+        //   });
+        // });
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
