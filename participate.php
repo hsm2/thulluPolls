@@ -23,6 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $num = $mysqli->query($sql3);
+    echo $num;
     $num = $num + 1;
 
     $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
