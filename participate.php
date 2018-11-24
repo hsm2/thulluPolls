@@ -134,12 +134,6 @@ $result = $mysqli->query($sql);
 <div id="gtco-project">
   <div class="container">
     <div class="row row-pb-md">
-      <div class="col-md-7">
-        <h3><center>Polls</center></h3>
-        <p class="desc"><center>Participate on Polls!</center></p>
-      </div>
-    </div>
-    <div class="row row-pb-md">
 
       <script src="js/jquery.min.js"></script>
     	<!-- jQuery Easing -->
