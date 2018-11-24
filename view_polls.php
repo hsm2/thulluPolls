@@ -96,7 +96,7 @@ $result = $mysqli->query($sql);
     <div class="row row-pb-md">
       <div class="col-md-7">
         <h3>Your Polls</h3>
-        <p class="desc">Which poll do you want more information on?</p>
+        <p class="desc">Information on Polls</p>
       </div>
     </div>
     <div class="row row-pb-md">
@@ -118,9 +118,24 @@ if ($result->num_rows > 0) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
         <h3>Poll Name: <?php echo $row['poll_name'] ?> </h3>
+        <h3>Poll Id: <?php echo $row['poll_id'] ?> </h3>
         <h3>Visibility: <?php echo $row['visibility'] ?> </h3>
         <h3>Total Votes: <?php echo $row['total_votes'] ?> </h3>
         <h3>Total Likes: <?php echo $row['total_likes'] ?> </h3>
+        <h3>Most Popular Option: <?php
+            $id = $row['poll_id']
+            $sql1 = "SELECT * FROM Options WHERE poll_id = '$id'";
+            $result1 = $mysqli->query($sql1);
+            $max = 0;
+            if($result1->num_rows > 0) {
+              while($row1 = $result1->fetch_assoc()) {
+                if($row1['total_votes'] > $max) {
+                  $max = $row1['total_votes'];
+                }
+              }
+            }
+            echo $max
+        ?></h3>
     </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
