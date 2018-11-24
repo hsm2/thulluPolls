@@ -137,7 +137,7 @@ if ($result->num_rows > 0) {
               }
             }
             echo $option
-        ?> with <?php $max?> total votes.</h3>
+        ?> with <?php echo $max?> total votes.</h3>
     </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
