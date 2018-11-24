@@ -172,7 +172,7 @@ if ($result->num_rows > 0) {
             </center>
               <div class="module"> </div>
             </form>
-            <a class="topnav" href="stats.php" title="Homepage"><font color="red">View Statistics of this poll.</font></a>
+            <a class="topnav" href="stats.php" title="Homepage" onClick = "<?php $_SESSION['poll_id_stats'] = $id?>"><font color="red">View Statistics of this poll.</font></a>
             <?php
         ?>
     </div>
