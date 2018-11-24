@@ -58,41 +58,13 @@ echo $_SESSION['username']
 
 	</head>
 	<body>
+    <div class="dtc animate-box">
+      <center>
+      <a class="topnav" href="index.html" title="Homepage">Home</a>
+      <h2 class="gradient-text">My Polls</h2>
+    </div>
+  </body>
 
-	<div class="gtco-loader"></div>
-
-	<div id="page">
-
-		<nav class="gtco-nav" role="navigation">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-xs-10 text-right fh5co-top-social">
-						<ul class="gtco-social">
-							<li><a href="#" class="icon-twitter"></i></a></li>
-							<li><a href="#" class="icon-dribbble"></i></a></li>
-							<li><a href="#" class="icon-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</nav>
-		<div id="gtco-intro">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<div class="dt js-height">
-							<div class="dtc animate-box">
-								<center>
-								<a class="topnav" href="index.html" title="Homepage">Home</a>
-								<h2 class="gradient-text">My Polls</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
