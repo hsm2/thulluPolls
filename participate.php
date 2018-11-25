@@ -1,3 +1,41 @@
+<style>
+/* Force scrollbars onto browser window */
+body {
+margin-bottom: 200%;
+}
+
+/* Box styles */
+.myBox {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 200px;
+height: 200px;
+overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid yellowgreen;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: yellowgreen;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #88ba1c;
+}
+</style>
+
+
 <?php
  ob_start();  //begin buffering the output
 ?>
@@ -172,6 +210,9 @@ if ($result->num_rows > 0) {
             </center>
               <div class="module"> </div>
             </form>
+            <div class="myBox">
+                Efficient honorificabilitudinitatibus cross-media information without floccinaucinihilipilification cross-media value. Quickly maximize timely deliverables for real-time schemas plenipotentiary.
+              </div>
             <a class="topnav" href="stats.php" title="Homepage" onClick = "<?php $_SESSION['poll_id_stats'] = $id?>"><font color="red">View Statistics of this poll.</font></a>
             <?php
         ?>
