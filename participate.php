@@ -9,7 +9,7 @@ margin-bottom: 200%;
 border: none;
 padding: 5px;
 font: 24px/36px sans-serif;
-width: 200px;
+width: 500px;
 height: 200px;
 overflow: scroll;
 }
