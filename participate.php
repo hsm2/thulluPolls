@@ -210,6 +210,7 @@ if ($result->num_rows > 0) {
             </center>
               <div class="module"> </div>
             </form>
+            <h2> Comments </h2>
             <div class="myBox">
                 Efficient honorificabilitudinitatibus cross-media information without floccinaucinihilipilification cross-media value. Quickly maximize timely deliverables for real-time schemas plenipotentiary.
               </div>
