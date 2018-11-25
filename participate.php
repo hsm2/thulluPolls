@@ -8,8 +8,8 @@ margin-bottom: 200%;
 .myBox {
 border: none;
 padding: 5px;
-font: 24px/36px sans-serif;
-width: 500px;
+font: 12px/14px sans-serif;
+width: 250px;
 height: 200px;
 overflow: scroll;
 }
