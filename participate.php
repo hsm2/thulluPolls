@@ -49,7 +49,7 @@ echo $_SESSION['username']
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if($_SESSION['comment'] == 'no') {
+    if($_SESSION['comment'] != 'yes') {
       $number = $_POST['number'];
       $poll_id = $_SESSION['poll_id'];
 
@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $mysqli->query($sql4);
     }
     else {
-      
+
     }
 
 }
