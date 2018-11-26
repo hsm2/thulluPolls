@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $result2 = $mysqli->query($sql7);
       $likes = 1;
       if($result2->num_rows > 0) {
-        while ($row = $result1->fetch_assoc()) {
+        while ($row = $result2->fetch_assoc()) {
             $likes = $likes + $row['total_votes'];
         }
       }
