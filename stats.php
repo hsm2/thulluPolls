@@ -1,10 +1,11 @@
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="/require.js">
+    <script type="text/javascript" src="require.js">
+      console.log("5");
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
+      console.log("8");
       var mysql = require('mysql');
 
       var con = mysql.createConnection({
