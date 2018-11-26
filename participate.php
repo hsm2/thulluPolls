@@ -49,37 +49,55 @@ echo $_SESSION['username']
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $number = $_POST['number'];
-    $poll_id = $_SESSION['poll_id'];
+    if($_SESSION['comment'] == 'no') {
+      $number = $_POST['number'];
+      $poll_id = $_SESSION['poll_id'];
 
-    $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
-    $result1 = $mysqli->query($sql);
-    $votes = 0;
-    if($result1->num_rows > 0) {
-      while ($row = $result1->fetch_assoc()) {
-          $votes = $votes + $row['total_votes'];
+      if ($_POST['Like'] == 'like') {
+        $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
+        $result1 = $mysqli->query($sql7);
+        $likes = 1;
+        if($result1->num_rows > 0) {
+          while ($row = $result1->fetch_assoc()) {
+              $likes = $votes + $row['total_votes'];
+          }
+        }
+        $sql8 = "UPDATE Poll SET total_likes='$likes' WHERE id='$poll_id'";
+        $mysqli->query($sql8);
       }
+
+      $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
+      $result1 = $mysqli->query($sql);
+      $votes = 1;
+      if($result1->num_rows > 0) {
+        while ($row = $result1->fetch_assoc()) {
+            $votes = $votes + $row['total_votes'];
+        }
+      }
+      else {
+        echo "Not a valid option:(";
+      }
+
+      $sql1 = "UPDATE Poll SET total_votes='$votes' WHERE id='$poll_id'";
+      $mysqli->query($sql1);
+
+      $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
+      $result = $mysqli->query($sql3);
+      $num = 0;
+      if($result1->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              $num = $num + $row['total_votes'];
+          }
+      }
+      $num = $num + 1;
+
+      $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
+      $mysqli->query($sql4);
     }
     else {
-      echo "Not a valid option:(";
+      
     }
-    $votes = $votes + 1;
 
-		$sql1 = "UPDATE Poll SET total_votes='$votes' WHERE id='$poll_id'";
-		$mysqli->query($sql1);
-
-    $sql3 = "SELECT total_votes FROM Options WHERE poll_id = '$poll_id' AND option_num = '$number'";
-    $result = $mysqli->query($sql3);
-    $num = 0;
-    if($result1->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $num = $num + $row['total_votes'];
-        }
-    }
-    $num = $num + 1;
-
-    $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
-    $mysqli->query($sql4);
 }
 
 $mysqli->close();
@@ -206,7 +224,8 @@ if ($result->num_rows > 0) {
             <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
               <input type="text" placeholder="Option Number" name="number" required />
-              <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" />
+              <input type="checkbox" name="Like" value="like"> Like <br><br><br>
+              <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
             </center>
               <div class="module"> </div>
             </form>
@@ -214,6 +233,13 @@ if ($result->num_rows > 0) {
             <div class="myBox">
                 Efficient honorificabilitudinitatibus cross-media information without floccinaucinihilipilification cross-media value. Quickly maximize timely deliverables for real-time schemas plenipotentiary.
               </div>
+              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
+                <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+                <input type="text" placeholder="Comment on this poll" name="comment" required />
+                <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "yes"?>"/>
+              </center>
+                <div class="module"> </div>
+              </form>
             <a class="topnav" href="stats.php" title="Homepage" onClick = "<?php $_SESSION['poll_id_stats'] = $id?>"><font color="red">View Statistics of this poll.</font></a>
             <?php
         ?>
