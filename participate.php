@@ -54,11 +54,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if ($_POST['Like'] == 'like') {
       $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
-      $result1 = $mysqli->query($sql7);
+      $result2 = $mysqli->query($sql7);
       $likes = 1;
-      if($result1->num_rows > 0) {
+      if($result2->num_rows > 0) {
         while ($row = $result1->fetch_assoc()) {
-            $likes = $votes + $row['total_votes'];
+            $likes = $likes + $row['total_votes'];
         }
       }
       $sql8 = "UPDATE Poll SET total_likes='$likes' WHERE id='$poll_id'";
