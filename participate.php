@@ -243,7 +243,7 @@ if ($result->num_rows > 0) {
                   $res = $mysqli->query($sq);
                   if($res->num_rows > 0) {
                     while($row1 = $res->fetch_assoc()) {
-                      ?> <h1> <font size = "6"><br><?php echo $row1['user_id']?> </br> : <?php echo $row1['comment_text'] ?> </font></h1> <?php
+                      ?> <h5> <br><?php echo $row1['user_id']?> </br> : <?php echo $row1['comment_text'] ?> </h5> <?php
                     }
                   }
                   ?>
