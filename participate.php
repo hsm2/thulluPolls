@@ -10,7 +10,7 @@ border: none;
 padding: 5px;
 font: 12px/14px sans-serif;
 width: 250px;
-height: 200px;
+height: 100px;
 overflow: scroll;
 }
 
