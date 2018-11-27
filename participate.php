@@ -49,6 +49,14 @@ echo $_SESSION['username']
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SESSION['comment'] = "yes") {
+      $poll_id = $_SESSION['poll_id'];
+      $id = uniqid();
+      $user = $_SESSION['username'];
+      $comment_text = $mysqli->real_escape_string($_POST['comment']);
+      $s = "INSERT INTO Comments (id, poll_id, user, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
+      $mysqli->query($s);
+    }
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
 
@@ -225,12 +233,21 @@ if ($result->num_rows > 0) {
             </form>
             <h2> Comments </h2>
             <div class="myBox">
-                Efficient honorificabilitudinitatibus cross-media information without floccinaucinihilipilification cross-media value. Quickly maximize timely deliverables for real-time schemas plenipotentiary.
+              <?php
+                  $id = $_SESSION['poll_id'];
+                  $sq = "SELECT user_id, comment_text FROM Comments WHERE poll_id = '$id'";
+                  $res = $mysqli->query($sq);
+                  if($res->num_rows > 0) {
+                    while($row1 = $res->fetch_assoc()) {
+                      ?> <h1> <?php echo $row1['user_id']?> : <?php echo $row1['comment_text'] ?> </h1> <?php
+                    }
+                  }
+                  ?>
               </div>
-              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
+              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id; $_SESSION['comment'] = "yes"?>">
                 <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                 <input type="text" placeholder="Comment on this poll" name="comment" required />
-                <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "yes"?>"/>
+                <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary"/>
               </center>
                 <div class="module"> </div>
               </form>
