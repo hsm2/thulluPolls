@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = uniqid();
     $user = $_SESSION['username'];
     $comment_text = $mysqli->real_escape_string($_POST['comment']);
-    $s = "INSERT INTO Comments (id, poll_id, user, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
+    $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
     if(($mysqli->query($s) === true)){
           echo "hello";
           header("location: #");
