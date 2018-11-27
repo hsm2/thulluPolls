@@ -41,7 +41,7 @@ background: #88ba1c;
 ?>
 
 <?php
-// session_start();
+session_start();
 echo $_SESSION['username']
 ?>
 
