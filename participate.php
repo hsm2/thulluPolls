@@ -251,7 +251,7 @@ if ($result->num_rows > 0) {
                   }
                   ?>
               </div>
-              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id; $_SESSION['comment'] = "yes"?>">
+              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
                 <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                 <input type="text" placeholder="Comment on this poll" name="comment" required />
                 <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary"/>
