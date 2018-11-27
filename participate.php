@@ -49,14 +49,14 @@ echo $_SESSION['username']
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if($_SESSION['comment'] = "yes") {
-      $poll_id = $_SESSION['poll_id'];
-      $id = uniqid();
-      $user = $_SESSION['username'];
-      $comment_text = $mysqli->real_escape_string($_POST['comment']);
-      $s = "INSERT INTO Comments (id, poll_id, user, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
-      $mysqli->query($s);
-    }
+
+    $poll_id = $_SESSION['poll_id'];
+    $id = uniqid();
+    $user = $_SESSION['username'];
+    $comment_text = $mysqli->real_escape_string($_POST['comment']);
+    $s = "INSERT INTO Comments (id, poll_id, user, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
+    $mysqli->query($s);
+
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
 
