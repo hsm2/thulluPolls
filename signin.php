@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		ob_flush();
 	}
 	else {
-		$_SESSION['message'] = "You fucked up";
+		$_SESSION['message'] = "Your username or password is incorrect!";
 	}
 }
 ?>
@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								<form class="form" action="signin.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 						      <input type="text" placeholder="User Name" name="username" required />
-									<input type="text" placeholder="Password" name="password" required />
+									<input type="password" placeholder="Password" name="password" required />
 						      <input type="submit" value="verify" name="Create Account" class="btn btn-block btn-primary" />
 								</center>
 						      <div class="module">
