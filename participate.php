@@ -162,7 +162,7 @@ $mysqli->close();
       <center>
       <h2 class="gradient-text">Public Polls</h2>
       <a class="topnav" href="welcome.php" title="Homepage">Home</a><br>
-      <a class="topnav" href="private_id.php" title="Private Polls">Private Polls</a>
+      <a class="topnav" href="private_id.php" title="Private Polls">P..rivate Polls</a>
     </div>
   </body>
 
@@ -230,7 +230,7 @@ if ($result->num_rows > 0) {
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
               <input type="text" placeholder="Option Number" name="number" required />
               <input type="checkbox" name="Like" value="like"> Like <br><br><br>
-              <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
+              <input type="submit" value="comment" name=<?= $id ?> class="btn" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
             </center>
               <div class="module"> </div>
             </form>
