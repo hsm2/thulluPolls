@@ -187,7 +187,7 @@ $mysqli->close();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$owner = "5bf87b9359c79";
+$id = $_SESSION['private_poll_id'];
 $sql = "SELECT * FROM Poll WHERE id = '$owner'";
 $result = $mysqli->query($sql);
 
@@ -212,8 +212,8 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-        <h3><b> <?php echo $row['poll_name'] ?> </b></h3>
-        <h3><b><?php echo $row['question'] ?> </b> </h3>
+        <h3><b>Name: <?php echo $row['poll_name'] ?> </b></h3>
+        <h3><b>Question: <?php echo $row['question'] ?> </b> </h3>
 
         <h3><b>Options: </b></h3><?php
             $id = $row['id'];
