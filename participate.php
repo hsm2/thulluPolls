@@ -239,7 +239,7 @@ if ($result->num_rows > 0) {
             </center>
               <div class="module"> </div>
             </form>
-            <h2><font size = "7">Comments:</font></h2>
+            <h2><font size = "3">Comments:</font></h2>
             <div class="myBox">
               <?php
                   $id = $_SESSION['poll_id'];
