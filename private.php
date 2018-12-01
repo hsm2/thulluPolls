@@ -187,7 +187,7 @@ $mysqli->close();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$owner = "5bf87b7a90b4d";
+$owner = "5bf87b9359c79";
 $sql = "SELECT * FROM Poll WHERE poll_id = '$owner'";
 $result = $mysqli->query($sql);
 
