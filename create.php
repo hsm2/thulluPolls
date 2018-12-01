@@ -65,6 +65,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Problem 4";
 		$flag = false;
 	}
+  if ($mysqli->query($sql5) == false) {
+		$_SESSION['message'] = "Problem 4";
+		echo "Problem 4";
+		$flag = false;
+	}
 	$_SESSION['show_poll'] = $poll_id;
   header("location: poll_id.php");
   ob_flush();
@@ -160,7 +165,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						      <div class="module">
 						    </form>
 
-                <form action="view_polls.php">
+                <form action="poll_id.php">
 								    <button class="btn btn-gradient" type="submit">View My Polls</button>
 								</form>
 							</div>
