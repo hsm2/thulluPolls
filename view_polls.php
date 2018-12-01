@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
             $max = 0;
-            $option = ;
+            $option = "hi";
             if($result1->num_rows > 0) {
               while($row1 = $result1->fetch_assoc()) {
                 if($row1['total_votes'] >= $max) {
