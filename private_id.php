@@ -97,7 +97,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Poll Time!</h2>
-								<form  onsubmit="<?php $_SESSION['private_poll_id'] = $_POST['poll_id']?>" >
+								<form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
                     <input type="text" placeholder="Poll Id" name="poll_id" required />
 								    <button class="btn btn-gradient" type="submit">Participate!</button>
 								</form>
