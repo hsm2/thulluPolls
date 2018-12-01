@@ -6,6 +6,12 @@
 session_start();
 echo $_SESSION['username']
 ?>
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['private_poll_id'] = $_POST['poll_id'];
+}
+
+?>
 
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
