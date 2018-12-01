@@ -9,6 +9,7 @@ echo $_SESSION['username']
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['private_poll_id'] = $_POST['poll_id'];
+    echo "hello";
     header("Location:private.php");
 		ob_flush();
 }

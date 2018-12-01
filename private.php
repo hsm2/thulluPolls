@@ -189,7 +189,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 echo $_SESSION['private_poll_id'];
 $id =  $_SESSION['private_poll_id'];
-echo "no";
+
 $sql = "SELECT * FROM Poll WHERE poll_id = '$id'";
 $result = $mysqli->query($sql);
 
