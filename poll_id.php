@@ -87,7 +87,7 @@ echo $_SESSION['username']
 						<div class="dt js-height">
 							<div class="dtc animate-box">
 								<center>
-								<a class="topnav" href="index.html" title="Homepage">Home</a>
+								<a class="topnav" href="welcome.php" title="Homepage">Home</a>
 								<h2 class="gradient-text">Your Poll ID is: </b><?php echo $_SESSION['show_poll'] ?> </h2>
 							</div>
 						</div>

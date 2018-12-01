@@ -89,7 +89,7 @@ echo $_SESSION['username']
 								<center>
 								<a class="topnav" href="index.html" title="Homepage">Home</a>
 								<h2 class="gradient-text">Poll Time!</h2>
-								<form action="participate.php">
+								<form action="private.php" onsubmit="<?php $_SESSION['private_poll_id'] = $mysqli->real_escape_string($_POST['poll_id']);?>>
                     <input type="text" placeholder="Poll Id" name="poll_id" required />
 								    <button class="btn btn-gradient" type="submit">Participate!</button>
 								</form>
