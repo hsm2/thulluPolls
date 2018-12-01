@@ -162,7 +162,7 @@ $mysqli->close();
       <center>
       <h2 class="gradient-text">Public Polls</h2>
       <a class="topnav" href="welcome.php" title="Homepage">Home</a><br>
-      <a class="topnav" href="private_id.php" title="Private Polls">P..rivate Polls</a>
+      <a class="topnav" href="private_id.php" title="Private Polls">Private Polls</a>
     </div>
   </body>
 
