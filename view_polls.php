@@ -127,17 +127,17 @@ if ($result->num_rows > 0) {
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
             $max = 0;
-            $option = "$id";
+            $option = ;
             if($result1->num_rows > 0) {
               while($row1 = $result1->fetch_assoc()) {
-                if($row1['total_votes']>= $max) {
+                if($row1['total_votes'] >= $max) {
                   $max = $row1['total_votes'];
                   $option = $row1['option_name'];
                 }
               }
             }
-            echo $option
-        ?> with <?php echo $max?> total votes.</h3>
+
+        echo $option ?> with <?php echo $max?> total votes.</h3>
     </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

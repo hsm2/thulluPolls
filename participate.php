@@ -62,6 +62,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
 
+    $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id)" . "VALUES ('$poll_id', '$number', '$user')";;
+    if(($mysqli->query($insert_vote) === true)) {
+      echo "inserted";
+    }
+
     if ($_POST['Like'] == 'like') {
       $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
       $result2 = $mysqli->query($sql7);
