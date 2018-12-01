@@ -235,7 +235,7 @@ if ($result->num_rows > 0) {
               <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
               <input type="text" placeholder="Option Number" name="number" required />
               <input type="checkbox" name="Like" value="like"> Like <br><br><br>
-              <input type="submit" value="comment" name=<?= $id ?> class="btn" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
+              <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
             </center>
               <div class="module"> </div>
             </form>
@@ -255,7 +255,7 @@ if ($result->num_rows > 0) {
               <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
                 <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                 <input type="text" placeholder="Comment on this poll" name="comment" required />
-                <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary"/>
+                <input type="submit" value="comment" name=<?= $id ?> class="btn"/>
               </center>
                 <div class="module"> </div>
               </form>
