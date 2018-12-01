@@ -160,8 +160,9 @@ $mysqli->close();
 	<body>
     <div class="dtc animate-box">
       <center>
-      <a class="topnav" href="welcome.php" title="Homepage">Home</a>
-      <h2 class="gradient-text">Private Polls</h2>
+      <a class="topnav" href="welcome.php" title="Homepage">Home</a><br>
+      <a class="topnav" href="private_id.php" title="Private Polls">Private Polls</a>
+      <h2 class="gradient-text">Public Polls</h2>
     </div>
   </body>
 
@@ -186,17 +187,36 @@ $mysqli->close();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
+$id =  $_SESSION['private_poll_id'];
+$sql = "SELECT * FROM Poll WHERE poll_id = '$id'";
+$result = $mysqli->query($sql);
+
 ?>
 <div id="gtco-project">
   <div class="container">
     <div class="row row-pb-md">
 
+      <script src="js/jquery.min.js"></script>
+    	<!-- jQuery Easing -->
+    	<script src="js/jquery.easing.1.3.js"></script>
+    	<!-- Bootstrap -->
+    	<script src="js/bootstrap.min.js"></script>
+    	<!-- Waypoints -->
+    	<script src="js/jquery.waypoints.min.js"></script>
+
+    	<!-- Main -->
+    	<script src="js/main.js"></script>
+<?php
+
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
         <h3><b> <?php echo $row['poll_name'] ?> </b></h3>
         <h3><b><?php echo $row['question'] ?> </b> </h3>
 
         <h3><b>Options: </b></h3><?php
-            $id = $_SESSION['private_poll_id'];
+            $id = $row['id'];
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
             if($result1->num_rows > 0) {
@@ -214,6 +234,27 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
             </center>
               <div class="module"> </div>
             </form>
+            <h2> Comments </h2>
+            <div class="myBox">
+              <?php
+                  $id = $_SESSION['poll_id'];
+                  $sq = "SELECT user_id, comment_text FROM Comments WHERE poll_id = '$id'";
+                  $res = $mysqli->query($sq);
+                  if($res->num_rows > 0) {
+                    while($row1 = $res->fetch_assoc()) {
+                      ?> <h5> <b><?php echo $row1['user_id']?><b>  : <?php echo $row1['comment_text'] ?> </h5> <?php
+                    }
+                  }
+                  ?>
+              </div>
+              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
+                <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
+                <input type="text" placeholder="Comment on this poll" name="comment" required />
+                <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary"/>
+              </center>
+                <div class="module"> </div>
+              </form>
+            <a class="topnav" href="stats.php" title="Homepage" onClick = "<?php $_SESSION['poll_id_stats'] = $id?>"><font color="red">View Statistics of this poll.</font></a>
             <?php
         ?>
     </div>
@@ -228,7 +269,12 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+    <?php
+  }
+}
+else {
+  echo "0 results";
+}
 ?>
 </div>
 <div class="row">
