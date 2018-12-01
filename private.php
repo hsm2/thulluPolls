@@ -161,8 +161,7 @@ $mysqli->close();
     <div class="dtc animate-box">
       <center>
       <a class="topnav" href="welcome.php" title="Homepage">Home</a>
-      <a class="topnav" href="pivate_id.php" title="Private Polls">Home</a>
-      <h2 class="gradient-text">Public Polls</h2>
+      <h2 class="gradient-text">Private Polls</h2>
     </div>
   </body>
 
@@ -192,19 +191,6 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
   <div class="container">
     <div class="row row-pb-md">
 
-      <script src="js/jquery.min.js"></script>
-    	<!-- jQuery Easing -->
-    	<script src="js/jquery.easing.1.3.js"></script>
-    	<!-- Bootstrap -->
-    	<script src="js/bootstrap.min.js"></script>
-    	<!-- Waypoints -->
-    	<script src="js/jquery.waypoints.min.js"></script>
-
-    	<!-- Main -->
-    	<script src="js/main.js"></script>
-<?php
-
-    ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
         <h3><b> <?php echo $row['poll_name'] ?> </b></h3>
         <h3><b><?php echo $row['question'] ?> </b> </h3>
