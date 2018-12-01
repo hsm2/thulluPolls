@@ -217,8 +217,8 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-        <h3><b> <?php echo $row['poll_name'] ?> </b></h3>
-        <h3><b><?php echo $row['question'] ?> </b> </h3>
+        <h3><b><font size = "5"> <?php echo $row['poll_name'] ?> </font></b></h3>
+        <h3><b><font size = "5"><?php echo $row['question'] ?></font> </b> </h3>
 
         <h3><b>Options: </b></h3><?php
             $id = $row['id'];
