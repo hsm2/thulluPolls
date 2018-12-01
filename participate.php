@@ -217,10 +217,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     ?>
     <div class="col-md-4 col-sm-4 col-xs-6 fh5co-project animate-box">
-        <h3><b><font size = "5"> <?php echo $row['poll_name'] ?> </font></b></h3>
-        <h3><b><font size = "5"><?php echo $row['question'] ?></font> </b> </h3>
+        <h3><b><font size = "4"> <?php echo $row['poll_name'] ?> </font></b></h3>
+        <h3><b><font size = "4"><?php echo $row['question'] ?></font> </b> </h3>
 
-        <h3><b>Options: </b></h3><?php
+        <h3><b><font size = "4">Options: </font></b></h3><?php
             $id = $row['id'];
             $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
             $result1 = $mysqli->query($sq);
