@@ -26,9 +26,11 @@ function myFun() {
   $poll_id = $_SESSION['comment_id'];
   $comment_id = uniqid();
   $user = $_SESSION['username'];
+  if (isset($_POST['comments'])) {
   $comment_text = $mysqli->real_escape_string($_POST['comments']);
   $_POST['comments'] = '';
   $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$comment_id', '$poll_id', '$user', '$comment_text')";
+}
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
