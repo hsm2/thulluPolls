@@ -35,8 +35,8 @@ echo $_SESSION['username']
             <li><a href="create.php">Create Polls</a></li>
           </ul>
         </li>
-        <li><a href="index.html" onclick="<?php session_destroy();?>">Logout</a></li>
         <li><a href="view_polls.php"><?php echo $_SESSION['username'] ?></a></li>
+        <li><a href="index.html" onclick="<?php session_destroy();?>">Logout</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -49,10 +49,9 @@ echo $_SESSION['username']
   <div id="pageintro" class="hoc clear">
     <!-- ################################################################################################ -->
     <article>
-      <p>Donec feugiat faucibus massa</p>
-      <h2 class="heading">Ullamcorper libero ante ipsum vestibulum</h2>
-      <p>Metus euismod non porta nec adipiscing a leo morbi viverra nulla sit amet pharetra dictum lectus quam lobortis</p>
-      <footer><a class="btn" href="#">Porttitor</a></footer>
+      <p>Welcome to Thullu Polls!</p>
+      <h2 class="heading">Create and Participate in Polls.</h2>
+      <p>Share Opinions and get Opinions</p>
     </article>
     <!-- ################################################################################################ -->
   </div>
