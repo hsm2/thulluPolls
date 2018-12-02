@@ -9,7 +9,6 @@ echo $_SESSION['username']
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['private_poll_id'] = $_POST['poll_id'];
-    echo "hello";
     header("Location:private.php");
 		ob_flush();
 }
@@ -88,7 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <h2 class="gradient-text">Private Poll Id:</h2>
     								<form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
                         <input type="text" placeholder="Poll Id" name="poll_id" required />
-    								    <button class="btn btn-gradient" type="submit">Participate!</button>
+    								    <input type="submit" value="vote" name="vote" class="btn btn-gradient"/>
     								</form>
                   </div>
                 </address>
