@@ -201,9 +201,9 @@ $mysqli->close();
   	<body>
       <div class="dtc animate-box">
         <center>
-        <h2 class="gradient-text">Public Polls</h2>
-        <a class="topnav" href="welcome.php" title="Homepage">Home</a><br>
-        <a class="topnav" href="private_id.php" title="Private Polls">Private Polls</a>
+        <h2 >Public Polls</h2>
+        <a  href="welcome.php" title="Homepage">Home</a><br>
+        <a  href="private_id.php" title="Private Polls">Private Polls</a>
       </div>
     </body>
 
