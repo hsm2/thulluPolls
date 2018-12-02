@@ -251,7 +251,7 @@ $mysqli->close();
                     <p><font size = "3">Comments:</font></p>
                     <div class="myBox">
                       <?php
-                          $id = $_SESSION['poll_id'];
+                          $id = $row['id'];
                           $sq = "SELECT user_id, comment_text FROM Comments WHERE poll_id = '$id'";
                           $res = $mysqli->query($sq);
                           if($res->num_rows > 0) {
