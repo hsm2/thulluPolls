@@ -23,63 +23,49 @@ if($result->num_rows > 0) {
 echo $options;
 echo "not";
 
-
-if($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-      array_push($options, $row);
-  }
-}
-
-
-
 ?>
-
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="require.js">
-      console.log("5");
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      console.log("8");
-      var mysql = require('mysql');
-
-
-      con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-      });
-
-      con.connect(function(err) {
-        if (err) throw err;
-        con.query("SELECT * FROM Options", function (err, result, fields) {
-          if (err) throw err;
-          console.log(result);
-        });
-      });
-
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
+//
+// <html>
+//   <head>
+//     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+//     <script type="text/javascript" src="require.js">
+//       console.log("5");
+//       google.charts.load('current', {'packages':['corechart']});
+//       google.charts.setOnLoadCallback(drawChart);
+//       console.log("8");
+//       var mysql = require('mysql');
+//
+//
+//       con.connect(function(err) {
+//         if (err) throw err;
+//         console.log("Connected!");
+//       });
+//
+//       con.connect(function(err) {
+//         if (err) throw err;
+//         con.query("SELECT * FROM Options", function (err, result, fields) {
+//           if (err) throw err;
+//           console.log(result);
+//         });
+//       });
+//
+//
+//       function drawChart() {
+//         var data = google.visualization.arrayToDataTable([
+//           ['Task', 'Hours per Day'],
+//           ['Work',     11],
+//           ['Eat',      2],
+//           ['Commute',  2],
+//           ['Watch TV', 2],
+//           ['Sleep',    7]
+//         ]);
+//
+//         var options = {
+//           title: 'My Daily Activities'
+//         };
+//
+//         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+//
+//         chart.draw(data, options);
+//       }
+//     </script>
