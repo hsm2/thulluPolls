@@ -244,7 +244,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
-                        <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?= $_SESSION['comment'] = "no"?>"/>
+                        <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?php $_SESSION['poll_id'] = $id?>"/>
                       </center>
                         <div class="module"> </div>
                     </form>
