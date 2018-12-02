@@ -127,7 +127,7 @@ if ($result2->num_rows > 0) {
      var data2 = [];
      var data3 = [];
      var data4 = [];
-     console.log("HELLO");
+     console.log("<?php echo $data1votes[0] ?>");
      <?php
         for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
           ?>data1.push(<?php $data1dates[$i]?>, <?php $data1votes[$i]?>);
