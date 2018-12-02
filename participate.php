@@ -261,7 +261,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id_comment'] = $id?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php echo "hello"; $_SESSION['poll_id_comment'] = $id?>">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comment" required />
                         <input type="submit" value="comment" name=<?= $id ?> class="btn"/>
