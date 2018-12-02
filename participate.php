@@ -224,7 +224,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="#" onclick="<?php $_SESSION['poll_id_stats'] = $row['id']?>">View Statistics</a>
+                <?php echo $row['poll_name']?> <a href="stats.php" onclick="<?php $_SESSION['poll_id_stats'] = $row['id']?>">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
               </header>
@@ -252,7 +252,6 @@ $mysqli->close();
                     <div class="myBox">
                       <?php
                           $id = $row['id'];
-                          echo "hello";
                           $sq = "SELECT user_id, comment_text FROM Comments WHERE poll_id = '$id'";
                           $res = $mysqli->query($sq);
                           if($res->num_rows > 0) {
