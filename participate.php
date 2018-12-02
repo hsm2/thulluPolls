@@ -3,8 +3,9 @@
 ?>
 
 <?php
-@session_start();
+session_start();
 echo $_SESSION['username']
+echo "hello";
 ?>
 
 <?php
