@@ -42,11 +42,11 @@ $_SESSION['flag'] = TRUE;
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  if (isset($_POST['view_stats'])) {
-    $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
-    header("location:stats.php");
-    ob_flush();
-  }
+  // if (isset($_POST['view_stats'])) {
+  //   $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
+  //   header("location:stats.php");
+  //   ob_flush();
+  // }
   if (isset($_POST['comment'])) {
     echo "hello";
     $_SESSION['flag'] = TRUE;
