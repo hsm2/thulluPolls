@@ -163,7 +163,7 @@ $mysqli->close();
 
       $owner = $_SESSION['username'];
       $id = $_SESSION['private_poll_id'];
-      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner'";
+      $sql = "SELECT * FROM Poll WHERE  id='$id'";
       $result = $mysqli->query($sql);
 
       ?>
