@@ -161,10 +161,10 @@ $mysqli->close();
       $_SESSION['message'] = '';
       $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-      $owner = $_SESSION['username'];
       $id = $_SESSION['private_poll_id'];
+      $sql = "SELECT * FROM Poll WHERE id = '$id'";
+      $result = $mysqli->query($sql);
       echo $id;
-      $sql = "SELECT * FROM Poll WHERE id='$id'";
       $result = $mysqli->query($sql);
 
       ?>
