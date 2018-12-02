@@ -9,7 +9,9 @@ session_start();
 $_SESSION['message'] = '';
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  echo "helo";
 	$username = $mysqli->real_escape_string($_POST['username']);
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$_SESSION['username'] = $username;
@@ -65,6 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					<span class="login100-form-title p-b-33">
 						Account Login
 					</span>
+          <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="username" placeholder="Username">
