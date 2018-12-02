@@ -20,15 +20,14 @@ if($result->num_rows > 0) {
   }
 }
 
-echo $options;
+echo $options[1];
 echo "not";
 
 ?>
-//
-// <html>
-//   <head>
-//     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-//     <script type="text/javascript" src="require.js">
+ <html>
+   <head>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript" src="require.js">
 //       console.log("5");
 //       google.charts.load('current', {'packages':['corechart']});
 //       google.charts.setOnLoadCallback(drawChart);
