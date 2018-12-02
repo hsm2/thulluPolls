@@ -22,7 +22,7 @@ echo $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  if (isset($_POST['comment'])) {
+  if (isset($_POST['comm'])) {
     echo "hello";
     $poll_id = $_SESSION['poll_id_comment'];
     $id = uniqid();
@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           // echo "`hello`";
     }
   }
+  heading("location:participate.php");
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
@@ -265,10 +266,10 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php echo "hello"; $_SESSION['poll_id_comment'] = $id?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php$_SESSION['poll_id_comment'] = $id?>">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comment" required />
-                        <input type="submit" value="comment" name="comment" class="btn"/>
+                        <input type="submit" value="comm" name="comment" class="btn"/>
                       </center>
                         <div class="module"> </div>
                       </form>
