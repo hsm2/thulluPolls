@@ -93,6 +93,10 @@ if ($result2->num_rows > 0) {
     ?> <h2> <?php echo $data1dates[0]?> </h2> <?php
     $c = $c + 1;
   }
+  ?> <h2> <?php echo "adddkjf"?> </h2> <?php
+}
+else {
+  ?> <h2> <?php echo "ahhhhh no values"?> </h2> <?php
 }
 
 
