@@ -265,11 +265,12 @@ $mysqli->close();
                         }
                       }
                       ?>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $row['id']?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="<?php $_SESSION['poll_id'] = $row['id']?>">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
+                        <input type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
                       </center>
                         <div class="module"> </div>
                     </form>
@@ -286,7 +287,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="<?php $_SESSION['id'] = $row['id'] ?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
