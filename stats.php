@@ -33,15 +33,14 @@ if($result->num_rows > 0) {
 
        var data = google.visualization.arrayToDataTable([
          ['Task', 'Hours per Day'],
-         ['Work',     11],
-         ['Eat',      2],
-         ['Commute',  2],
-         ['Watch TV', 2],
-         ['Sleep',    7]
+         [<?php $options[0] ?>,     <?php $votes[0]?>],
+         [<?php $options[1]?>,      <?php $votes[1]?>],
+         [<?php $options[2]?>,  <?php $votes[2]?>],
+         [<?php $options[3]?>, <?php $votes[3]?>]
        ]);
 
        var options = {
-         title: 'My Daily Activities'
+         title: 'Statistics'
        };
 
        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
