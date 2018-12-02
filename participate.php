@@ -19,13 +19,15 @@ echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
 
+<script>
+  function fu(name) {
+    echo "Fucking here";
+    <?php$_SESSION['poll_id_stats'] = ?> name <?php;?>
+  }
+</script>
+
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-
-function fu($name) {
-  echo "Fucking here";
-  $_SESSION['poll_id_stats'] = $name;
-}
 
 function myFun() {
   $poll_id = $_SESSION['comment_id'];
@@ -56,8 +58,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_POST['id'];
+    $timestamp = time();
 
-    $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id)" . "VALUES ('$poll_id', '$number', '$user')";;
+    $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id, timestamp)" . "VALUES ('$poll_id', '$number', '$user', $timestamp)";;
     if(($mysqli->query($insert_vote) === true)) {
       //echo "inserted";
     }
