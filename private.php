@@ -164,20 +164,18 @@ $mysqli->close();
       $owner = $_SESSION['username'];
       $id = $_SESSION['private_poll_id'];
       echo $id;
-      $sql = "SELECT * FROM Poll WHERE  id='$id'";
+      echo "hello";
+      $sql = "SELECT * FROM Poll WHERE id='$id'";
       $result = $mysqli->query($sql);
 
       ?>
       <!-- ################################################################################################ -->
       <div id="comments">
-        <h2>Public Polls</h2>
+        <h2>Private Poll</h2>
         <ul>
       <?php
 
       if ($result->num_rows > 0) {
-        $_SESSION['idarr'] = array();
-        $_SESSION['commentarr'] = array();
-        $c = 0;
         while($row = $result->fetch_assoc()) {
           ?>
           <li>
