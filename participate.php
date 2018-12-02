@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
-    $poll_id = $_SESSION['poll_id'];
+    $poll_id = $_POST['id'];
 
     $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id)" . "VALUES ('$poll_id', '$number', '$user')";;
     if(($mysqli->query($insert_vote) === true)) {
