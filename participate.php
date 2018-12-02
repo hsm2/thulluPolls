@@ -153,7 +153,6 @@ $mysqli->close();
 <div class="wrapper bgded overlay" style="background-image:url('images/Green.html');">
   <div id="pageintro" class="hoc clear">
     <!-- ################################################################################################ -->
-    <article>
       <?php
       $_SESSION['message'] = '';
       $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
@@ -249,7 +248,6 @@ $mysqli->close();
       ?>
       </div>
 
-    </article>
     <!-- ################################################################################################ -->
   </div>
 </div>
