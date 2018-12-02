@@ -2,6 +2,8 @@
  ob_start();  //begin buffering the output
 ?>
 
+<html>
+
 <?php
 session_start();
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
@@ -32,6 +34,7 @@ $data3dates = array();
 $data4votes = array();
 $data4dates = array();
 $c = 0;
+
 if ($result2->num_rows > 0) {
   while ($row = $result2->fetch_assoc()) {
     $t = $row['timestamp'];
@@ -87,6 +90,7 @@ if ($result2->num_rows > 0) {
     array_push($data2dates, $d);
     array_push($data3dates, $d);
     array_push($data4dates, $d);
+    ?> <h2> <?php echo $data1datas[0]?> </h2> <?php
     $c = $c + 1;
   }
 }
