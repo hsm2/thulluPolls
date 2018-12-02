@@ -122,29 +122,27 @@ if ($result2->num_rows > 0) {
    </script>
 
    <script>
-   var data1 = [];
-   var data2 = [];
-   var data3 = [];
-   var data4 = [];
-
-   <?php
-      for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
-        ?>data1.push(<?php $data1dates[$i]?>, <?php $data1votes[$i]?>);
-        data2.push(<?php $data2dates[$i]?>, <?php $data2votes[$i]?>);
-        data3.push(<?php $data3dates[$i]?>, <?php $data3votes[$i]?>);
-        data4.push(<?php $data4dates[$i]?>, <?php $data4votes[$i]?>);
-        console.log("here");
-        <?php
-      }
-   ?>
-
-   console.log(data1);
-   console.log(data2);
-   console.log(data3);
-   console.log(data4);
-
    window.onload = function () {
+     var data1 = [];
+     var data2 = [];
+     var data3 = [];
+     var data4 = [];
 
+     <?php
+        for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
+          ?>data1.push(<?php $data1dates[$i]?>, <?php $data1votes[$i]?>);
+          data2.push(<?php $data2dates[$i]?>, <?php $data2votes[$i]?>);
+          data3.push(<?php $data3dates[$i]?>, <?php $data3votes[$i]?>);
+          data4.push(<?php $data4dates[$i]?>, <?php $data4votes[$i]?>);
+          console.log("here");
+          <?php
+        }
+     ?>
+
+     console.log(data1);
+     console.log(data2);
+     console.log(data3);
+     console.log(data4);
    var chart = new CanvasJS.Chart("chartContainer", {
    	animationEnabled: true,
    	title:{
