@@ -34,7 +34,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           // echo "`hello`";
     }
   }
-  heading("location:participate.php");
+  header("location:participate.php");
+  ob_flush();
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
