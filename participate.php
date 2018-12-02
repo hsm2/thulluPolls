@@ -22,6 +22,7 @@ echo $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if (isset($_POST['comment'])) {
     $poll_id = $_SESSION['poll_id_comment'];
     $id = uniqid();
     $user = $_SESSION['username'];
@@ -29,9 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_POST['comment'] = '';
     $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
     if(($mysqli->query($s) === true)){
-          // echo "hello";
+          // echo "`hello`";
     }
-
+  }
+  if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
 
@@ -80,6 +82,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $mysqli->query($sql4);
+  }
 }
 
 $mysqli->close();
@@ -244,7 +247,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
-                        <input type="submit" value="verify" name=<?= $id ?> class="btn btn-block btn-primary" onClick = "<?php $_SESSION['poll_id'] = $id?>"/>
+                        <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary" onClick = "<?php $_SESSION['poll_id'] = $id?>"/>
                       </center>
                         <div class="module"> </div>
                     </form>
@@ -264,7 +267,7 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php echo "hello"; $_SESSION['poll_id_comment'] = $id?>">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comment" required />
-                        <input type="submit" value="comment" name=<?= $id ?> class="btn"/>
+                        <input type="submit" value="comment" name="comment" class="btn"/>
                       </center>
                         <div class="module"> </div>
                       </form>
@@ -279,6 +282,7 @@ $mysqli->close();
     else {
       echo "0 results";
     }
+    $mysqli->close();
     ?>
       </ul>
       </div>
