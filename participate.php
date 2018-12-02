@@ -248,7 +248,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="stats.php" name="id" value= "<?php echo $row['id'] ?>" onclick="<?php $_SESSION['poll_id_stats'] = $_POST['id']?>">View Statistics</a>
+                <?php echo $row['poll_name']?> <a href="stats.php" name="<?php echo $row['id'] ?>" onclick="<?php $_SESSION['poll_id_stats'] = $_POST['name']?>">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
               </header>
