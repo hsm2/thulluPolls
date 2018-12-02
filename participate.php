@@ -3,7 +3,7 @@
 border: none;
 padding: 5px;
 font: 12px/14px sans-serif;
-width: 250px;
+width: 500px;
 height: 100px;
 overflow: scroll;
 }
