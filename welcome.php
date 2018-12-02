@@ -51,7 +51,7 @@ echo $_SESSION['username']
     <article>
       <p>Welcome to Thullu Polls!</p>
       <h2 class="heading">Create and Participate in Polls.</h2>
-      <p>Share Opinions and get Opinions</p>
+      <p>Share Opinions and Get Opinions</p>
     </article>
     <!-- ################################################################################################ -->
   </div>
