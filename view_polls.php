@@ -36,7 +36,7 @@ echo $_SESSION['username']
           </ul>
         </li>
         <li><a href="view_polls.php"><?php echo $_SESSION['username'] ?></a></li>
-        <li><a href="index.html" >Logout</a></li>
+        <li><a href="logout.php" >Logout</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
