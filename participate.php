@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_POST['comment'] = '';
     $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
     if(($mysqli->query($s) === true)){
-          echo "hello";
+          // echo "hello";
     }
 
     $number = $_POST['number'];
