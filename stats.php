@@ -29,20 +29,6 @@ if($result->num_rows > 0) {
      google.charts.setOnLoadCallback(drawChart);
 
      function drawChart() {
-
-
-       // echo $options[0];
-       // echo $options[1];
-       // echo $options[2];
-       // echo $options[3];
-       //
-       // echo $votes[0];
-       // echo $votes[1];
-       // echo $votes[2];
-       // echo $votes[3];
-       //
-
-
        var data = google.visualization.arrayToDataTable([
         ['Task', 'Hours per Day'],
         ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
