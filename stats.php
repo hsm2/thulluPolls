@@ -1,3 +1,39 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
+<?php
+session_start();
+$mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
+$id = $_SESSION['poll_id_stats'];
+
+$sql = "SELECT option_name, total_votes FROM Options WHERE poll_id = '$id' GROUP BY option_num";
+$result = $mysqli->query($sql);
+
+$options = array();
+$votes = array();
+
+if($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+      array_push($options, $row['option_name']);
+      array_push($votes, $row['total_votes']);
+  }
+}
+
+echo $options;
+echo "not";
+
+
+if($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+      array_push($options, $row);
+  }
+}
+
+
+
+?>
+
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -8,12 +44,6 @@
       console.log("8");
       var mysql = require('mysql');
 
-      var con = mysql.createConnection({
-        host: "127.0.0.1",
-        user: "thullupolls_root",
-        password: "Surabhiharish",
-        database: "thullupolls_thullupolls"
-      });
 
       con.connect(function(err) {
         if (err) throw err;
