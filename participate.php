@@ -1,3 +1,14 @@
+<style>
+.myBox {
+border: none;
+padding: 5px;
+font: 12px/14px sans-serif;
+width: 250px;
+height: 100px;
+overflow: scroll;
+}
+
+</style>
 <?php
  ob_start();  //begin buffering the output
 ?>
@@ -5,7 +16,6 @@
 <?php
 session_start();
 echo $_SESSION['username'];
-echo "hello";
 ?>
 
 <?php
