@@ -79,7 +79,7 @@ $mysqli->close();
 					<span class="login100-form-title p-b-33">
 						Register Account
 					</span>
-
+          <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
 					<div class="wrap-input100 validate-input" data-validate = "Full name is required">
 						<input class="input100" type="text" name="name" placeholder="Full Name" required>
 						<span class="focus-input100-1"></span>
