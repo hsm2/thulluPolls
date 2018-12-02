@@ -133,10 +133,11 @@ if ($result2->num_rows > 0) {
         data2.push(<?php $data2dates[$i]?>, <?php $data2votes[$i]?>);
         data3.push(<?php $data3dates[$i]?>, <?php $data3votes[$i]?>);
         data4.push(<?php $data4dates[$i]?>, <?php $data4votes[$i]?>);
+        console.log("here");
         <?php
       }
    ?>
-   
+
    console.log(data1);
    console.log(data2);
    console.log(data3);
