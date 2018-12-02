@@ -18,6 +18,7 @@ echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 mysqli_close($link);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  echo "Im here";
     if($_POST['password'] == $_POST['confirmpassword']){
         $name = $mysqli->real_escape_string($_POST['name']);
         $id = $mysqli->real_escape_string($_POST['id']);
@@ -82,7 +83,7 @@ $mysqli->close();
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form" enctype="multipart/form-data" autocomplete="off" method="post">
+				<form method="post" class="login100-form validate-form" enctype="multipart/form-data" autocomplete="off" >
 					<span class="login100-form-title p-b-33">
 						Register Account
 					</span>
