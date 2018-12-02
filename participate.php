@@ -9,6 +9,7 @@ overflow: scroll;
 }
 
 </style>
+
 <?php
  ob_start();  //begin buffering the output
 ?>
