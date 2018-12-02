@@ -270,7 +270,7 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
-                        <input type="submit" value="comment" name="comment" class="btn" />
+                        <input type="submit" value="<?php echo $id ?>" name="comment" class="btn" />
                       </center>
                         <div class="module"> </div>
                       </form>
