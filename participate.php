@@ -270,7 +270,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php if (isset($_POST['comment']) && $_SESSION['flag']) {$_SESSION['comment_id'] = $id; $_SESSION['flag'] = FALSE;}?>" >
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?phpif (isset($_POST['comment']) && $_SESSION['flag']) {$_SESSION['comment_id'] = $id; $_SESSION['flag'] = FALSE;} echo "thujlu";?>" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="text" value="<?php $row['id']?>" name = "id" readonly />
