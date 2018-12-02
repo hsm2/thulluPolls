@@ -20,13 +20,6 @@ echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
 
-<script>
-  function fu(name) {
-    echo "Fucking here";
-    <?php$_SESSION['poll_id_stats'] = ?> name <?php;?>
-  }
-</script>
-
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
@@ -257,7 +250,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="fu(this.getAttribute('name'))">View Statistics</a>
+                <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
               </header>
