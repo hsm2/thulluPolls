@@ -23,6 +23,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['comment'])) {
+    echo "hello";
     $poll_id = $_SESSION['poll_id_comment'];
     $id = uniqid();
     $user = $_SESSION['username'];
