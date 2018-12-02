@@ -111,9 +111,16 @@ echo $_SESSION['username']
                   echo $option ?> with <?php echo $max?> total votes.</p>
                   </div>
                 </address>
-                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
             </article>
+
           </li>
+          <?php
+        }
+      }
+      else {
+        echo "0 results";
+      }
+      ?>
         </ul>
       </div>
       <!-- ################################################################################################ -->
