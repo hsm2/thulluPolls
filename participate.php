@@ -51,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
+    $user = $_SESSION['username'];
     $poll_id = $_POST['id'];
     $timestamp = time();
 
