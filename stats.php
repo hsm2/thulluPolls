@@ -45,7 +45,10 @@ if($result->num_rows > 0) {
 
        var data = google.visualization.arrayToDataTable([
          ['Task', 'Hours per Day'],
-         ["<?php echo $options[0] ?>",     <?php echo $votes[1] ?> ]
+         ["<?php echo $options[0] ?>",  3],
+         ["<?php echo $options[1]?>",    2],
+          ["<?php echo $options[2]?>",  4],
+          ["<?php echo $options[3]?>", 1]
 
        ]);
 
