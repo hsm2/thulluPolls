@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id)" . "VALUES ('$poll_id', '$number', '$user')";;
     if(($mysqli->query($insert_vote) === true)) {
-      echo "inserted";
+      //echo "inserted";
     }
 
     if ($_POST['Like'] == 'like') {
@@ -248,7 +248,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="stats.php" onclick="<?php $_SESSION['poll_id_stats'] = $row['id']?>">View Statistics</a>
+                <?php echo $row['poll_name']?> <a href="stats.php" name="id" value= "<?php echo $row['id'] ?>" onclick="<?php $_SESSION['poll_id_stats'] = $_POST['id']?>">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
               </header>
