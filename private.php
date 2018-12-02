@@ -34,6 +34,7 @@ text-transform: uppercase; /* Make letters uppercase */
 
 <?php
 session_start();
+session_cache_limiter('private');
 echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
