@@ -251,7 +251,7 @@ $mysqli->close();
                           $res = $mysqli->query($sq);
                           if($res->num_rows > 0) {
                             while($row1 = $res->fetch_assoc()) {
-                              ?> <p> <b><?php echo $row1['user_id']?><b>  : <?php echo $row1['comment_text'] ?> </p> <?php
+                              ?> <p> <b><?php echo $row1['user_id']?></b>  : <?php echo $row1['comment_text'] ?> </p> <?php
                             }
                           }
                           ?>
