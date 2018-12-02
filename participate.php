@@ -25,7 +25,8 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['comment'])) {
     echo "hello";
-    $poll_id = $mysqli->real_escape_string($_POST['id']);
+    $_SESSION['flag'] = TRUE;
+    $poll_id = $_SESSION['comment_id']
     $comment_id = uniqid();
     $user = $_SESSION['username'];
     $comment_text = $mysqli->real_escape_string($_POST['comments']);
@@ -269,7 +270,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php if ($_SESSION['flag']) {$_SESSION['comment_id'] = $id; $_SESSION['flag'] = FALSE;}?>" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="text" value="<?php $row['id']?>" name = "id" readonly />
