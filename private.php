@@ -8,6 +8,11 @@ height: 100px;
 overflow: scroll;
 }
 
+#container div{
+    display:inline-block;
+    width:130px;
+}
+
 </style>
 <?php
  ob_start();  //begin buffering the output
@@ -161,22 +166,19 @@ $mysqli->close();
       $_SESSION['message'] = '';
       $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-      $owner = $_SESSION['username'];
       $id = $_SESSION['private_poll_id'];
-      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner'";
+      $sql = "SELECT * FROM Poll WHERE id = '$id'";
+      $result = $mysqli->query($sql);
       $result = $mysqli->query($sql);
 
       ?>
       <!-- ################################################################################################ -->
       <div id="comments">
-        <h2>Public Polls</h2>
+        <h2>Private Poll</h2>
         <ul>
       <?php
 
       if ($result->num_rows > 0) {
-        $_SESSION['idarr'] = array();
-        $_SESSION['commentarr'] = array();
-        $c = 0;
         while($row = $result->fetch_assoc()) {
           ?>
           <li>
@@ -192,8 +194,6 @@ $mysqli->close();
                 <p>Options:<br></p>
                   <?php
                       $id = $row['id'];
-                      array_push($_SESSION['idarr'], $id);
-                      array_push($_SESSION['commentarr'], "");
                       $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
                       $result1 = $mysqli->query($sq);
                       if($result1->num_rows > 0) {
@@ -205,9 +205,11 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
-                        <input type="checkbox" name="Like" value="like"> Like <br><br><br>
+                        <input type="checkbox" name="Like" value="like"> Like 
+                        <div id="container">
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
-                        <input type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input style="width: .05px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                      </div>
                       </center>
                         <div class="module"> </div>
                     </form>
@@ -228,7 +230,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
-                        <input type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input style="width: .05px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
                       </center>
                         <div class="module"> </div>
                       </form>
