@@ -273,7 +273,7 @@ $mysqli->close();
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
-                        <input style="width: .000000005px; height: .000000005px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input  type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
                         <div class="module"> </div>
                     </form>
