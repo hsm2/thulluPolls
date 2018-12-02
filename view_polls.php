@@ -30,6 +30,7 @@ echo $_SESSION['username']
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="participate.php">Participate in Polls</a></li>
+            <li><a href="private_id.php">Participate in Private Polls</a></li>
             <li><a href="view_polls.php">View Your Polls</a></li>
             <li><a href="create.php">Create Polls</a></li>
           </ul>
