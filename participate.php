@@ -252,6 +252,7 @@ $mysqli->close();
                     <div class="myBox">
                       <?php
                           $id = $row['id'];
+                          echo "hello";
                           $sq = "SELECT user_id, comment_text FROM Comments WHERE poll_id = '$id'";
                           $res = $mysqli->query($sq);
                           if($res->num_rows > 0) {
