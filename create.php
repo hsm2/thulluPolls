@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <!-- ################################################################################################ -->
     <ul>
       <li><a href="welcome.php">Home</a></li>
-      <li><a href="view_polls.php">View Your Polls</a></li>
+      <li><a href="view_polls.php">Create Poll</a></li>
     </ul>
     <!-- ################################################################################################ -->
   </div>
@@ -143,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                   <div class="comcont">
                     <form class="form"  method="post" enctype="multipart/form-data" autocomplete="off">
     						      <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-    						      <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
+    						      Poll Name <input style="width: 300px;  padding-right: 20px; border: 3px solid #555;" type="text" placeholder="Poll Name" name="name" required /> <br><br>
     						      Question <br><input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Question" name="q1" /> <br><br>
     						      Answer Choice 1 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 1" name="a1"/><br><br>
     						      Answer Choice 2 <br> <input style=" width: 300px; height: 50px; border: 3px solid #555;" type="text" placeholder="Answer Choice 2" name="a2"/><br><br>
