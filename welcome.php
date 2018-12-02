@@ -37,7 +37,7 @@ echo $_SESSION['username']
         </li>
         <li><a href="login.php">Login</a></li>
         <li><a href="register.php">Resgister</a></li>
-        <li><?php echo $_SESSION['username'] ?></li>
+        <li><a href="view_polls.php"><?php echo $_SESSION['username'] ?></a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
