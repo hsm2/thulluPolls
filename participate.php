@@ -24,7 +24,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['comment'])) {
     echo "hello";
-    $poll_id = $id;
+    $poll_id = $_SESSION['comment_id'];
     $comment_id = uniqid();
     $user = $_SESSION['username'];
     $comment_text = $mysqli->real_escape_string($_POST['comments']);
@@ -36,6 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   header("location:participate.php");
   ob_flush();
+
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_SESSION['poll_id'];
@@ -250,7 +251,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
-                        <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary" onClick = "<?php $_SESSION['poll_id'] = $id?>"/>
+                        <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
                       </center>
                         <div class="module"> </div>
                     </form>
@@ -267,7 +268,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" >
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php$_SESSION['comment_id'] = $id?>" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment" class="btn" />
