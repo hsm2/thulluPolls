@@ -35,8 +35,7 @@ echo $_SESSION['username']
             <li><a href="create.php">Create Polls</a></li>
           </ul>
         </li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Resgister</a></li>
+        <li><a href="index.html" onclick="<?php session_destroy();?>">Logout</a></li>
         <li><a href="view_polls.php"><?php echo $_SESSION['username'] ?></a></li>
       </ul>
     </nav>
