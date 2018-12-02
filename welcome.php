@@ -1,3 +1,13 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
+<?php
+session_start();
+echo $_SESSION['username']
+?>
+
+
 <html lang="">
 <head>
 <title>Thullu Polls</title>
@@ -21,7 +31,7 @@
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="participate.php">Participate in Polls</a></li>
-            <li><a href="view_polls">View Your Polls</a></li>
+            <li><a href="view_polls.php">View Your Polls</a></li>
             <li><a href="create.php">Create Polls</a></li>
           </ul>
         </li>
