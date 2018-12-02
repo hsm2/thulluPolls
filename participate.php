@@ -16,6 +16,7 @@ overflow: scroll;
 <?php
 session_start();
 echo $_SESSION['username'];
+$_SESSION['flag'] = TRUE;
 ?>
 
 <?php
@@ -24,6 +25,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['comment'])) {
     echo "hello";
+    $_SESSION['flag'] = TRUE;
     $poll_id = $mysqli->real_escape_string($_POST['id']);
     $comment_id = uniqid();
     $user = $_SESSION['username'];
@@ -268,11 +270,10 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['comment_id'] = $row['id']?>" >
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php if ($_SESSION['flag']) {$_SESSION['comment_id'] = $id; $_SESSION['flag'] = FALSE;}?>" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
-                        <input type="text" value="<?php $row['id'] ?>" name="id" readonly />
                       </center>
                         <div class="module"> </div>
                       </form>
