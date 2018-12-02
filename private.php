@@ -164,7 +164,6 @@ $mysqli->close();
       $owner = $_SESSION['username'];
       $id = $_SESSION['private_poll_id'];
       echo $id;
-      echo "hello";
       $sql = "SELECT * FROM Poll WHERE id='$id'";
       $result = $mysqli->query($sql);
 
@@ -191,8 +190,6 @@ $mysqli->close();
                 <p>Options:<br></p>
                   <?php
                       $id = $row['id'];
-                      array_push($_SESSION['idarr'], $id);
-                      array_push($_SESSION['commentarr'], "");
                       $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
                       $result1 = $mysqli->query($sq);
                       if($result1->num_rows > 0) {
