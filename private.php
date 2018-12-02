@@ -201,8 +201,10 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
+                        <div style="display: inline-block">
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
                         <input style="width: .05px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                      </div>
                       </center>
                         <div class="module"> </div>
                     </form>
