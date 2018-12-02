@@ -154,16 +154,21 @@ $mysqli->close();
   <div id="pageintro" class="hoc clear">
     <!-- ################################################################################################ -->
     <article>
-      <?php
-      $_SESSION['message'] = '';
-      $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-
-      $owner = $_SESSION['username'];
-      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner'";
-      $result = $mysqli->query($sql);
-
       ?>
+      <div id="gtco-project">
+        <div class="container">
+          <div class="row row-pb-md">
 
+            <script src="js/jquery.min.js"></script>
+          	<!-- jQuery Easing -->
+          	<script src="js/jquery.easing.1.3.js"></script>
+          	<!-- Bootstrap -->
+          	<script src="js/bootstrap.min.js"></script>
+          	<!-- Waypoints -->
+          	<script src="js/jquery.waypoints.min.js"></script>
+
+          	<!-- Main -->
+          	<script src="js/main.js"></script>
       <?php
 
       if ($result->num_rows > 0) {
@@ -215,14 +220,35 @@ $mysqli->close();
                   <a class="topnav" href="stats.php" title="Homepage" onClick = "<?php $_SESSION['poll_id_stats'] = $id?>"><font color="red">View Statistics of this poll.</font></a>
                   <?php
               ?>
+          </div>
+      	<!-- jQuery -->
+      	<script src="js/jquery.min.js"></script>
+      	<!-- jQuery Easing -->
+      	<script src="js/jquery.easing.1.3.js"></script>
+      	<!-- Bootstrap -->
+      	<script src="js/bootstrap.min.js"></script>
+      	<!-- Waypoints -->
+      	<script src="js/jquery.waypoints.min.js"></script>
 
-              <?php
-            }
-          }
-          else {
-            echo "0 results";
-          }
-          ?>
+      	<!-- Main -->
+      	<script src="js/main.js"></script>
+          <?php
+        }
+      }
+      else {
+        echo "0 results";
+      }
+      ?>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <a href="#" class="btn btn-gradient gtco-load"><i class="ti-reload"></i> load more...</a>
+        </div>
+      </div>
+      </div>
+      </div>
+      <?php
+      ?>
 
     </article>
     <!-- ################################################################################################ -->
