@@ -10,6 +10,7 @@ echo $_SERVER['REQUEST_METHOD'];
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   echo "Im here";
     if($_POST['password'] == $_POST['confirmpassword']){
+        echo "hello"
         $name = $mysqli->real_escape_string($_POST['name']);
         $id = $mysqli->real_escape_string($_POST['id']);
         $password = $mysqli->real_escape_string($_POST['password']);
@@ -33,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					}
 				}
     else{
+        echo "goodbye";
         $_SESSION['message'] = "Two passwords do not match! Please type a valid password.";
     }
 }
