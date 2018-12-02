@@ -64,8 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Problem 4";
 		$flag = false;
 	}
-	$_SESSION['show_poll'] = $poll_id;
-  header("location: poll_id.php");
+  header("location: view_polls.php");
   ob_flush();
 	$mysqli->close();
 }
