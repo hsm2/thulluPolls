@@ -284,7 +284,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['comment_id'] = $id; myFun(); if(FALSE AND isset($_POST['comment']) AND $_SESSION['flag']) {$_SESSION['comment_id'] = $id; $_SESSION['flag'] = FALSE;}?>" >
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
