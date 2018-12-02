@@ -30,7 +30,7 @@ if($result->num_rows > 0) {
 
      function drawChart() {
 
-       
+
        // echo $options[0];
        // echo $options[1];
        // echo $options[2];
@@ -45,7 +45,7 @@ if($result->num_rows > 0) {
 
        var data = google.visualization.arrayToDataTable([
          ['Task', 'Hours per Day'],
-         ['Work',     11],
+         ["<?php echo $options[0] ?>",     11],
           ['Eat',      2],
           ['Commute',  2],
           ['Watch TV', 2],
