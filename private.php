@@ -164,7 +164,6 @@ $mysqli->close();
       $id = $_SESSION['private_poll_id'];
       $sql = "SELECT * FROM Poll WHERE id = '$id'";
       $result = $mysqli->query($sql);
-      echo $id;
       $result = $mysqli->query($sql);
 
       ?>
