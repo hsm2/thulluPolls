@@ -23,6 +23,7 @@ $_SESSION['flag'] = TRUE;
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 function fu($name) {
+  echo "Fucking here";
   $_SESSION['poll_id_stats'] = $name;
 }
 
