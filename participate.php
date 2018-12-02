@@ -22,6 +22,10 @@ $_SESSION['flag'] = TRUE;
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
+function fu($name) {
+  $_SESSION['poll_id_stats'] = $name;
+}
+
 function myFun() {
   $poll_id = $_SESSION['comment_id'];
   $comment_id = uniqid();
@@ -248,7 +252,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="stats.php" name="<?php echo $row['id'] ?>" onclick="<?php $_SESSION['poll_id_stats'] = $_POST['name']?>">View Statistics</a>
+                <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="fu(this.getAttribute('name'))">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
               </header>
