@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['comment'])) {
     echo "hello";
     $_SESSION['flag'] = TRUE;
-    $poll_id = $_SESSION['comment_id'];
+    $poll_id = $mysqli->real_escape_string($_POST['id']);
     $comment_id = uniqid();
     $user = $_SESSION['username'];
     $comment_text = $mysqli->real_escape_string($_POST['comments']);
@@ -286,10 +286,11 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php if (isset($_POST['comments'])) {$_SESSION['comment_id'] = $id; myFun();} ?>" >
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
+                        <input type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
                       </center>
                         <div class="module"> </div>
                       </form>
