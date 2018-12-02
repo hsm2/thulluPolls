@@ -20,6 +20,16 @@ if($result->num_rows > 0) {
   }
 }
 
+echo $options[0];
+echo $options[1];
+echo $options[2];
+echo $options[3];
+
+echo $votes[0];
+echo $votes[1];
+echo $votes[2];
+echo $votes[3];
+
 
 ?>
 <html>
@@ -35,8 +45,8 @@ if($result->num_rows > 0) {
          ['Task', 'Hours per Day'],
          [<?php $options[0] ?>,     <?php $votes[0]?>],
          [<?php $options[1]?>,      <?php $votes[1]?>],
-         [<?php $options[2]?>,  <?php $votes[2]?>],
-         [<?php $options[3]?>, <?php $votes[3]?>]
+         [<?php $options[2]?>,      <?php $votes[2]?>],
+         [<?php $options[3]?>,      <?php $votes[3]?>]
        ]);
 
        var options = {
