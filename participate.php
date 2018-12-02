@@ -294,7 +294,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
-                        <input style="width: .000000005px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
                         <div class="module"> </div>
                       </form>

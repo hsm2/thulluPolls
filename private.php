@@ -208,7 +208,7 @@ $mysqli->close();
                         <input type="checkbox" name="Like" value="like"> Like
                         <div id="container">
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
-                        <input style="width: .05px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </div>
                       </center>
                         <div class="module"> </div>
@@ -230,7 +230,7 @@ $mysqli->close();
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comments" required />
                         <input type="submit" value="comment" name="comment"  class="btn" />
-                        <input style="width: .05px; height: .05px;" type="text" name="id" value= "<?php echo $row['id'] ?>" readonly />
+                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </center>
                         <div class="module"> </div>
                       </form>
