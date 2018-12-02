@@ -22,7 +22,7 @@ echo $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $poll_id = $_SESSION['poll_id'];
+    $poll_id = $_SESSION['poll_id_comment'];
     $id = uniqid();
     $user = $_SESSION['username'];
     $comment_text = $mysqli->real_escape_string($_POST['comment']);
@@ -261,7 +261,7 @@ $mysqli->close();
                           }
                           ?>
                       </div>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id'] = $id?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="<?php $_SESSION['poll_id_comment'] = $id?>">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Comment on this poll" name="comment" required />
                         <input type="submit" value="comment" name=<?= $id ?> class="btn"/>
