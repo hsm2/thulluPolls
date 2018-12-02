@@ -89,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 							Create an account?
 						</span>
 
-						<a href="signup.php" class="txt2 hov1">
+						<a href="login.php" class="txt2 hov1">
 							Sign up
 						</a>
 					</div>
