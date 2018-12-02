@@ -17,6 +17,9 @@ echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
 mysqli_close($link);
 
+echo $_SERVER['REQUEST_METHOD'];
+echo 'no';
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   echo "Im here";
     if($_POST['password'] == $_POST['confirmpassword']){
