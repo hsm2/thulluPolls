@@ -257,8 +257,8 @@ $mysqli->close();
                       </center>
                         <div class="module"> </div>
 
-                      </form class="div.wpforms-container-full .wpforms-form button[type=submit]">
-                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" />
+                      </form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
+                        <input type="submit" value="View Statistics" name="view_stats"  class="div.wpforms-container-full .wpforms-form button[type=submit]" />
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       <form>
 
