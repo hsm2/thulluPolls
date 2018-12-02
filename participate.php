@@ -47,8 +47,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           // echo "`hello`";
     }
   }
-  header("location:participate.php");
-  ob_flush();
 
   if (isset($_POST['vote'])){
     $number = $_POST['number'];
@@ -100,6 +98,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $mysqli->query($sql4);
   }
+  header("location:participate.php");
+  ob_flush();
 }
 
 $mysqli->close();
@@ -266,7 +266,7 @@ $mysqli->close();
                         }
                       }
                       ?>
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="<?php $_SESSION['poll_id'] = $row['id']?>">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like <br><br><br>
