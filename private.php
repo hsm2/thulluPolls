@@ -13,6 +13,20 @@ overflow: scroll;
     width:130px;
 }
 
+div.wpforms-container-full .wpforms-form button[type=submit] {
+
+color: #0099CC; /* Text color */
+
+background-color: transparent; /* Remove background color */
+
+border: 2px solid #0099CC; /* Border thickness, line style, and color */
+
+border-radius: 5px; /* Adds curve to border corners */
+
+text-transform: uppercase; /* Make letters uppercase */
+
+}
+
 </style>
 <?php
  ob_start();  //begin buffering the output
@@ -28,6 +42,11 @@ $_SESSION['flag'] = TRUE;
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if (isset($_POST['view_stats'])) {
+    $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
+    header("location:stats.php");
+    ob_flush();
+  }
   if (isset($_POST['comment'])) {
     echo "hello";
     $_SESSION['flag'] = TRUE;
@@ -233,7 +252,11 @@ $mysqli->close();
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </center>
                         <div class="module"> </div>
-                      </form>
+
+                      </form class="div.wpforms-container-full .wpforms-form button[type=submit]">
+                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" />
+                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
+                      <form>
 
               </div>
             </article>
