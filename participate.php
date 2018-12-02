@@ -22,13 +22,13 @@ echo $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  if (isset($_POST['comm'])) {
+  if (isset($_POST['comment'])) {
     echo "hello";
     $poll_id = $_SESSION['poll_id_comment'];
     $id = uniqid();
     $user = $_SESSION['username'];
-    $comment_text = $mysqli->real_escape_string($_POST['comment']);
-    $_POST['comment'] = '';
+    $comment_text = $mysqli->real_escape_string($_POST['comments']);
+    $_POST['comments'] = '';
     $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$id', '$poll_id', '$user', '$comment_text')";
     if(($mysqli->query($s) === true)){
           // echo "`hello`";
@@ -269,8 +269,8 @@ $mysqli->close();
                       </div>
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" >
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
-                        <input type="text" placeholder="Comment on this poll" name="comment" required />
-                        <input type="submit" value="comm" name="comment" class="btn"/>
+                        <input type="text" placeholder="Comment on this poll" name="comments" required />
+                        <input type="submit" value="comment" name="comment" class="btn"/>
                       </center>
                         <div class="module"> </div>
                       </form>
