@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     echo "hello";
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
-    header("location:stats.php");
+    header("Location:stats.php");
     ob_flush();
   }
 
