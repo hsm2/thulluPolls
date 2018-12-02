@@ -90,7 +90,7 @@ if ($result2->num_rows > 0) {
     array_push($data2dates, $d);
     array_push($data3dates, $d);
     array_push($data4dates, $d);
-    ?> <h2> <?php echo $data1datas[0]?> </h2> <?php
+    ?> <h2> <?php echo $data1dates[0]?> </h2> <?php
     $c = $c + 1;
   }
 }
