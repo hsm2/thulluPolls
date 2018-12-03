@@ -28,15 +28,11 @@ overflow: scroll;
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$max_q = "SELECT p.poll_name, u.name FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll)";
+$max_q = "SELECT p.poll_name as poll_name, u.name as name FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility="public"";
 $r = $mysqli->query($max_q);
-// $max_p = $r->fetch_assoc();
-if($r == false) {
-  echo "oh man";
-}
-else {
-  echo "helllloooooo";
-}
+$max_p = $r->fetch_assoc();
+echo $max_p['poll_name'];
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
