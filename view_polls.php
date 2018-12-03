@@ -158,7 +158,7 @@ overflow: scroll;
                 }
                 ?>
 
-                <address style="float:right">
+                <address>
                   <article>
                     <header>
                       <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
