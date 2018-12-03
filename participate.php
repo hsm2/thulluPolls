@@ -225,7 +225,7 @@ $mysqli->close();
       $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
       $owner = $_SESSION['username'];
-      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner' ORDER BY total_likes DESC";
+      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner' ORDER BY total_likes, total_votes DESC|DESC";
       $result = $mysqli->query($sql);
 
       ?>
