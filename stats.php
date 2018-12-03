@@ -127,7 +127,7 @@ else {
           ?>
             var temp = [];
           <?php
-          for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
+          for ($b = 1; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php echo $data[$a][$b]?>);
             <?php
           }
@@ -136,7 +136,10 @@ else {
           <?php
         }
         ?>
-
+        for (var i = 0; i < arr.length; i++) {
+          arr[i][0] = new Date(arr[i][0] * 1000);
+        }
+        
         console.log("hllsdfaso");
         var data = google.visualization.arrayToDataTable(arr);
         console.log("hllo");
