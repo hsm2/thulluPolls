@@ -256,11 +256,12 @@ $mysqli->close();
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </center>
                         <div class="module"> </div>
+                      </form >
 
-                      </form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <input type="submit" value="View Statistics" name="view_stats"  class="btn" />
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
-                      <form>
+                      </form>
 
               </div>
             </article>
