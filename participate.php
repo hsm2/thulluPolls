@@ -31,10 +31,12 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 $max_q = "SELECT p.poll_name as poll_name, u.name as name, p.total_likes as total_likes FROM Poll p, User u WHERE u.id = p.owner and p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility='public'";
 $r = $mysqli->query($max_q);
 $max_p = $r->fetch_assoc();
-echo $max_p['poll_name'];
 
 
 $max_pop = "SELECT p.poll_name as poll_name, u.name as name, p.total_votes as total_votes FROM Poll p, User u WHERE u.id = p.owner  and p.total_votes = (SELECT MAX(total_votes) FROM Poll) AND p.visibility='public'";
+$r1 = $mysqli->query($max_pop);
+$max_pop = $r1->fetch_assoc();
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
@@ -185,7 +187,7 @@ $mysqli->close();
       <p> <b> <?php echo $max_p['poll_name'];?> </b>by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_likes'];?> likes! </p>
       <div class="sdb_holder">
         <h6>The Most Popular poll of the day is:</h6>
-        <p> <p> <b> <?php echo $max_p['poll_name'];?> </b>by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_votes'];?> likes! </p>
+        <p> <p> <b> <?php echo $max_pop['poll_name'];?> </b>by <?php echo $max_pop['name']?> with a total of <?php echo $max_pop['total_votes'];?> votes! </p>
 
       </div>
       <!-- ################################################################################################ -->
