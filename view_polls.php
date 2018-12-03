@@ -4,7 +4,10 @@
 
 <?php
 session_start();
-echo $_SESSION['username']
+if($_SESSION['username'] = '') {
+  header("location:index.html");
+}
+echo $_SESSION['username'];
 ?>
 
 <html lang="">
