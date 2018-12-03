@@ -6,6 +6,9 @@
 
 <?php
 session_start();
+if($_SESSION['username'] = '') {
+  header("location:index.html");
+}
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 $id = $_SESSION['poll_id_stats'];
 

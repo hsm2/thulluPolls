@@ -4,9 +4,14 @@
 
 <?php
 session_start();
+if($_SESSION['username'] = '') {
+  header("location:index.html");
+}
 echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
+
+
 
 <style>
 .myBox {
