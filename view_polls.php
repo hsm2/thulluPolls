@@ -163,7 +163,6 @@ overflow: scroll;
                 <address>
                   <article>
                     <header>
-                      <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                       <address>
                       Pie Chart of Options:
                       </address>
