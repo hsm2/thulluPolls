@@ -102,7 +102,6 @@ overflow: scroll;
             <article>
               <header>
                 </header>
-                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
                   <div class="comcont">
                   <p><b>Poll Name:</b> <?php echo $row['poll_name'] ?> </p>
@@ -158,7 +157,7 @@ overflow: scroll;
                 }
                 ?>
 
-                
+
             </article>
 
           </li>
