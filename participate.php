@@ -225,7 +225,7 @@ $mysqli->close();
       $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
       $owner = $_SESSION['username'];
-      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner'";
+      $sql = "SELECT * FROM Poll WHERE visibility = 'public' and owner <> '$owner' ORDER BY total_likes";
       $result = $mysqli->query($sql);
 
       ?>
@@ -266,7 +266,7 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
-                        Like <input type="checkbox" name="Like" value="like"> 
+                        Like <input type="checkbox" name="Like" value="like">
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
                         <input  type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
