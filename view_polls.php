@@ -13,7 +13,6 @@ echo $_SESSION['username'];
 <style>
 .myBox {
 border: none;
-padding: 1px;
 font: 12px/14px sans-serif;
 width: 500px;
 height: 100px;
