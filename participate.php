@@ -57,11 +57,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $delete_vote = "DELETE FROM OptionVoters WHERE poll_id = '$poll_id' AND user_id = '$user'";
     $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id, timestamp)" . "VALUES ('$poll_id', '$number', '$user', $timestamp)";
     $votes = 1;
-    if(($mysqli->query($delete_vote) === true)) {
+    $res = $mysqli->query($delete_vote);
+    if(($res->affected_rows > 0)) {
       $votes = 0;
     }
     $mysqli->query($insert_vote);
-    
+
     if ($_POST['Like'] == 'like') {
       $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
       $result2 = $mysqli->query($sql7);
