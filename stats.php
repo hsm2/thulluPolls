@@ -126,7 +126,7 @@ else {
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php $data[$a][$b]?>);
-            console.log("hlskdfj");
+            console.log(temp);
             <?php
           }
           ?>
