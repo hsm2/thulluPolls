@@ -44,10 +44,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
     echo "I am here";
     header("location:welcome.php");
-		ob_flush();
   }
 
-  if (isset($_POST['comment'])) {
+  else if (isset($_POST['comment'])) {
     echo "hello";
     $_SESSION['flag'] = TRUE;
     $poll_id = $mysqli->real_escape_string($_POST['id']);
@@ -61,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
   }
 
-  if (isset($_POST['vote'])){
+  else if (isset($_POST['vote'])){
     $number = $_POST['number'];
     $poll_id = $_POST['id'];
     $user = $_SESSION['username'];
