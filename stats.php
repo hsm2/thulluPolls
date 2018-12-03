@@ -119,6 +119,9 @@ else {
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var arr = [];
+        var temp_arr  = ['X', '1', '2', '3', '4'];
+        arr.push(temp_arr);
+
         <?php
         for ($a = 0; $a < sizeof($data); $a = $a + 1) {
           ?>
