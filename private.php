@@ -34,6 +34,9 @@ ob_start();
 session_start();
 echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
+header("location:welcome.php");
+ob_flush();
+
 ?>
 
 <?php
