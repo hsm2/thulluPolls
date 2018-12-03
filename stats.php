@@ -139,8 +139,7 @@ $poll = $result3->fetch_assoc();
         data.addRows(arr);
         var options = {
                 chart: {
-                  title: '<?php echo $poll['poll_name'] ?>',
-                  subtitle: '<?php echo $poll['question'] ?>'
+                  title: '<?php echo $poll['question'] ?>'
                 },
                 width: 900,
                 height: 500,
