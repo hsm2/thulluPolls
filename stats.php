@@ -102,129 +102,40 @@ else {
 
 ?>
 <html>
- <head>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script type="text/javascript">
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawChart);
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', '1', '2', '3', '4', '5', '6'],
+              [1, 2, 3, 4, 5, 6, 7],
+              [2, 3, 4, 5, 6, 7, 8],
+              [3, 4, 5, 6, 7, 8, 9],
+              [4, 5, 6, 7, 8, 9, 10],
+              [5, 6, 7, 8, 9, 10, 11],
+              [6, 7, 8, 9, 10, 11, 12]
+        ]);
 
-     function drawChart() {
-       var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
-        ["<?php echo $options[1]?>",  <?php echo $votes[1] ?>],
-        ["<?php echo $options[2]?>",  <?php echo $votes[2] ?>],
-        ["<?php echo $options[3]?>",  <?php echo $votes[3] ?>]
+        var options = {
+          legend: 'none',
+          series: {
+            0: { color: '#e2431e' },
+            1: { color: '#e7711b' },
+            2: { color: '#f1ca3a' },
+            3: { color: '#6f9654' },
+            4: { color: '#1c91c0' },
+            5: { color: '#43459d' },
+          }
+        };
 
-       ]);
-
-       var options = {
-         title: 'Statistics'
-       };
-
-       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-       chart.draw(data, options);
-     }
-
-   </script>
-
-   <script>
-   window.onload = function () {
-    //  var data1 = [];
-    //  var data2 = [];
-    //  var data3 = [];
-    //  var data4 = [];
-    //  console.log(data1);
-    //  console.log(data2);
-    //  console.log(data3);
-    //  console.log(data4);
-     <?php echo "ahhhhh no values"?> 
-     console.log("BO");
-     console.log("<?php echo $data1votes[0] ?>");
-     console.log("HEY");
-     <?php
-        for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
-          ?>data1.push(<?php $data1dates[$i]?>, <?php $data1votes[$i]?>);
-          data2.push(<?php $data2dates[$i]?>, <?php $data2votes[$i]?>);
-          data3.push(<?php $data3dates[$i]?>, <?php $data3votes[$i]?>);
-          data4.push(<?php $data4dates[$i]?>, <?php $data4votes[$i]?>);
-          console.log("here");
-          <?php
-        }
-     ?>
-
-     console.log(data1);
-     console.log(data2);
-     console.log(data3);
-     console.log(data4);
-   var chart = new CanvasJS.Chart("chartContainer", {
-   	animationEnabled: true,
-   	title:{
-   		text: "Daily High Temperature at Different Beaches"
-   	},
-   	axisX: {
-   		valueFormatString: "DD MMM,YY"
-   	},
-   	axisY: {
-   		title: "Total votes",
-   		includeZero: true,
-   	},
-   	legend:{
-   		cursor: "pointer",
-   		fontSize: 16,
-   		itemclick: toggleDataSeries
-   	},
-   	toolTip:{
-   		shared: true
-   	},
-   	data: [{
-   		name: "Myrtle Beach",
-   		type: "spline",
-   		showInLegend: true,
-   		dataPoints: data1,
-   	},
-   	{
-   		name: "Martha Vineyard",
-   		type: "spline",
-   		showInLegend: true,
-   		dataPoints: data2
-   	},
-    {
-   		name: "Martha Vineyard",
-   		type: "spline",
-   		showInLegend: true,
-   		dataPoints: data3
-   	},
-   	{
-   		name: "Nantucket",
-   		type: "spline",
-   		showInLegend: true,
-   		dataPoints: data4
-   	}]
-   });
-   chart.render();
-
-   function toggleDataSeries(e){
-   	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-   		e.dataSeries.visible = false;
-   	}
-   	else{
-   		e.dataSeries.visible = true;
-   	}
-   	chart.render();
-   }
-
-   }
-   </script>
-
-
- </head>
- <body>
-   <div id="piechart" style="width: 900px; height: 500px;"></div>
-   <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
- </body>
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>
-
-<!DOCTYPE HTML>
