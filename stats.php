@@ -131,11 +131,11 @@ else {
             <?php
           }
           ?>
+          console.log(temp);
           arr.push(temp);
           <?php
         }
         ?>
-        console.log(arr);
         var data = google.visualization.arrayToDataTable
             (arr);
 
