@@ -174,6 +174,7 @@ overflow: scroll;
                           google.charts.setOnLoadCallback(drawChart);
 
                           function drawChart() {
+                            echo "hello";
                             var data = google.visualization.arrayToDataTable([
                              ['Task', 'Hours per Day'],
                              ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
@@ -190,6 +191,7 @@ overflow: scroll;
                             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
                             chart.draw(data, options);
+                            echo "drew";
                           }
 
                         </script>
