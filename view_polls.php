@@ -138,6 +138,9 @@ overflow: scroll;
                               ?> <p> <b>(<?php echo $row['user_id']?>)</b>  <?php echo $row['name'] ?> voted <?php echo $row['option_name']?></p>  <?php
                             }
                           }
+                          else {
+                            echo "sldkfj";
+                          }
                           ?>
                 </div>
                 </address>
