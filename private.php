@@ -176,12 +176,11 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> 
+                <font size="3"> <?php echo $row['poll_name']?> : <?php echo $row['question'] ?> </font> <br><a href="">This poll has: <b><?php echo $row['total_likes'] ?> </b>likes and <b><?php echo $row['total_votes'] ?> </b> votes</a>
                 </address>
-                <?php echo $row['question'] ?>
               </header>
               <div class="comcont">
-                <p>Options:<br></p>
+                <p><b>Options:</b><br></p>
                   <?php
                       $id = $row['id'];
                       $sq = "SELECT * FROM Options WHERE poll_id = '$id'";
@@ -203,7 +202,7 @@ $mysqli->close();
                       </center>
                         <div class="module"> </div>
                     </form>
-                    <p><font size = "3">Comments:</font></p>
+                    <p><font size = "3"><b>Comments:</b></font></p>
                     <div class="myBox">
                       <?php
                           $id = $row['id'];
