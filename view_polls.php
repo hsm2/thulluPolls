@@ -136,7 +136,7 @@ overflow: scroll;
                           if ($res->num_rows > 0) {
                             echo "hello";
                             while($row = $res->fetch_assoc()) {
-                              ?> <p> <b><?php echo $row1['user_id']?></b>  : <?php echo $row1['username'] ?> </p> <?php
+                              ?> <p> <b><?php echo $row['user_id']?></b>  : <?php echo $row['username'] ?> </p> <?php
                             }
                           }
                           ?>
