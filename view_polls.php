@@ -12,6 +12,8 @@ echo $_SESSION['username'];
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 ?>
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <style>
 .myBox {
 border: none;
@@ -166,7 +168,6 @@ overflow: scroll;
                     </header>
                     <div class="comcont">
                       <p>
-                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                         <script type="text/javascript">
                           google.charts.load('current', {'packages':['corechart']});
                           google.charts.setOnLoadCallback(drawChart);
