@@ -266,7 +266,7 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
-                        Like <input type="checkbox" name="Like" value="like"> <br><br><br>
+                        Like <input type="checkbox" name="Like" value="like"> 
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
                         <input  type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
