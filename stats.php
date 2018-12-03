@@ -139,7 +139,9 @@ else {
      console.log(data2);
      console.log(data3);
      console.log(data4);
+     console.log("BO");
      console.log("<?php echo $data1votes[0] ?>");
+     console.log("HEY");
      <?php
         for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
           ?>data1.push(<?php $data1dates[$i]?>, <?php $data1votes[$i]?>);
