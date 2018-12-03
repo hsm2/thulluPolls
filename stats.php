@@ -137,7 +137,7 @@ else {
         }
 
         var data = new google.visualization.DataTable();
-        data.addColumn('date', 'date');
+        data.addColumn('datetime', 'date');
         data.addColumn('number', '1');
         data.addColumn('number', '2');
         data.addColumn('number', '3');
