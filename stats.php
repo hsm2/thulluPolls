@@ -26,7 +26,7 @@ $result3 = $mysqli->query($sql3);
 
 $sql4 ="SELECT total_likes FROM Poll where id = $id";
 $result4 = $mysqli->query($sql4);
-$max_poll = $result4->fetch_assoc();
+// $max_poll = $result4->fetch_assoc();
 
 
 
