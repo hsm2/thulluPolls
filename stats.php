@@ -15,7 +15,7 @@ $result1 = $mysqli->query($sql1);
 $sql2 = "SELECT o.option_num, o.option_name, ov.timestamp FROM OptionVoters ov, Options o WHERE (ov.poll_id = '$id' AND o.poll_id = ov.poll_id AND o.option_num = ov.option_num) ORDER BY timestamp";
 $result2 = $mysqli->query($sql2);
 
-$sql3 = "SELECT poll_name, question FROM Poll WHERE poll_id = '$id'";
+$sql3 = "SELECT poll_name, question FROM Poll WHERE id = '$id'";
 $result3 = $mysqli->query($sql3);
 
 $options = array();
