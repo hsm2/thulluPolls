@@ -177,7 +177,7 @@ $poll = $result3->fetch_assoc();
 
                   </script>
                   <body>
-                    <div id="piechart" style="width: 300px; height: 200px;"></div>
+                    <div id="piechart" style="width: 500px; height: 300px;"></div>
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                   </body>
                 </p>
