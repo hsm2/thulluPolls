@@ -60,9 +60,7 @@ else {
   ?> <h2> <?php echo "ahhhhh no values"?> </h2> <?php
 }
 
-if ($result3->num_rows > 0) {
-  $poll = $result3->fetch_assoc();
-}
+$poll = $result3->fetch_assoc();
 
 ?>
 <html>
