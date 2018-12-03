@@ -125,7 +125,7 @@ else {
             var temp = [];
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
-            ?> temp.push(<?php $data[$a][$b]?>);
+            ?> temp.push(<?php echo $data[$a][$b]?>);
             console.log(temp);
             <?php
           }
