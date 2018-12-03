@@ -25,16 +25,6 @@ if($result1->num_rows > 0) {
   }
 }
 
-$data1votes = array();
-$data1dates = array();
-$data2votes = array();
-$data2dates = array();
-$data3votes = array();
-$data3dates = array();
-$data4votes = array();
-$data4dates = array();
-$c = 0;
-
 $val1 = 0;
 $val2 = 0;
 $val3 = 0;
@@ -61,7 +51,6 @@ if ($result2->num_rows > 0) {
       $val4 = $val4 + 1;
     }
     $data[] = array($t, $val1, $val2, $val3, $val4);
-    $c = $c + 1;
   }
 }
 else {
@@ -138,10 +127,10 @@ else {
         //console.log(arr);
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Date');
-        data.addColumn('number', '1');
-        data.addColumn('number', '2');
-        data.addColumn('number', '3');
-        data.addColumn('number', '4');
+        data.addColumn('number', <?php echo $options[0] ?>);
+        data.addColumn('number', <?php echo $options[1] ?>);
+        data.addColumn('number', <?php echo $options[2] ?>);
+        data.addColumn('number', <?php echo $options[3] ?>);
 
         data.addRows(arr)
         var options = {
