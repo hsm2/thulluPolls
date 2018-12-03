@@ -167,7 +167,7 @@ overflow: scroll;
                       Pie Chart of Options:
                       </address>
                     </header>
-                    <div class="comcont">
+                    <div class='comcont'>
                       <p>
                         <script type="text/javascript">
                         console.log('here');
@@ -193,7 +193,6 @@ overflow: scroll;
                             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
                             chart.draw(data, options);
-                            echo "drew";
                           }
 
                         </script>
