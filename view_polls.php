@@ -125,7 +125,7 @@ overflow: scroll;
 
                   echo $option ?> with <?php echo $max?> total votes.</p>
                   </div>
-                  <p>List of Users:</p>
+                  <p   style="margin-block-end: .25em ">List of Users:</p>
                   <div class="myBox">
                   <?php
                   $id = $row['id'];
