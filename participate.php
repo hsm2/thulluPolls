@@ -248,10 +248,11 @@ $mysqli->close();
                 <address>
                 <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="">View Statistics</a>
                 </address>
-                <?php echo $row['question'] ?>
+                <?php echo $row['question'] ?> <br>
+                <?php echo $row['total_likes'] ?> likes
               </header>
               <div class="comcont">
-                <p>Options:<br></p>
+                <p><b>Options:<b><br></p>
                   <?php
                       $id = $row['id'];
                       array_push($_SESSION['idarr'], $id);
@@ -267,7 +268,7 @@ $mysqli->close();
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
                         <div class="alert alert-error"><?= $_SESSION['message'] ?></div>
                         <input type="text" placeholder="Option Number" name="number" required />
-                        <input type="checkbox" name="Like" value="like"> Like: <?php echo $row['total_likes'] ?><br><br><br>
+                        <input type="checkbox" name="Like" value="like"> Like<br><br><br>
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
                         <input  type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
