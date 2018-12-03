@@ -28,7 +28,7 @@ overflow: scroll;
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$max_q = "SELECT p.poll_name as poll_name, u.name as name FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility='public'";
+$max_q = "SELECT p.poll_name as poll_name, u.name as name, p.total_likes as total_likes FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility='public'";
 $r = $mysqli->query($max_q);
 $max_p = $r->fetch_assoc();
 echo $max_p['poll_name'];
@@ -178,30 +178,8 @@ $mysqli->close();
     <!-- ################################################################################################ -->
     <div class="sidebar one_quarter first">
       <!-- ################################################################################################ -->
-      <h6>Lorem ipsum dolor</h6>
-      <nav class="sdb_holder">
-        <ul>
-          <li><a href="#">Navigation - Level 1</a></li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a>
-                <ul>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a></li>
-        </ul>
-      </nav>
+      <h6>The Most Likes Poll of the day is:</h6>
+      <p>  <?php echo $max_p['poll_name'];?> by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_likes'];?> likes! </p>
       <div class="sdb_holder">
         <h6>Lorem ipsum dolor</h6>
         <address>
