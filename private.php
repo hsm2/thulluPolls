@@ -225,7 +225,7 @@ $mysqli->close();
                       </form >
 
                       <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
-                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" style="font-size:5pt;color:white;background-color:red;border:2px solid #FF0000;padding:3px" />
+                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" style="font-size:6pt;color:red;background-color:white;border:2px solid #FF0000;padding:3px" />
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </form>
 
