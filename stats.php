@@ -135,7 +135,7 @@ else {
         for (var i = 0; i < arr.length; i++) {
           arr[i][0] = new Date(arr[i][0] * 1000);
         }
-
+        console.log(arr);
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Date');
         data.addColumn('number', '1');
