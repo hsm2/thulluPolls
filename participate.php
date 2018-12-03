@@ -252,7 +252,7 @@ $mysqli->close();
                 <?php echo $row['total_likes'] ?> likes
               </header>
               <div class="comcont">
-                <p><b>Options:<b><br></p>
+                <p><b>Options:</b><br></p>
                   <?php
                       $id = $row['id'];
                       array_push($_SESSION['idarr'], $id);
