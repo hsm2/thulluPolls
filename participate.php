@@ -34,7 +34,9 @@ $r = $mysqli->query($max_q);
 if($r == false) {
   echo "oh man";
 }
-
+else {
+  echo "helllloooooo";
+}
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
