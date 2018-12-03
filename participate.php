@@ -248,11 +248,11 @@ $mysqli->close();
                 <address>
                 <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="">View Statistics</a>
                 </address>
-                <?php echo $row['question'] ?>
+                <?php echo $row['question'] ?> <br>
                 <?php echo $row['total_likes'] ?> likes
               </header>
               <div class="comcont">
-                <p>Options:<br></p>
+                <p><b>Options:<b><br></p>
                   <?php
                       $id = $row['id'];
                       array_push($_SESSION['idarr'], $id);
