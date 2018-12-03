@@ -135,10 +135,10 @@ else {
      var data2 = [];
      var data3 = [];
      var data4 = [];
-     console.log(data1);
-     console.log(data2);
-     console.log(data3);
-     console.log(data4);
+    //  console.log(data1);
+    //  console.log(data2);
+    //  console.log(data3);
+    //  console.log(data4);
      console.log("BO");
      console.log("<?php echo $data1votes[0] ?>");
      console.log("HEY");
