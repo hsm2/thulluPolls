@@ -112,6 +112,42 @@ else {
 
 ?>
 <html>
+ <head>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
+        ["<?php echo $options[1]?>",  <?php echo $votes[1] ?>],
+        ["<?php echo $options[2]?>",  <?php echo $votes[2] ?>],
+        ["<?php echo $options[3]?>",  <?php echo $votes[3] ?>]
+
+       ]);
+
+       var options = {
+         title: 'Statistics'
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+       chart.draw(data, options);
+     }
+
+   </script>
+
+ </head>
+ <body>
+   <div id="piechart" style="width: 900px; height: 500px;"></div>
+   <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </body>
+</html>
+
+<html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
