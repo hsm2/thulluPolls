@@ -179,7 +179,7 @@ $poll = $result3->fetch_assoc();
                 </p>
               </div>
               <address>
-                Line Chart of 
+                Line Chart of
               </address>
               <div class="comcont">
                 <p>
@@ -224,8 +224,8 @@ $poll = $result3->fetch_assoc();
                                 chart: {
                                   title: '<?php echo $poll['question'] ?>'
                                 },
-                                width: 900,
-                                height: 500,
+                                width: 300,
+                                height: 200,
                                 axes: {
                                   x: {
                                     0: {side: 'top'}
