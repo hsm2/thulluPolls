@@ -135,6 +135,7 @@ else {
           <?php
         }
         ?>
+        console.log(arr);
         var data = google.visualization.arrayToDataTable
             (arr);
 
