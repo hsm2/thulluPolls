@@ -49,12 +49,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user = $_SESSION['username'];
     $poll_id = $_POST['id'];
     $timestamp = time();
-
-    $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id, timestamp)" . "VALUES ('$poll_id', '$number', '$user', $timestamp)";;
-    if(($mysqli->query($insert_vote) === true)) {
-      //echo "inserted";
+    $delete_vote = "DELETE FROM OptionVoters WHERE poll_id = '$poll_id' AND user_id = '$user'";
+    $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id, timestamp)" . "VALUES ('$poll_id', '$number', '$user', $timestamp)";
+    $votes = 1;
+    if(($mysqli->query($delete_vote) === true)) {
+      $votes = 0;
     }
-
+    $mysqli->query($insert_vote);
+    
     if ($_POST['Like'] == 'like') {
       $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
       $result2 = $mysqli->query($sql7);
@@ -70,7 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
     $result1 = $mysqli->query($sql);
-    $votes = 1;
     if($result1->num_rows > 0) {
       while ($row = $result1->fetch_assoc()) {
           $votes = $votes + $row['total_votes'];
