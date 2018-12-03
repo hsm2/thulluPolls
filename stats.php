@@ -135,6 +135,10 @@ else {
      var data2 = [];
      var data3 = [];
      var data4 = [];
+     console.log(data1);
+     console.log(data2);
+     console.log(data3);
+     console.log(data4);
      console.log("<?php echo $data1votes[0] ?>");
      <?php
         for($i = 0; $i < sizeof($data1dates); $i = $i + 1) {
