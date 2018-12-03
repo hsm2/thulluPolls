@@ -132,7 +132,7 @@ else {
         data.addColumn('number', <?php echo $options[2] ?>);
         data.addColumn('number', <?php echo $options[3] ?>);
 
-        data.addRows(arr)
+        data.addRows(arr);
         var options = {
                 chart: {
                   title: 'Box Office Earnings in First Two Weeks of Opening',
