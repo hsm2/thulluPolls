@@ -32,7 +32,7 @@ $max_q = "SELECT p.poll_name, u.name FROM Poll p, User u WHERE p.total_likes = M
 $r = $mysqli->query($max_q);
 // $max_p = $r->fetch_assoc();
 if($r == false) {
-  echo "oh man"!;
+  echo "oh man";
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
