@@ -165,7 +165,7 @@ overflow: scroll;
                       </address>
                     </header>
                     <div class="comcont">
-                      <p> <?php echo "hllllo"?>
+                      <p>
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                         <script type="text/javascript">
                           google.charts.load('current', {'packages':['corechart']});
@@ -198,6 +198,7 @@ overflow: scroll;
                           <div id="piechart" style="width: 500px; height: 300px;"></div>
                           <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                         </body>
+                        <?php echo "hllllo"?>
                       </p>
                     </div>
                   </article>
