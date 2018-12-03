@@ -44,6 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
     echo "I am here";
     header("location:welcome.php");
+    ob_flush();
   }
 
   else if (isset($_POST['comment'])) {
@@ -111,9 +112,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql4 = "UPDATE Options SET total_votes='$num' WHERE poll_id = '$poll_id' AND option_num = '$number'";
     $mysqli->query($sql4);
   }
+  else {
+    header("location:stats.php");
+  }
 
 }
-ob_flush();
+
 $mysqli->close();
 ?>
 
