@@ -30,11 +30,15 @@ text-transform: uppercase; /* Make letters uppercase */
 </style>
 
 <?php
-ob_start();
+ ob_start();  //begin buffering the output
+?>
+
+<?php
 session_start();
-echo $_SESSION['username'];
-$_SESSION['flag'] = TRUE;
+echo $_SESSION['username']
+?>
+
+<?php
 header("location:welcome.php");
 ob_flush();
-
 ?>
