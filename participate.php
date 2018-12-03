@@ -272,7 +272,7 @@ $mysqli->close();
                       </center>
                         <div class="module"> </div>
                     </form>
-                    <p><font size = "3">Comments:</font></p>
+                    <p><font size = "3"><b>Comments:</b></font></p>
                     <div class="myBox">
                       <?php
                           $id = $row['id'];
