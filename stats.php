@@ -132,7 +132,7 @@ else {
           <?php
         }
         ?>
-        for (var i = 10; i < arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) {
           arr[i][0] = new Date(arr[i][0] * 1000);
         }
 
