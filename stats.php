@@ -48,60 +48,19 @@ if ($result2->num_rows > 0) {
     $name = $row['option_name'];
     $num = $row['option_num'];
     $date = new DateTime("@$t");
-    $d = $date->format('U = Y-m-d H:i:s');
     if ($num == 1) {
       $val1 = $val1 + 1;
-      if ($c == 0) {
-        array_push($data1votes, 1);
-      }
-      else {
-        array_push($data1votes, $data1votes[$c - 1] + 1);
-      }
-      array_push($data2votes, $data2votes[$c - 1]);
-      array_push($data3votes, $data3votes[$c - 1]);
-      array_push($data4votes, $data4votes[$c - 1]);
     }
     else if ($num == 2) {
       $val2 = $val2 + 1;
-      if ($c == 0) {
-        array_push($data2votes, 1);
-      }
-      else {
-        array_push($data2votes, $data2votes[$c - 1] + 1);
-      }
-      array_push($data1votes, $data1votes[$c - 1]);
-      array_push($data3votes, $data3votes[$c - 1]);
-      array_push($data4votes, $data4votes[$c - 1]);
     }
     else if ($num == 3) {
       $val3 = $val3 + 1;
-      if ($c == 0) {
-        array_push($data3votes, 1);
-      }
-      else {
-        array_push($data3votes, $data3votes[$c - 1] + 1);
-      }
-      array_push($data1votes, $data1votes[$c - 1]);
-      array_push($data2votes, $data2votes[$c - 1]);
-      array_push($data4votes, $data4votes[$c - 1]);
     }
     else {
       $val4 = $val4 + 1;
-      if ($c == 0) {
-        array_push($data4votes, 1);
-      }
-      else {
-        array_push($data4votes, $data4votes[$c - 1] + 1);
-      }
-      array_push($data1votes, $data1votes[$c - 1]);
-      array_push($data2votes, $data2votes[$c - 1]);
-      array_push($data3votes, $data3votes[$c - 1]);
     }
     $data[] = array($t, $val1, $val2, $val3, $val4);
-    array_push($data1dates, $d);
-    array_push($data2dates, $d);
-    array_push($data3dates, $d);
-    array_push($data4dates, $d);
     $c = $c + 1;
   }
 }
