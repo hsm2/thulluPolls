@@ -119,8 +119,8 @@ else {
     <script type="text/javascript">
       google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
+      // google.charts.load("current", {packages:["corechart"]});
+      // google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var arr = [];
         var temp_arr  = ['X', '1', '2', '3', '4'];
