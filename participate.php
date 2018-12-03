@@ -30,8 +30,8 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 $max_q = "SELECT p.poll_name, u.name FROM Poll p, User u WHERE p.total_likes = Max(total_likes)";
 $r = $mysqli->query($max_q);
-$max_p = $r->fetch_assoc();
-echo $max_p['poll_name'];
+// $max_p = $r->fetch_assoc();
+echo $r;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
