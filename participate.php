@@ -28,7 +28,7 @@ overflow: scroll;
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$max_q = "SELECT p.poll_name, u.name FROM Poll p, User u WHERE p.total_likes = Max(total_likes)";
+$max_q = "SELECT p.poll_name, u.name FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll)";
 $r = $mysqli->query($max_q);
 // $max_p = $r->fetch_assoc();
 if($r == false) {
