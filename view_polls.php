@@ -127,7 +127,9 @@ overflow: scroll;
                   echo $option ?> with <?php echo $max?> total votes.</p>
                   </div>
                   <div class="myBox">
-                  <?php $sq = "SELECT DISTINCT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$row['id']'";
+                  <?php
+                  $id = $row['id'];
+                  $sq = "SELECT DISTINCT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
                             while($row = $res->fetch_assoc()) {
