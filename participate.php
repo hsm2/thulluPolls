@@ -64,16 +64,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mysqli->query($insert_vote);
 
     if ($_POST['Like'] == 'like') {
-      $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
-      $result2 = $mysqli->query($sql7);
-      $likes = 1;
-      if($result2->num_rows > 0) {
-        while ($row = $result2->fetch_assoc()) {
-            $likes = $likes + $row['total_votes'];
+      $sql8 = "SELECT * FROM Likes WHERE poll_id = '$poll_id' AND user_id = '$user'";
+      $res2 = $mysqli->query($sql8);
+      if ($res2->num_rows == 0) {
+        $sql7 = "SELECT total_likes FROM Poll WHERE id = '$poll_id'";
+        $result2 = $mysqli->query($sql7);
+        $likes = 1;
+        if($result2->num_rows > 0) {
+          while ($row = $result2->fetch_assoc()) {
+              $likes = $likes + $row['total_votes'];
+          }
         }
+        $sql8 = "UPDATE Poll SET total_likes='$likes' WHERE id='$poll_id'";
+        $mysqli->query($sql8);
       }
-      $sql8 = "UPDATE Poll SET total_likes='$likes' WHERE id='$poll_id'";
-      $mysqli->query($sql8);
     }
 
     $sql = "SELECT total_votes FROM Poll WHERE id = '$poll_id'";
