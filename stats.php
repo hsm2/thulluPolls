@@ -24,6 +24,12 @@ $result2 = $mysqli->query($sql2);
 $sql3 = "SELECT poll_name, question FROM Poll WHERE id = '$id'";
 $result3 = $mysqli->query($sql3);
 
+$sql4 ="SELECT total_likes FROM Poll where id = $id";
+$result4 = $mysqli->query($sql4);
+$max_poll = $result4->fetch_assoc();
+
+
+
 $options = array();
 $votes = array();
 
@@ -134,7 +140,6 @@ $poll = $result3->fetch_assoc();
 
       </p>
       <div id="comments">
-        <h2><?php echo $poll['poll_name'] ?></h2>
         <ul>
           <li>
             <article>
@@ -176,9 +181,6 @@ $poll = $result3->fetch_assoc();
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                   </body>
                 </p>
-                <p>
-                  hello
-                </p>
               </div>
             </article>
           </li>
@@ -188,7 +190,7 @@ $poll = $result3->fetch_assoc();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
               <address>
-                Line Chart of
+                Line Chart of Options Frequency:
               </address>
             </header>
               <div class="comcont">
@@ -240,6 +242,8 @@ $poll = $result3->fetch_assoc();
                                   x: {
                                     0: {side: 'top'}
                                   }
+
+
                                 }
                               };
 
@@ -265,66 +269,7 @@ $poll = $result3->fetch_assoc();
     </div>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
-    <div class="sidebar one_quarter">
-      <!-- ################################################################################################ -->
-      <h6>Lorem ipsum dolor</h6>
-      <nav class="sdb_holder">
-        <ul>
-          <li><a href="#">Navigation - Level 1</a></li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
-              <li><a href="#">Navigation - Level 2</a></li>
-              <li><a href="#">Navigation - Level 2</a>
-                <ul>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                  <li><a href="#">Navigation - Level 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#">Navigation - Level 1</a></li>
-        </ul>
-      </nav>
-      <div class="sdb_holder">
-        <h6>Lorem ipsum dolor</h6>
-        <address>
-        Full Name<br>
-        Address Line 1<br>
-        Address Line 2<br>
-        Town/City<br>
-        Postcode/Zip<br>
-        <br>
-        Tel: xxxx xxxx xxxxxx<br>
-        Email: <a href="#">contact@domain.com</a>
-        </address>
-      </div>
-      <div class="sdb_holder">
-        <article>
-          <h6>Pie chart of poll options:</h6>
-          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor sit</a></li>
-            <li>Etiam vel sapien et</li>
-            <li><a href="#">Etiam vel sapien et</a></li>
-          </ul>
-          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
-          <p class="more"><a href="#">Continue Reading &raquo;</a></p>
-        </article>
-      </div>
-      <!-- ################################################################################################ -->
-    </div>
     <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
