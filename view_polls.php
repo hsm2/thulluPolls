@@ -130,7 +130,7 @@ overflow: scroll;
                   <div class="myBox">
                   <?php
                   $id = $row['id'];
-                  $sq = "SELECT DISTINCT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
+                  $sq = "SELECT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
                             echo "hello";
