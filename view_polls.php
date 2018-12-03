@@ -135,7 +135,7 @@ overflow: scroll;
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
                             while($row = $res->fetch_assoc()) {
-                              ?> <p> <b>(<?php echo $row['user_id'])?></b>  <?php echo $row['name'] ?> voted <?php echo $row['option_name']?></p>  <?php
+                              ?> <p> <b>(<?php echo $row['user_id']?>)</b>  <?php echo $row['name'] ?> voted <?php echo $row['option_name']?></p>  <?php
                             }
                           }
                           ?>
