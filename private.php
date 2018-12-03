@@ -7,6 +7,18 @@ session_start();
 echo $_SESSION['username']
 ?>
 
+<style>
+.myBox {
+border: none;
+padding: 5px;
+font: 12px/14px sans-serif;
+width: 500px;
+height: 100px;
+overflow: scroll;
+}
+
+</style>
+
 
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
