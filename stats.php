@@ -128,7 +128,7 @@ $poll = $result3->fetch_assoc();
     <!-- ################################################################################################ -->
     <div class="content three_quarter first">
       <!-- ################################################################################################ -->
-      <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
+      <h1>Information on the <b><?php echo $poll['poll_name']?></b> poll: </h1>
       <img class="imgr borderedbox inspace-5" src="../images/demo/imgr.gif" alt="">
       <p>
 
@@ -141,9 +141,8 @@ $poll = $result3->fetch_assoc();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                By <a href="#">A Name</a>
+                Pie Chart of Options
                 </address>
-                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
               </header>
               <div class="comcont">
                 <p>
@@ -179,6 +178,73 @@ $poll = $result3->fetch_assoc();
                   </body>
                 </p>
               </div>
+              <address>
+                Line Chart of 
+              </address>
+              <div class="comcont">
+                <p>
+                  <head>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                    google.charts.load('current', {'packages':['line']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                      function drawChart() {
+                        var arr = [];
+                        var temp_arr  = ['X', '1', '2', '3', '4'];
+                        //arr.push(temp_arr);
+
+                        <?php
+                        for ($a = 0; $a < sizeof($data); $a = $a + 1) {
+                          ?>
+                            var temp = [];
+                          <?php
+                          for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
+                            ?> temp.push(<?php echo $data[$a][$b]?>);
+                            <?php
+                          }
+                          ?>
+                          arr.push(temp);
+                          <?php
+                        }
+                        ?>
+                        for (var i = 0; i < arr.length; i++) {
+                          arr[i][0] = new Date(arr[i][0] * 1000);
+                        }
+                        //console.log(arr);
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('date', 'Date');
+                        data.addColumn('number', "<?php echo $options[0] ?>");
+                        data.addColumn('number', "<?php echo $options[1] ?>");
+                        data.addColumn('number', "<?php echo $options[2] ?>");
+                        data.addColumn('number', "<?php echo $options[3] ?>");
+
+                        data.addRows(arr);
+                        var options = {
+                                chart: {
+                                  title: '<?php echo $poll['question'] ?>'
+                                },
+                                width: 900,
+                                height: 500,
+                                axes: {
+                                  x: {
+                                    0: {side: 'top'}
+                                  }
+                                }
+                              };
+
+                              var chart = new google.charts.Line(document.getElementById('line_top_x'));
+                            chart.draw(data, google.charts.Line.convertOptions(options));
+                      }
+                    </script>
+                  </head>
+                  <body>
+                    <div <div id="line_top_x"></div>
+                  </body>
+
+                </p>
+
+            </div>
             </article>
           </li>
 
