@@ -12,7 +12,7 @@ $id = $_SESSION['poll_id_stats'];
 $sql1 = "SELECT option_name, total_votes FROM Options WHERE poll_id = '$id' GROUP BY option_num";
 $result1 = $mysqli->query($sql1);
 
-$sql2 = "SELECT o.option_num, o.option_name, ov.timestamp FROM OptionVoters ov, Options o WHERE (ov.poll_id = '$id' AND o.poll_id = ov.poll_id) ORDER BY timestamp";
+$sql2 = "SELECT o.option_num, o.option_name, ov.timestamp FROM OptionVoters ov, Options o WHERE (ov.poll_id = '$id' AND o.poll_id = ov.poll_id AND o.option_num = ov.option_num) ORDER BY timestamp";
 $result2 = $mysqli->query($sql2);
 
 $options = array();
@@ -122,7 +122,6 @@ else {
         for ($a = 0; $a < sizeof($data); $a = $a + 1) {
           ?>
             var temp = [];
-            console.log(<?php echo sizeof($data) ?>);
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php echo $data[$a][$b]?>);
@@ -130,7 +129,6 @@ else {
           }
           ?>
           arr.push(temp);
-          //console.log(arr);
           <?php
         }
         ?>
