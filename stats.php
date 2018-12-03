@@ -173,7 +173,7 @@ $poll = $result3->fetch_assoc();
 
                   </script>
                   <body>
-                    <div id="piechart" style="width: 200px; height: 100px;"></div>
+                    <div id="piechart" style="width: 300px; height: 200px;"></div>
                     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                   </body>
@@ -250,43 +250,6 @@ $poll = $result3->fetch_assoc();
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row4">
-  <footer id="footer" class="hoc clear">
-    <!-- ################################################################################################ -->
-    <h6 class="heading">Lalapeden</h6>
-    <p>Vivamus quis tellus eget quam elementum aliquam cras nibh mi adipiscing a sodales in tincidunt ut enim praesent tempor molestie metus ut pretium odio.</p>
-    <ul class="faico clear">
-      <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
-      <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-      <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
-    </ul>
-    <nav>
-      <ul class="nospace">
-        <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Disclaimer</a></li>
-        <li><a href="#">Cookies</a></li>
-      </ul>
-    </nav>
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear">
-    <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
