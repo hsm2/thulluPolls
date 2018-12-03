@@ -31,7 +31,7 @@ a {
 	font-family: OpenSans-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #EC7063;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -56,7 +56,7 @@ p {
 	font-family: OpenSans-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #EC7063;
 	margin: 0px;
 }
 
@@ -81,15 +81,15 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-input::-webkit-input-placeholder { color: #666666;}
-input:-moz-placeholder { color: #666666;}
-input::-moz-placeholder { color: #666666;}
-input:-ms-input-placeholder { color: #666666;}
+input::-webkit-input-placeholder { color: #EC7063;}
+input:-moz-placeholder { color: #EC7063;}
+input::-moz-placeholder { color: #EC7063;}
+input:-ms-input-placeholder { color: #EC7063;}
 
-textarea::-webkit-input-placeholder { color: #666666;}
-textarea:-moz-placeholder { color: #666666;}
-textarea::-moz-placeholder { color: #666666;}
-textarea:-ms-input-placeholder { color: #666666;}
+textarea::-webkit-input-placeholder { color: #EC7063;}
+textarea:-moz-placeholder { color: #EC7063;}
+textarea::-moz-placeholder { color: #EC7063;}
+textarea:-ms-input-placeholder { color: #EC7063;}
 
 /*---------------------------------------------*/
 button {
@@ -112,14 +112,14 @@ iframe {
   font-family: OpenSans-Regular;
   font-size: 15px;
   line-height: 1.4;
-  color: #999999;
+  color: #F5B7B1;
 }
 
 .txt2 {
   font-family: OpenSans-Regular;
   font-size: 15px;
   line-height: 1.4;
-  color: #4272d7;
+  color: #F5B7B1;
 }
 
 .hov1:hover {
@@ -147,7 +147,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #83113f;
+  background: #E74C3C;
 }
 
 .wrap-login100 {
@@ -175,7 +175,7 @@ iframe {
   display: block;
   font-family: OpenSans-Regular;
   font-size: 30px;
-  color: #555555;
+  color: #F5B7B1;
   line-height: 1.2;
   text-align: center;
 }
@@ -200,7 +200,7 @@ iframe {
   background: transparent;
   font-family: OpenSans-Regular;
   font-size: 15px;
-  color: #666666;
+  color: #EC7063;
   line-height: 1.2;
 }
 
@@ -232,7 +232,7 @@ input.input100 {
   position: absolute;
   width: 0;
   height: 1px;
-  background-color: #941a1a;
+  background-color: #F1948A  ;
 }
 
 .focus-input100-1::before {
@@ -252,7 +252,7 @@ input.input100 {
   position: absolute;
   width: 1px;
   height: 0;
-  background-color: #941a1a;
+  background-color: #F1948A  ;
 }
 
 .focus-input100-1::after {
@@ -330,7 +330,7 @@ input.input100 {
   padding: 0 20px;
   width: 100%;
   height: 60px;
-  background-color: #941a1a;
+  background-color: #F1948A  ;
 
   font-family: OpenSans-Regular;
   font-size: 14px;
@@ -345,7 +345,7 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background-color: #941a1a;
+  background-color: #F1948A  ;
 }
 
 
@@ -361,7 +361,7 @@ input.input100 {
   position: absolute;
   max-width: 70%;
   background-color: #fff;
-  border: 1px solid #c80000;
+  border: 1px solid #B03A2E  ;
   border-radius: 2px;
   padding: 4px 25px 4px 10px;
   top: 50%;
@@ -374,7 +374,7 @@ input.input100 {
   pointer-events: none;
 
   font-family: OpenSans-Regular;
-  color: #c80000;
+  color: #B03A2E  ;
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
@@ -393,7 +393,7 @@ input.input100 {
   font-family: FontAwesome;
   display: block;
   position: absolute;
-  color: #c80000;
+  color: #B03A2E;
   font-size: 16px;
   top: 50%;
   -webkit-transform: translateY(-50%);
