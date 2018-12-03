@@ -134,9 +134,9 @@ else {
         }
         ?>
 
-        console.log(arr);
-        var data = google.visualization.arrayToDataTable
-            (arr);
+
+        var data = google.visualization.arrayToDataTable(arr);
+        console.log("hllo");
 
         var options = {
           legend: 'none',
