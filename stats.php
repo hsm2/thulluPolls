@@ -177,6 +177,9 @@ $poll = $result3->fetch_assoc();
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                   </body>
                 </p>
+                <p>
+                  hello
+                </p>
               </div>
             </article>
           </li>
