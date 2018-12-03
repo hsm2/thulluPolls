@@ -132,12 +132,12 @@ else {
           <?php
         }
         ?>
-        for (var i = 1; i < arr.length; i++) {
+        for (var i = 10; i < arr.length; i++) {
           arr[i][0] = new Date(arr[i][0] * 1000);
         }
 
         var data = new google.visualization.DataTable();
-        data.addColumn('datetime', 'date');
+        data.addColumn('date', 'Date');
         data.addColumn('number', '1');
         data.addColumn('number', '2');
         data.addColumn('number', '3');
