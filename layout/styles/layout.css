@@ -250,7 +250,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#EC7063;}
 /* Rows */
 .row1{color:#474747; background-color:#FADBD8; border-top-color:#EC7063; border-bottom-color:#FDEDEC;}
 .row2{color:#474747; background-color:#FADBD8;}
-.row3{color:#474747; background-color:#F5F5F5;}
+.row3{color:#474747; background-color:#EC7063;}
 .row4{color:#FADBD8; background-color:#222222;}
 .row5, .row5 a{color:#FADBD8; background-color:#EC7063;}
 
