@@ -171,7 +171,7 @@ else {
         //   }
         // };
 
-        var chart = new google.visualization.Line(document.getElementById('chart_div'));
+        var chart = new google.visualization.ChartLine(document.getElementById('chart_div'));
         chart.draw(data);
       }
     </script>
