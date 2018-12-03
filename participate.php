@@ -248,7 +248,7 @@ $mysqli->close();
                 <address>
                 <?php echo $row['poll_name']?> <br><a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="">This poll has: <b><?php echo $row['total_likes'] ?> </b>likes</a>
                 </address>
-                <?php echo $row['question'] ?> <br>
+                <b><font size="6"><?php echo $row['question'] ?></font></b> <br>
               </header>
               <div class="comcont">
                 <p><b>Options:</b><br></p>
