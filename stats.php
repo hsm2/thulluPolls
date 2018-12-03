@@ -122,7 +122,7 @@ else {
         for ($a = 0; $a < sizeof($data); $a = $a + 1) {
           ?>
             var temp = [];
-            console.log(<?php echo sizeof(data) ?>);
+            console.log(<?php echo sizeof($data) ?>);
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php echo $data[$a][$b]?>);
