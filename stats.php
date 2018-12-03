@@ -116,7 +116,7 @@ else {
       function drawChart() {
         var arr = [];
         var temp_arr  = ['X', '1', '2', '3', '4'];
-        arr.push(temp_arr);
+        //arr.push(temp_arr);
 
         <?php
         for ($a = 0; $a < sizeof($data); $a = $a + 1) {
@@ -136,8 +136,13 @@ else {
           arr[i][0] = new Date(arr[i][0] * 1000);
         }
 
-        var data = google.visualization.arrayToDataTable(arr);
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', '1');
+        data.addColumn('number', '2');
+        data.addColumn('number', '3');
+        data.addColumn('number', '4');
 
+        data.addRows(arr)
         var options = {
                 chart: {
                   title: 'Box Office Earnings in First Two Weeks of Opening',
