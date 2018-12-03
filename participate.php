@@ -28,13 +28,13 @@ overflow: scroll;
 <?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-$max_q = "SELECT p.poll_name as poll_name, u.name as name, p.total_likes as total_likes FROM Poll p, User u WHERE p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility='public'";
+$max_q = "SELECT p.poll_name as poll_name, u.name as name, p.total_likes as total_likes FROM Poll p, User u WHERE u.id = p.owner and p.total_likes = (SELECT MAX(total_likes) FROM Poll) AND p.visibility='public'";
 $r = $mysqli->query($max_q);
 $max_p = $r->fetch_assoc();
 echo $max_p['poll_name'];
 
 
-$max_pop = "SELECT p.poll_name as poll_name, u.name as name, p.total_votes as total_votes FROM Poll p, User u WHERE p.total_votes = (SELECT MAX(total_votes) FROM Poll) AND p.visibility='public'";
+$max_pop = "SELECT p.poll_name as poll_name, u.name as name, p.total_votes as total_votes FROM Poll p, User u WHERE u.id = p.owner  and p.total_votes = (SELECT MAX(total_votes) FROM Poll) AND p.visibility='public'";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
