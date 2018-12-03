@@ -13,7 +13,7 @@ echo $_SESSION['username'];
 <style>
 .myBox {
 border: none;
-padding: 5px;
+padding: 1px;
 font: 12px/14px sans-serif;
 width: 500px;
 height: 100px;
@@ -131,11 +131,10 @@ overflow: scroll;
                   <?php
                   $id = $row['id'];
                   $sq = "SELECT ov.user_id as user_id, u.name as name, o.option_name as option_name FROM OptionVoters ov, User u, Options o WHERE ov.option_num = o.option_num AND ov.poll_id = o.poll_id AND o.poll_id='$id' AND ov.user_id=u.id";
-                  // $sq = "SELECT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
                             while($row = $res->fetch_assoc()) {
-                              ?> <p> <b>(<?php echo $row['user_id']?>)</b>  <?php echo $row['name'] ?> voted <?php echo $row['option_name']?></p>  <?php
+                              ?> <p> <b>(<?php echo $row['user_id']?>)</b>  <?php echo $row['name'] ?> voted for <?php echo $row['option_name']?></p>  <?php
                             }
                           }
                           else {
