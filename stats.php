@@ -115,8 +115,8 @@ else {
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var arr = [];
@@ -141,42 +141,28 @@ else {
           arr[i][0] = new Date(arr[i][0] * 1000);
         }
 
-        console.log("hllsdfaso");
         var data = google.visualization.arrayToDataTable(arr);
-        console.log("hllo");
 
+        var options = {
+                chart: {
+                  title: 'Box Office Earnings in First Two Weeks of Opening',
+                  subtitle: 'in millions of dollars (USD)'
+                },
+                width: 900,
+                height: 500,
+                axes: {
+                  x: {
+                    0: {side: 'top'}
+                  }
+                }
+              };
 
-      //   var options = {
-      //   chart: {
-      //     title: 'Stats',
-      //     subtitle: 'in min'
-      //   },
-      //   width: 900,
-      //   height: 500,
-      //   axes: {
-      //     x: {
-      //       0: {side: 'top'}
-      //     }
-      //   }
-      // };
-
-        // var options = {
-        //   title: "Poll Stats",
-        //   legend: {'position' : bottom},
-        //   series: {
-        //     1: { color: '#e2431e' },
-        //     2: { color: '#e7711b' },
-        //     3: { color: '#f1ca3a' },
-        //     4: { color: '#6f9654' },
-        //   }
-        // };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data);
+              var chart = new google.charts.Line(document.getElementById('line_top_x'));
+            chart.draw(data, google.charts.Line.convertOptions(options));
       }
     </script>
   </head>
   <body>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div <div id="line_top_x"></div>
   </body>
 </html>=x
