@@ -72,10 +72,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $likes = 1;
         if($result2->num_rows > 0) {
           while ($row = $result2->fetch_assoc()) {
-              $likes = $likes + $row['total_votes'];
+              $likes = $likes + $row['total_likes'];
           }
         }
         $sql8 = "UPDATE Poll SET total_likes='$likes' WHERE id='$poll_id'";
+        $mysqli->query($sql8);
+        $sql8 = "INSERT INTO Likes (poll_id, user_id)" . "VALUES ('$poll_id', '$user')";
         $mysqli->query($sql8);
       }
     }
