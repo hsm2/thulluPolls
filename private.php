@@ -34,7 +34,7 @@ text-transform: uppercase; /* Make letters uppercase */
 
 <?php
 session_start();
-session_cache_limiter('private');
+// session_cache_limiter('private');
 echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
@@ -44,7 +44,7 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
-    echo "hello";
+    echo "helllllllllo";
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
     header("Location:stats.php");
     ob_flush();
