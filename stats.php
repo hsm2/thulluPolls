@@ -131,37 +131,162 @@ $poll = $result3->fetch_assoc();
       <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
       <img class="imgr borderedbox inspace-5" src="../images/demo/imgr.gif" alt="">
       <p>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
 
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-             ['Task', 'Hours per Day'],
-             ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
-             ["<?php echo $options[1]?>",  <?php echo $votes[1] ?>],
-             ["<?php echo $options[2]?>",  <?php echo $votes[2] ?>],
-             ["<?php echo $options[3]?>",  <?php echo $votes[3] ?>]
-
-            ]);
-
-            var options = {
-              title: 'Statistics'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-            chart.draw(data, options);
-          }
-
-        </script>
-        <body>
-          <div id="piechart" style="width: 200px; height: 100px;"></div>
-          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        </body>
       </p>
+      <div id="comments">
+        <h2><?php echo $result3['poll_name'] ?></h2>
+        <ul>
+          <li>
+            <article>
+              <header>
+                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
+                <address>
+                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                      var data = google.visualization.arrayToDataTable([
+                       ['Task', 'Hours per Day'],
+                       ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
+                       ["<?php echo $options[1]?>",  <?php echo $votes[1] ?>],
+                       ["<?php echo $options[2]?>",  <?php echo $votes[2] ?>],
+                       ["<?php echo $options[3]?>",  <?php echo $votes[3] ?>]
+
+                      ]);
+
+                      var options = {
+                        title: 'Statistics'
+                      };
+
+                      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                      chart.draw(data, options);
+                    }
+
+                  </script>
+                  <body>
+                    <div id="piechart" style="width: 200px; height: 100px;"></div>
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                  </body>
+              </header>
+              <div class="comcont">
+                <p>
+
+                </p>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter">
+      <!-- ################################################################################################ -->
+      <h6>Lorem ipsum dolor</h6>
+      <nav class="sdb_holder">
+        <ul>
+          <li><a href="#">Navigation - Level 1</a></li>
+          <li><a href="#">Navigation - Level 1</a>
+            <ul>
+              <li><a href="#">Navigation - Level 2</a></li>
+              <li><a href="#">Navigation - Level 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Navigation - Level 1</a>
+            <ul>
+              <li><a href="#">Navigation - Level 2</a></li>
+              <li><a href="#">Navigation - Level 2</a>
+                <ul>
+                  <li><a href="#">Navigation - Level 3</a></li>
+                  <li><a href="#">Navigation - Level 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Navigation - Level 1</a></li>
+        </ul>
+      </nav>
+      <div class="sdb_holder">
+        <h6>Lorem ipsum dolor</h6>
+        <address>
+        Full Name<br>
+        Address Line 1<br>
+        Address Line 2<br>
+        Town/City<br>
+        Postcode/Zip<br>
+        <br>
+        Tel: xxxx xxxx xxxxxx<br>
+        Email: <a href="#">contact@domain.com</a>
+        </address>
+      </div>
+      <div class="sdb_holder">
+        <article>
+          <h6>Pie chart of poll options:</h6>
+          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li>Etiam vel sapien et</li>
+            <li><a href="#">Etiam vel sapien et</a></li>
+          </ul>
+          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
+          <p class="more"><a href="#">Continue Reading &raquo;</a></p>
+        </article>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <h6 class="heading">Lalapeden</h6>
+    <p>Vivamus quis tellus eget quam elementum aliquam cras nibh mi adipiscing a sodales in tincidunt ut enim praesent tempor molestie metus ut pretium odio.</p>
+    <ul class="faico clear">
+      <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+      <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+      <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+      <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+    </ul>
+    <nav>
+      <ul class="nospace">
+        <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
