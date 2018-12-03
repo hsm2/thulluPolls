@@ -167,7 +167,7 @@ overflow: scroll;
                       </address>
                     </header>
                     <div class="comcont">
-                      <p> Hi
+                      <p>
                         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                         <script type="text/javascript">
                           google.charts.load('current', {'packages':['corechart']});
@@ -175,7 +175,7 @@ overflow: scroll;
 
 
                           function drawChart() {
-                            echo "hello";
+                             console.log("ehllo");
                             var data = google.visualization.arrayToDataTable([
                              ['Task', 'Hours per Day'],
                              ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
