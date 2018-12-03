@@ -141,6 +141,7 @@ $poll = $result3->fetch_assoc();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
+                  <p>
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                   <script type="text/javascript">
                     google.charts.load('current', {'packages':['corechart']});
@@ -173,10 +174,8 @@ $poll = $result3->fetch_assoc();
                   </body>
               </header>
               <div class="comcont">
-                <p>
-
-                </p>
               </div>
+            </p>
             </article>
           </li>
 
