@@ -44,7 +44,8 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
-    $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
+    $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);\
+    echo "I am here";
     header("Location:welcome.php");
 		ob_flush();
   }
