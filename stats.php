@@ -134,7 +134,7 @@ $poll = $result3->fetch_assoc();
 
       </p>
       <div id="comments">
-        <h2><?php echo $result3['poll_name'] ?></h2>
+        <h2><?php echo $poll['poll_name'] ?></h2>
         <ul>
           <li>
             <article>
