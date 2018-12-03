@@ -14,7 +14,6 @@ $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupo
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
-    echo "I am here";
     header("location:stats.php");
     ob_flush();
   }
@@ -177,7 +176,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <?php echo $row['poll_name']?> <a href="stats.php" name="id" value= "<?php echo $row['id'] ?>" onclick="<?php $_SESSION['poll_id_stats'] = $_POST['id']?>">View Statistics</a>
+                <?php echo $row['poll_name']?> 
                 </address>
                 <?php echo $row['question'] ?>
               </header>
