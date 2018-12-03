@@ -102,10 +102,8 @@ if ($result2->num_rows > 0) {
     array_push($data2dates, $d);
     array_push($data3dates, $d);
     array_push($data4dates, $d);
-    ?> <h2> <?php echo $data1dates[0]?> </h2> <?php
     $c = $c + 1;
   }
-  ?> <h2> <?php echo "adddkjf"?> </h2> <?php
 }
 else {
   ?> <h2> <?php echo "ahhhhh no values"?> </h2> <?php
@@ -128,6 +126,7 @@ else {
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php $data[$a][$b]?>);
+            console.log("hlskdfj");
             <?php
           }
           ?>
