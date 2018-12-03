@@ -180,6 +180,11 @@ $mysqli->close();
                 </address>
               </header>
               <div class="comcont">
+
+              <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
+                <input type="submit" value="View Statistics" name="view_stats"  class="btn" style="font-size:8pt;color:red;background-color:white;border:2px solid #FFFFFF;padding:3px" />
+                <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
+              </form>
                 <p><b>Options:</b><br></p>
                   <?php
                       $id = $row['id'];
@@ -223,11 +228,6 @@ $mysqli->close();
                       </center>
                         <div class="module"> </div>
                       </form >
-
-                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
-                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" style="font-size:6pt;color:red;background-color:white;border:2px solid #FFFFFF;padding:3px" />
-                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
-                      </form>
 
               </div>
             </article>
