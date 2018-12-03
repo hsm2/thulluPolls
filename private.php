@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
     echo "I am here";
-    header("Location:welcome.php");
+    header("Location:http://thullupolls.web.illinois.edu/welcome.php");
 		ob_flush();
   }
 
