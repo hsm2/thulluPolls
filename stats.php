@@ -178,9 +178,17 @@ $poll = $result3->fetch_assoc();
                   </body>
                 </p>
               </div>
+            </article>
+          </li>
+
+          <li>
+            <article>
+              <header>
+                <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
               <address>
                 Line Chart of
               </address>
+            </header>
               <div class="comcont">
                 <p>
                   <head>
@@ -224,8 +232,8 @@ $poll = $result3->fetch_assoc();
                                 chart: {
                                   title: '<?php echo $poll['question'] ?>'
                                 },
-                                width: 300,
-                                height: 200,
+                                width: 500,
+                                height: 300,
                                 axes: {
                                   x: {
                                     0: {side: 'top'}
@@ -245,7 +253,8 @@ $poll = $result3->fetch_assoc();
                 </p>
 
             </div>
-            </article>
+
+            </articla>
           </li>
 
         </ul>
