@@ -171,10 +171,11 @@ overflow: scroll;
                     <div class="comcont">
                       <p>
                         <script type="text/javascript">
+                        console.log("here");
                           google.charts.load('current', {'packages':['corechart']});
                           google.charts.setOnLoadCallback(drawChart);
 
-
+                          console.log("hi");
                           function drawChart() {
                              console.log("ehllo");
                             var data = google.visualization.arrayToDataTable([
