@@ -146,7 +146,7 @@ $poll = $result3->fetch_assoc();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                Pie Chart of Options
+                Pie Chart of Options:
                 </address>
               </header>
               <div class="comcont">
