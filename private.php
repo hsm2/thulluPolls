@@ -28,13 +28,10 @@ text-transform: uppercase; /* Make letters uppercase */
 }
 
 </style>
-<?php
- ob_start();  //begin buffering the output
-?>
 
 <?php
+ob_start();
 session_start();
-// session_cache_limiter('private');
 echo $_SESSION['username'];
 $_SESSION['flag'] = TRUE;
 ?>
@@ -46,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
     echo "I am here";
-    header("Location:http://thullupolls.web.illinois.edu/welcome.php");
+    header("location:welcome.php");
 		ob_flush();
   }
 
