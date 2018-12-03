@@ -130,7 +130,7 @@ overflow: scroll;
                   <div class="myBox">
                   <?php
                   $id = $row['id'];
-                  $sq = "SELECT ov.user_id as user_id, u.name as name, o.option_name as option_name FROM OptionVoters ov, User u, Options o WHERE ov.option_num = o.option_num AND ov.poll_id = o.poll_id AND poll_id='$id' AND ov.user_id=u.id";
+                  $sq = "SELECT ov.user_id as user_id, u.name as name, o.option_name as option_name FROM OptionVoters ov, User u, Options o WHERE ov.poll_id = o.poll_id AND poll_id='$id' AND ov.user_id=u.id";
                   // $sq = "SELECT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
