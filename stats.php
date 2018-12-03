@@ -35,6 +35,13 @@ $data4votes = array();
 $data4dates = array();
 $c = 0;
 
+$val1 = 0;
+$val2 = 0;
+$val3 = 0;
+$val4 = 0;
+
+$data = array();
+
 if ($result2->num_rows > 0) {
   while ($row = $result2->fetch_assoc()) {
     $t = $row['timestamp'];
@@ -43,6 +50,7 @@ if ($result2->num_rows > 0) {
     $date = new DateTime("@$t");
     $d = $date->format('U = Y-m-d H:i:s');
     if ($num == 1) {
+      $val1 = $val1 + 1;
       if ($c == 0) {
         array_push($data1votes, 1);
       }
@@ -54,6 +62,7 @@ if ($result2->num_rows > 0) {
       array_push($data4votes, $data4votes[$c - 1]);
     }
     else if ($num == 2) {
+      $val2 = $val2 + 1;
       if ($c == 0) {
         array_push($data2votes, 1);
       }
@@ -65,6 +74,7 @@ if ($result2->num_rows > 0) {
       array_push($data4votes, $data4votes[$c - 1]);
     }
     else if ($num == 3) {
+      $val3 = $val3 + 1;
       if ($c == 0) {
         array_push($data3votes, 1);
       }
@@ -76,6 +86,7 @@ if ($result2->num_rows > 0) {
       array_push($data4votes, $data4votes[$c - 1]);
     }
     else {
+      $val4 = $val4 + 1;
       if ($c == 0) {
         array_push($data4votes, 1);
       }
@@ -86,6 +97,7 @@ if ($result2->num_rows > 0) {
       array_push($data2votes, $data2votes[$c - 1]);
       array_push($data3votes, $data3votes[$c - 1]);
     }
+    $data[] = array($t, $val1, $val2, $val3, $val4);
     array_push($data1dates, $d);
     array_push($data2dates, $d);
     array_push($data3dates, $d);
@@ -108,15 +120,23 @@ else {
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
+        var arr = [];
+        <?php
+        for ($a = 0; $a < sizeof($data); $a = $a + 1) {
+          ?>
+            var temp = [];
+          <?php
+          for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
+            ?> temp.push(<?php $data[$a][$b]?>);
+            <?php
+          }
+          ?>
+          arr.push(temp);
+          <?php
+        }
+        ?>
         var data = google.visualization.arrayToDataTable
-            ([['X', '1', '2', '3', '4', '5', '6'],
-              [1, 2, 3, 4, 5, 6, 7],
-              [2, 3, 4, 5, 6, 7, 8],
-              [3, 4, 5, 6, 7, 8, 9],
-              [4, 5, 6, 7, 8, 9, 10],
-              [5, 6, 7, 8, 9, 10, 11],
-              [6, 7, 8, 9, 10, 11, 12]
-        ]);
+            (arr);
 
         var options = {
           legend: 'none',
@@ -125,8 +145,6 @@ else {
             1: { color: '#e7711b' },
             2: { color: '#f1ca3a' },
             3: { color: '#6f9654' },
-            4: { color: '#1c91c0' },
-            5: { color: '#43459d' },
           }
         };
 
@@ -138,4 +156,4 @@ else {
   <body>
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
   </body>
-</html>
+</html>=x
