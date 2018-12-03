@@ -141,7 +141,12 @@ $poll = $result3->fetch_assoc();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                  <p>
+                By <a href="#">A Name</a>
+                </address>
+                <time datetime="2045-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2045 @08:15:00</time>
+              </header>
+              <div class="comcont">
+                <p>
                   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                   <script type="text/javascript">
                     google.charts.load('current', {'packages':['corechart']});
@@ -172,10 +177,8 @@ $poll = $result3->fetch_assoc();
                     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                   </body>
-              </header>
-              <div class="comcont">
+                </p>
               </div>
-            </p>
             </article>
           </li>
 
