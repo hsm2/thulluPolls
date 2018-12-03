@@ -128,9 +128,9 @@ else {
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Date');
         data.addColumn('number', "<?php echo $options[0] ?>");
-        data.addColumn('number', <?php echo $options[1] ?>);
-        data.addColumn('number', <?php echo $options[2] ?>);
-        data.addColumn('number', <?php echo $options[3] ?>);
+        data.addColumn('number', "<?php echo $options[1] ?>");
+        data.addColumn('number', "<?php echo $options[2] ?>");
+        data.addColumn('number', "<?php echo $options[3] ?>");
 
         data.addRows(arr);
         var options = {
