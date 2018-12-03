@@ -249,6 +249,7 @@ $mysqli->close();
                 <?php echo $row['poll_name']?> <a href="stats.php" name= "<?php echo $row['id'] ?>" onclick="">View Statistics</a>
                 </address>
                 <?php echo $row['question'] ?>
+                <?php echo $row['total_likes'] ?> likes
               </header>
               <div class="comcont">
                 <p>Options:<br></p>
@@ -269,7 +270,6 @@ $mysqli->close();
                         <input type="text" placeholder="Option Number" name="number" required />
                         <input type="checkbox" name="Like" value="like"> Like<br><br><br>
                         <input type="submit" value="verify" name="vote" class="btn btn-block btn-primary"/>
-                        <input type="text" value= "<?php echo $row['total_likes'] ?> likes" readonly/>
                         <input  type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
                         <div class="module"> </div>
