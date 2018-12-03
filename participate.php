@@ -33,6 +33,9 @@ $r = $mysqli->query($max_q);
 $max_p = $r->fetch_assoc();
 echo $max_p['poll_name'];
 
+
+$max_pop = "SELECT p.poll_name as poll_name, u.name as name, p.total_votes as total_votes FROM Poll p, User u WHERE p.total_votes = (SELECT MAX(total_votes) FROM Poll) AND p.visibility='public'";
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (isset($_POST['view_stats'])) {
     $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
@@ -178,20 +181,12 @@ $mysqli->close();
     <!-- ################################################################################################ -->
     <div class="sidebar one_quarter first">
       <!-- ################################################################################################ -->
-      <h6>The Most Likes Poll of the day is:</h6>
-      <p>  <?php echo $max_p['poll_name'];?> by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_likes'];?> likes! </p>
+      <h6>The Most Liked Poll of the day is:</h6>
+      <p> <b> <?php echo $max_p['poll_name'];?> </b>by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_likes'];?> likes! </p>
       <div class="sdb_holder">
-        <h6>Lorem ipsum dolor</h6>
-        <address>
-        Full Name<br>
-        Address Line 1<br>
-        Address Line 2<br>
-        Town/City<br>
-        Postcode/Zip<br>
-        <br>
-        Tel: xxxx xxxx xxxxxx<br>
-        Email: <a href="#">contact@domain.com</a>
-        </address>
+        <h6>The Most Popular poll of the day is:</h6>
+        <p> <p> <b> <?php echo $max_p['poll_name'];?> </b>by <?php echo $max_p['name']?> with a total of <?php echo $max_p['total_votes'];?> likes! </p>
+
       </div>
       <div class="sdb_holder">
         <article>
