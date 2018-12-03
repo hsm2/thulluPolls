@@ -131,14 +131,15 @@ else {
 
    <script>
    window.onload = function () {
-     var data1 = [];
-     var data2 = [];
-     var data3 = [];
-     var data4 = [];
+    //  var data1 = [];
+    //  var data2 = [];
+    //  var data3 = [];
+    //  var data4 = [];
     //  console.log(data1);
     //  console.log(data2);
     //  console.log(data3);
     //  console.log(data4);
+     <?php echo "ahhhhh no values"?> 
      console.log("BO");
      console.log("<?php echo $data1votes[0] ?>");
      console.log("HEY");
