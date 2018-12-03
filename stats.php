@@ -144,6 +144,21 @@ else {
         var data = google.visualization.arrayToDataTable(arr);
         console.log("hllo");
 
+
+        var options = {
+        chart: {
+          title: 'Stats',
+          subtitle: 'in min'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
         var options = {
           title: "Poll Stats",
           legend: {'position' : bottom},
@@ -156,7 +171,7 @@ else {
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        chart.draw(data, google.charts.Line.convertOptions(options));
       }
     </script>
   </head>
