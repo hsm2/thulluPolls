@@ -170,7 +170,7 @@ overflow: scroll;
                     <div class="comcont">
                       <p>
                         <script type="text/javascript">
-                        console.log("here");
+                        console.log('here');
                           google.charts.load('current', {'packages':['corechart']});
                           google.charts.setOnLoadCallback(drawChart);
 
