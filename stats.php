@@ -134,7 +134,7 @@ else {
         }
         ?>
 
-
+        console.log("hllsdfaso");
         var data = google.visualization.arrayToDataTable(arr);
         console.log("hllo");
 
