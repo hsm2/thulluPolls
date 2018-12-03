@@ -125,11 +125,11 @@ $mysqli->close();
   <header id="header" class="hoc clear">
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">Thullu Polls</a></h1>
+      <h1><a href="welcome.php">Thullu Polls</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="welcome.php">Home</a></li>
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="participate.php">Participate in Polls</a></li>
