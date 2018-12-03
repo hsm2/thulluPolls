@@ -159,16 +159,16 @@ else {
         }
       };
 
-        var options = {
-          title: "Poll Stats",
-          legend: {'position' : bottom},
-          series: {
-            1: { color: '#e2431e' },
-            2: { color: '#e7711b' },
-            3: { color: '#f1ca3a' },
-            4: { color: '#6f9654' },
-          }
-        };
+        // var options = {
+        //   title: "Poll Stats",
+        //   legend: {'position' : bottom},
+        //   series: {
+        //     1: { color: '#e2431e' },
+        //     2: { color: '#e7711b' },
+        //     3: { color: '#f1ca3a' },
+        //     4: { color: '#6f9654' },
+        //   }
+        // };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(data, google.charts.Line.convertOptions(options));
