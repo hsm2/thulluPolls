@@ -7,7 +7,7 @@
 <?php
 session_start();
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
-$id =$_SESSION['poll_id_stats'];
+$id = $_SESSION['poll_id_stats'];
 
 $sql1 = "SELECT option_name, total_votes FROM Options WHERE poll_id = '$id' GROUP BY option_num";
 $result1 = $mysqli->query($sql1);

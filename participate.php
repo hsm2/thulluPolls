@@ -1,3 +1,13 @@
+<?php
+ ob_start();  //begin buffering the output
+?>
+
+<?php
+session_start();
+echo $_SESSION['username'];
+$_SESSION['flag'] = TRUE;
+?>
+
 <style>
 .myBox {
 border: none;
@@ -11,30 +21,15 @@ overflow: scroll;
 </style>
 
 <?php
- ob_start();  //begin buffering the output
-?>
-
-<?php
-session_start();
-echo $_SESSION['username'];
-$_SESSION['flag'] = TRUE;
-?>
-
-<?php
 $mysqli = new mysqli("127.0.0.1", "thullupolls_root", "Surabhiharish", "thullupolls_thullupolls");
 
-function myFun() {
-  $poll_id = $_SESSION['comment_id'];
-  $comment_id = uniqid();
-  $user = $_SESSION['username'];
-  if (isset($_POST['comments'])) {
-  $comment_text = $mysqli->real_escape_string($_POST['comments']);
-  $_POST['comments'] = '';
-  $s = "INSERT INTO Comments (id, poll_id, user_id, comment_text)". "VALUES ('$comment_id', '$poll_id', '$user', '$comment_text')";
-}
-}
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if (isset($_POST['view_stats'])) {
+    $_SESSION['poll_id_stats'] = $mysqli->real_escape_string($_POST['id']);
+    header("location:stats.php");
+    ob_flush();
+  }
+
   if (isset($_POST['comment'])) {
     echo "hello";
     $_SESSION['flag'] = TRUE;
@@ -298,6 +293,11 @@ $mysqli->close();
                         <input type="hidden" name="id" value= "<?php echo $row['id'] ?>" />
                       </center>
                         <div class="module"> </div>
+                      </form>
+
+                      <form class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off" name="<?php echo $row['id'] ?>" onsubmit="">
+                        <input type="submit" value="View Statistics" name="view_stats"  class="btn" />
+                        <input type="hidden" name="id" value= "<?php echo $row['id'] ?>"/>
                       </form>
 
               </div>
