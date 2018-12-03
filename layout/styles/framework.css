@@ -64,7 +64,7 @@ label{margin-bottom:5px;}
 
 /* Generalise
 --------------------------------------------------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:22px; line-height:normal; font-weight:normal; text-transform:uppercase;}
+h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:26px; line-height:normal; font-weight:normal; text-transform:uppercase;}
 .heading.nospace{margin-bottom:0;}
 
 address{font-style:normal; font-weight:normal;}

@@ -250,7 +250,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#EC7063;}
 /* Rows */
 .row1{color:#474747; background-color:#FADBD8; border-top-color:#EC7063; border-bottom-color:#FDEDEC;}
 .row2{color:#474747; background-color:#FADBD8;}
-.row3{color:#474747; background-color:#EC7063;}
+.row3{color:#000000; background-color:#EC7063;}
 .row4{color:#FADBD8; background-color:#222222;}
 .row5, .row5 a{color:#FADBD8; background-color:#EC7063;}
 
@@ -300,7 +300,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#EC7063;}
 table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#FDEDEC;}
 #comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#EC7063;}
 th{color:#FADBD8; background-color:#373737;}
-tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#F9EBEA;}
+tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FFFFFF;}
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
 
