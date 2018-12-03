@@ -126,15 +126,15 @@ else {
           <?php
           for ($b = 0; $b < sizeof($data[0]); $b = $b + 1) {
             ?> temp.push(<?php echo $data[$a][$b]?>);
-            console.log(temp);
             <?php
           }
           ?>
-          console.log(temp);
           arr.push(temp);
           <?php
         }
         ?>
+
+        console.log(arr);
         var data = google.visualization.arrayToDataTable
             (arr);
 
