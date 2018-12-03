@@ -133,9 +133,8 @@ overflow: scroll;
                   $sq = "SELECT DISTINCT ov.user_id as user_id, u.name as username FROM OptionVoters ov, User u WHERE ov.user_id=u.id and ov.poll_id='$id";
                           $res = $mysqli->query($sq);
                           if ($res->num_rows > 0) {
-                            echo "hello"
+                            echo "hello";
                             while($row = $res->fetch_assoc()) {
-
                               ?> <p> <b><?php echo $row1['user_id']?></b>  : <?php echo $row1['username'] ?> </p> <?php
                             }
                           }
