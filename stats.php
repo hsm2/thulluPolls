@@ -113,14 +113,11 @@ else {
 ?>
 <html>
   <head>
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript"> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
+      google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
-      // google.charts.load("current", {packages:["corechart"]});
-      // google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
         var arr = [];
         var temp_arr  = ['X', '1', '2', '3', '4'];
@@ -149,19 +146,19 @@ else {
         console.log("hllo");
 
 
-        var options = {
-        chart: {
-          title: 'Stats',
-          subtitle: 'in min'
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'top'}
-          }
-        }
-      };
+      //   var options = {
+      //   chart: {
+      //     title: 'Stats',
+      //     subtitle: 'in min'
+      //   },
+      //   width: 900,
+      //   height: 500,
+      //   axes: {
+      //     x: {
+      //       0: {side: 'top'}
+      //     }
+      //   }
+      // };
 
         // var options = {
         //   title: "Poll Stats",
@@ -175,7 +172,7 @@ else {
         // };
 
         var chart = new google.visualization.Line(document.getElementById('chart_div'));
-        chart.draw(data, google.charts.Line.convertOptions(options));
+        chart.draw(data);
       }
     </script>
   </head>
