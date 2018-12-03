@@ -145,65 +145,6 @@ overflow: scroll;
                           ?>
                 </div>
 
-                <?php
-                $id = $row['id'];
-                $options = array();
-                $votes = array();
-
-                if($result1->num_rows > 0) {
-                  while ($row = $result1->fetch_assoc()) {
-                      array_push($options, $row['option_name']);
-                      array_push($votes, $row['total_votes']);
-                  }
-                }
-                ?>
-
-                <address>
-                  <article>
-                    <header>
-                      <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
-                      <address>
-                      Pie Chart of Options:
-                      </address>
-                    </header>
-                    <div class="comcont">
-                      <p>
-                        <script type="text/javascript">
-                          google.charts.load('current', {'packages':['corechart']});
-                          google.charts.setOnLoadCallback(drawChart);
-
-
-                          function drawChart() {
-                             console.log("ehllo");
-                            var data = google.visualization.arrayToDataTable([
-                             ['Task', 'Hours per Day'],
-                             ["<?php echo $options[0] ?>", <?php echo $votes[0] ?>],
-                             ["<?php echo $options[1]?>",  <?php echo $votes[1] ?>],
-                             ["<?php echo $options[2]?>",  <?php echo $votes[2] ?>],
-                             ["<?php echo $options[3]?>",  <?php echo $votes[3] ?>]
-
-                            ]);
-
-                            var options = {
-                              title: 'Statistics'
-                            };
-
-                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                            chart.draw(data, options);
-                            echo "drew";
-                          }
-
-                        </script>
-                        <body>
-                          <div id="piechart" style="width: 500px; height: 300px;"></div>
-                          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                        </body>
-                        <?php echo "hllllo"?>
-                      </p>
-                    </div>
-                  </article>
-                </address>
 
                 </address>
 
