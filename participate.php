@@ -246,7 +246,7 @@ $mysqli->close();
               <header>
                 <figure class="avatar"><img src="../images/demo/avatar.png" alt=""></figure>
                 <address>
-                <font size="3"> <?php echo $row['poll_name']?> : <?php echo $row['question'] ?> </font> <br><a href="" name= "<?php echo $row['id'] ?>" onclick="">This poll has: <b><?php echo $row['total_likes'] ?> </b>likes</a>
+                <font size="3"> <?php echo $row['poll_name']?> : <?php echo $row['question'] ?> </font> <br><a href="">This poll has: <b><?php echo $row['total_likes'] ?> </b>likes and <b><?php echo $row['total_votes'] ?> </b> votes</a>
                 </address>
               </header>
               <div class="comcont">
