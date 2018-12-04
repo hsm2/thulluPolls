@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $insert_vote = "INSERT INTO OptionVoters (poll_id, option_num, user_id, timestamp)" . "VALUES ('$poll_id', '$number', '$user', $timestamp)";
     $votes = 1;
     $res = $mysqli->query($delete_vote);
-    if(($res->affected_rows > 0)) {
+    if(($mysqli->affected_rows > 0)) {
       $votes = 0;
     }
     $mysqli->query($insert_vote);
